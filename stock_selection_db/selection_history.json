@@ -1,0 +1,89 @@
+{
+  "selections": [
+    {
+      "stock_code": "000001",
+      "stock_name": "000001",
+      "price": 0,
+      "selection_date": "2026-05-21",
+      "market_status": {
+        "trend": "bearish",
+        "description": "市场下跌，北向资金流出",
+        "avg_change": -0.65,
+        "northbound": -40.38,
+        "indices": {
+          "000001": {
+            "name": "平安银行",
+            "price": 10.7,
+            "last_close": 10.77,
+            "open": 10.78,
+            "change_amt": -0.07,
+            "change_pct": -0.65,
+            "high": 10.8,
+            "low": 10.69,
+            "amount_wan": 119414.0,
+            "turnover_pct": 0.57,
+            "pe_ttm": 4.82,
+            "amplitude_pct": 1.02,
+            "mcap_yi": 2076.4,
+            "float_mcap_yi": 2076.43,
+            "pb": 0.45,
+            "limit_up": 11.85,
+            "limit_down": 9.69,
+            "vol_ratio": 1.33,
+            "pe_static": 3.57
+          }
+        }
+      },
+      "strategy": "value",
+      "strategy_scores": {
+        "value": 80.0,
+        "momentum": 40.0,
+        "technical": 50.0
+      },
+      "timestamp": "2026-05-21T15:42:03.827157"
+    },
+    {
+      "stock_code": "600036",
+      "stock_name": "600036",
+      "price": 0,
+      "selection_date": "2026-05-21",
+      "market_status": {
+        "trend": "bearish",
+        "description": "市场下跌，北向资金流出",
+        "avg_change": -0.65,
+        "northbound": -40.38,
+        "indices": {
+          "000001": {
+            "name": "平安银行",
+            "price": 10.7,
+            "last_close": 10.77,
+            "open": 10.78,
+            "change_amt": -0.07,
+            "change_pct": -0.65,
+            "high": 10.8,
+            "low": 10.69,
+            "amount_wan": 119414.0,
+            "turnover_pct": 0.57,
+            "pe_ttm": 4.82,
+            "amplitude_pct": 1.02,
+            "mcap_yi": 2076.4,
+            "float_mcap_yi": 2076.43,
+            "pb": 0.45,
+            "limit_up": 11.85,
+            "limit_down": 9.69,
+            "vol_ratio": 1.33,
+            "pe_static": 3.57
+          }
+        }
+      },
+      "strategy": "value",
+      "strategy_scores": {
+        "value": 80.0,
+        "momentum": 40.0,
+        "technical": 50.0
+      },
+      "timestamp": "2026-05-21T15:42:45.621303"
+    }
+  ],
+  "total_count": 2
+}

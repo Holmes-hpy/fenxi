@@ -1,0 +1,54 @@
+{
+  "analyses": [
+    {
+      "stock_code": "600036",
+      "stock_name": "600036",
+      "current_price": 0,
+      "analysis_date": "2026-05-21",
+      "prediction": {
+        "score": 40,
+        "direction": "震荡偏跌",
+        "confidence": "中",
+        "factors": [
+          "RSI超卖"
+        ],
+        "predicted_change_pct": -2.0
+      },
+      "indicators": {
+        "price": 37.15,
+        "ma5": 37.362,
+        "ma10": 37.63099999999999,
+        "ma20": 38.340500000000006,
+        "ma60": 39.0015,
+        "macd_dif": -0.545029306684846,
+        "macd_dea": -0.4365200228121793,
+        "macd_histogram": -0.10850928387266667,
+        "rsi": 1.1952191235060354,
+        "kdj_k": 2.471819363301323,
+        "kdj_d": 4.532067937948975,
+        "kdj_j": -1.648677785993982,
+        "bb_upper": 40.20160861132764,
+        "bb_middle": 38.340500000000006,
+        "bb_lower": 36.47939138867237,
+        "bb_position": 18.016374951090196,
+        "volume": 725199.0,
+        "vol_ma5": 733542.8,
+        "recent_return": -1.3280212483399734
+      },
+      "key_findings": [
+        "RSI超卖，可能存在反弹机会"
+      ],
+      "risk_factors": [],
+      "support_resistance": {
+        "resistance_1": 38.09,
+        "resistance_2": 37.36,
+        "support_1": 37.36,
+        "support_2": 37.63,
+        "support_3": 38.34
+      },
+      "timestamp": "2026-05-21T15:42:46.408661"
+    }
+  ],
+  "success_cases": [],
+  "failure_cases": []
+}
