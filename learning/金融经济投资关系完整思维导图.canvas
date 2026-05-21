@@ -1,0 +1,246 @@
+{
+  "nodes": [
+    {
+      "id": "root001",
+      "type": "text",
+      "x": 450,
+      "y": 0,
+      "width": 400,
+      "height": 100,
+      "color": "5",
+      "text": "# 金融、经济与投资\n## 三位一体的关系体系"
+    },
+    {
+      "id": "economics",
+      "type": "text",
+      "x": 0,
+      "y": 150,
+      "width": 280,
+      "height": 180,
+      "color": "1",
+      "text": "## 经济学\n### 研究稀缺资源如何配置\n\n**核心问题**：\n- 生产什么？\n- 如何生产？\n- 为谁生产？\n\n**关键课程**：\n- 微观经济学\n- 宏观经济学\n- 财政学"
+    },
+    {
+      "id": "finance",
+      "type": "text",
+      "x": 360,
+      "y": 150,
+      "width": 280,
+      "height": 200,
+      "color": "2",
+      "text": "## 金融学\n### 研究资金的募集与投资\n\n**从经济学分化而来**\n\n**十大核心课程**：\n- 货币银行学\n- 公司金融\n- 金融市场学\n- 金融工程学\n- 投资学\n- 金融计量学\n- ...\n\n**本质**：资金的 时间价值和风险定价"
+    },
+    {
+      "id": "investment",
+      "type": "text",
+      "x": 720,
+      "y": 150,
+      "width": 280,
+      "height": 200,
+      "color": "3",
+      "text": "## 投资学\n### 在不确定条件下资产配置\n\n**核心目标**：\n- 风险最小化\n- 收益最大化\n\n**核心理论**：\n- 投资组合理论(MPT)\n- CAPM模型\n- 有效市场假说\n\n**本质**：用今天的现金换取未来更多的现金"
+    },
+    {
+      "id": "money_supply",
+      "type": "text",
+      "x": 0,
+      "y": 400,
+      "width": 260,
+      "height": 250,
+      "color": "4",
+      "text": "## 货币供应量\n### 宏观指标体系\n\n**M0 - 流通中现金**\n- 流动性最强\n- 银行体系外\n\n**M1 - 狭义货币**\n- M0 + 活期存款\n- 企业活力晴雨表\n- 与股市相关性70%\n\n**M2 - 广义货币**\n- M1 + 定期存款\n- 央行调控主要目标\n- 2023年达292万亿\n\n**剪刀差分析**：\n- M1-M2：企业资金活性\n- 社融-M2：资金供需"
+    },
+    {
+      "id": "macro_analysis",
+      "type": "text",
+      "x": 320,
+      "y": 400,
+      "width": 260,
+      "height": 250,
+      "color": "5",
+      "text": "## 宏观分析框架\n### 经济周期判断\n\n**领先指标**：\n- 社融增速\n- M1-M2剪刀差\n- PMI\n\n**同步指标**：\n- GDP增速\n- 工业增加值\n\n**滞后指标**：\n- CPI\n- 企业利润\n\n**政策观察**：\n- 货币政策\n- 财政政策"
+    },
+    {
+      "id": "investment_theory",
+      "type": "text",
+      "x": 640,
+      "y": 400,
+      "width": 260,
+      "height": 250,
+      "color": "6",
+      "text": "## 投资学核心理论\n\n**现代投资组合理论(MPT)**\n- 分散化降低风险\n- 有效前沿\n- 资产配置\n\n**CAPM模型**\n- 预期收益=rf+β×(rm-rf)\n- 系统性风险定价\n- β>1高风险高收益\n\n**有效市场假说(EMH)**\n- 弱式有效\n- 半强式有效\n- 强式有效\n\n**夏普比率**\n- 收益风险调整指标\n- 越高越好"
+    },
+    {
+      "id": "first_principle",
+      "type": "text",
+      "x": 960,
+      "y": 400,
+      "width": 260,
+      "height": 250,
+      "color": "1",
+      "text": "## 第一性原理\n### 马斯克的思维方法\n\n**4步操作法**：\n1. 拆解要素\n2. 追溯本源\n3. 重构系统\n4. 验证迭代\n\n**投资应用**：\n- 回归本质思考\n- 不被表象迷惑\n- 风险控制优先\n\n**核心问题**：\n- 这家公司能赚多少钱？\n- 未来现金流值多少？\n- 当前价格便宜吗？"
+    },
+    {
+      "id": "company_finance",
+      "type": "text",
+      "x": 0,
+      "y": 720,
+      "width": 300,
+      "height": 220,
+      "color": "2",
+      "text": "## 公司金融\n### 企业金融决策\n\n**三大核心问题**：\n1. 投资决策\n   - NPV\n   - IRR\n   - 资本预算\n\n2. 融资决策\n   - MM理论\n   - WACC\n   - 最优资本结构\n\n3. 股利决策\n   - 分红政策\n   - 股票回购"
+    },
+    {
+      "id": "risk_management",
+      "type": "text",
+      "x": 360,
+      "y": 720,
+      "width": 280,
+      "height": 220,
+      "color": "3",
+      "text": "## 风险管理\n### 投资第一性原理\n\n**核心原则**：\n- 保住本金第一\n- 先控风险再谈收益\n- 持续盈利而非暴利\n\n**具体措施**：\n- 单只仓位<20%\n- 硬性止损10%\n- 分散投资\n- 保留现金\n\n**不懂止损、盲目跟风**\n**= 一次翻车满盘皆输**"
+    },
+    {
+      "id": "practical_framework",
+      "type": "text",
+      "x": 700,
+      "y": 720,
+      "width": 300,
+      "height": 220,
+      "color": "4",
+      "text": "## 实战应用框架\n\n**三层分析**：\n1. 宏观分析\n   - 经济周期\n   - 政策环境\n\n2. 中观分析\n   - 行业选择\n   - 竞争格局\n\n3. 微观分析\n   - 公司质量\n   - 估值水平\n\n**选股决策**：\n本质分析 > 技术验证 > 时机选择"
+    },
+    {
+      "id": "summary",
+      "type": "text",
+      "x": 300,
+      "y": 1020,
+      "width": 600,
+      "height": 180,
+      "color": "5",
+      "text": "## 核心认知总结\n\n**三者关系**：\n经济学提供大环境 → 金融学提供工具方法 → 投资学提供实践策略\n\n**投资本质**：\n用今天的现金，换取未来更多的现金\n\n**第一性原理启示**：\n回归本质思考，不被表象迷惑，风险控制永远第一\n\n**知行合一**：\n理解本质 → 建立框架 → 实战验证 → 持续优化"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge01",
+      "fromNode": "root001",
+      "fromSide": "bottom",
+      "toNode": "economics",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "经济学基础"
+    },
+    {
+      "id": "edge02",
+      "fromNode": "root001",
+      "fromSide": "bottom",
+      "toNode": "finance",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "金融学框架"
+    },
+    {
+      "id": "edge03",
+      "fromNode": "root001",
+      "fromSide": "bottom",
+      "toNode": "investment",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "投资学实践"
+    },
+    {
+      "id": "edge04",
+      "fromNode": "economics",
+      "fromSide": "bottom",
+      "toNode": "macro_analysis",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "宏观分析"
+    },
+    {
+      "id": "edge05",
+      "fromNode": "finance",
+      "fromSide": "bottom",
+      "toNode": "company_finance",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "公司金融"
+    },
+    {
+      "id": "edge06",
+      "fromNode": "investment",
+      "fromSide": "bottom",
+      "toNode": "investment_theory",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "投资理论"
+    },
+    {
+      "id": "edge07",
+      "fromNode": "macro_analysis",
+      "fromSide": "right",
+      "toNode": "first_principle",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "edge08",
+      "fromNode": "money_supply",
+      "fromSide": "right",
+      "toNode": "macro_analysis",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "edge09",
+      "fromNode": "company_finance",
+      "fromSide": "right",
+      "toNode": "practical_framework",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "edge10",
+      "fromNode": "risk_management",
+      "fromSide": "top",
+      "toNode": "practical_framework",
+      "toSide": "bottom",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "edge11",
+      "fromNode": "first_principle",
+      "fromSide": "bottom",
+      "toNode": "risk_management",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "风控优先"
+    },
+    {
+      "id": "edge12",
+      "fromNode": "practical_framework",
+      "fromSide": "bottom",
+      "toNode": "summary",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "知行合一"
+    },
+    {
+      "id": "edge13",
+      "fromNode": "macro_analysis",
+      "fromSide": "bottom",
+      "toNode": "risk_management",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "edge14",
+      "fromNode": "investment_theory",
+      "fromSide": "bottom",
+      "toNode": "risk_management",
+      "toSide": "right",
+      "toEnd": "arrow"
+    }
+  ]
+}
