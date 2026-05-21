@@ -1,0 +1,182 @@
+[
+  {
+    "code": "000809",
+    "name": "和展能源",
+    "yesterday_change": 10.076,
+    "today_price": 4.14,
+    "today_change": -5.26,
+    "pe": -77.66,
+    "pb": 1.28,
+    "mcap": 34.15
+  },
+  {
+    "code": "002421",
+    "name": "达实智能",
+    "yesterday_change": 10.052,
+    "today_price": 4.11,
+    "today_change": -3.75,
+    "pe": -13.88,
+    "pb": 3.21,
+    "mcap": 82.34
+  },
+  {
+    "code": "002514",
+    "name": "*ST宝馨",
+    "yesterday_change": 5.097,
+    "today_price": 4.27,
+    "today_change": -1.39,
+    "pe": -15.13,
+    "pb": -58.23,
+    "mcap": 23.66
+  },
+  {
+    "code": "002272",
+    "name": "川润股份",
+    "yesterday_change": 10.013,
+    "today_price": 24.2,
+    "today_change": -2.97,
+    "pe": -421.98,
+    "pb": 8.04,
+    "mcap": 98.77
+  },
+  {
+    "code": "603008",
+    "name": "ST喜临门",
+    "yesterday_change": 5.011,
+    "today_price": 8.96,
+    "today_change": -4.98,
+    "pe": 24.55,
+    "pb": 0.94,
+    "mcap": 33.0
+  },
+  {
+    "code": "002158",
+    "name": "汉钟精机",
+    "yesterday_change": 10.016,
+    "today_price": 34.59,
+    "today_change": -1.28,
+    "pe": 39.14,
+    "pb": 4.15,
+    "mcap": 184.56
+  },
+  {
+    "code": "000926",
+    "name": "福星股份",
+    "yesterday_change": 10.145,
+    "today_price": 2.13,
+    "today_change": -6.58,
+    "pe": -0.81,
+    "pb": 0.65,
+    "mcap": 33.51
+  },
+  {
+    "code": "603618",
+    "name": "杭电股份",
+    "yesterday_change": 9.997,
+    "today_price": 42.31,
+    "today_change": -0.63,
+    "pe": -122.33,
+    "pb": 10.81,
+    "mcap": 292.52
+  },
+  {
+    "code": "603687",
+    "name": "大胜达",
+    "yesterday_change": 10.006,
+    "today_price": 17.62,
+    "today_change": -0.45,
+    "pe": 139.67,
+    "pb": 2.96,
+    "mcap": 96.92
+  },
+  {
+    "code": "603517",
+    "name": "ST绝味",
+    "yesterday_change": 5.023,
+    "today_price": 13.56,
+    "today_change": -0.22,
+    "pe": -34.29,
+    "pb": 1.37,
+    "mcap": 82.17
+  },
+  {
+    "code": "002782",
+    "name": "可立克",
+    "yesterday_change": 10.004,
+    "today_price": 29.77,
+    "today_change": -1.91,
+    "pe": 57.88,
+    "pb": 6.89,
+    "mcap": 144.83
+  },
+  {
+    "code": "600530",
+    "name": "交大昂立",
+    "yesterday_change": 10.029,
+    "today_price": 7.13,
+    "today_change": -5.81,
+    "pe": 1357.46,
+    "pb": 17.58,
+    "mcap": 55.25
+  },
+  {
+    "code": "002787",
+    "name": "华源控股",
+    "yesterday_change": 9.992,
+    "today_price": 27.55,
+    "today_change": -2.24,
+    "pe": 78.96,
+    "pb": 5.0,
+    "mcap": 69.11
+  },
+  {
+    "code": "002072",
+    "name": "凯瑞德",
+    "yesterday_change": 10.071,
+    "today_price": 7.54,
+    "today_change": -2.84,
+    "pe": -114.92,
+    "pb": 12.0,
+    "mcap": 27.71
+  },
+  {
+    "code": "000695",
+    "name": "滨海能源",
+    "yesterday_change": 9.986,
+    "today_price": 15.88,
+    "today_change": -1.91,
+    "pe": -41.43,
+    "pb": 12.31,
+    "mcap": 35.22
+  },
+  {
+    "code": "000890",
+    "name": "法尔胜",
+    "yesterday_change": 10.017,
+    "today_price": 12.27,
+    "today_change": -4.51,
+    "pe": -67.63,
+    "pb": 263.32,
+    "mcap": 51.47
+  },
+  {
+    "code": "001313",
+    "name": "粤海饲料",
+    "yesterday_change": 10.0,
+    "today_price": 9.27,
+    "today_change": -5.31,
+    "pe": 120.79,
+    "pb": 2.53,
+    "mcap": 64.81
+  },
+  {
+    "code": "600238",
+    "name": "*ST椰岛",
+    "yesterday_change": 4.941,
+    "today_price": 5.25,
+    "today_change": -1.13,
+    "pe": -109.71,
+    "pb": 30.18,
+    "mcap": 23.38
+  }
+]
