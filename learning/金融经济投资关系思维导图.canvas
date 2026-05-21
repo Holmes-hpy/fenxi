@@ -1,0 +1,235 @@
+{
+  "nodes": [
+    {
+      "id": "root001",
+      "type": "text",
+      "x": 400,
+      "y": 0,
+      "width": 500,
+      "height": 120,
+      "color": "5",
+      "text": "# 金融、经济与投资的本质关系\n\n**核心问题**：三者如何相互作用？"
+    },
+    {
+      "id": "economics",
+      "type": "text",
+      "x": 0,
+      "y": 200,
+      "width": 300,
+      "height": 150,
+      "color": "1",
+      "text": "## 经济学\n\n**本质**：研究稀缺资源如何配置\n\n**核心问题**：\n- 生产什么\n- 如何生产\n- 为谁生产\n\n**对投资的影响**：\n- 经济周期决定资产表现\n- 货币政策影响市场流动性\n- 财政政策改变行业格局"
+    },
+    {
+      "id": "finance",
+      "type": "text",
+      "x": 400,
+      "y": 200,
+      "width": 300,
+      "height": 180,
+      "color": "2",
+      "text": "## 金融学\n\n**本质**：研究资金的募集与投资\n\n**从经济学分化而来**\n\n**两大分支**：\n- **宏观金融学**：货币银行、国际金融\n- **微观金融学**：投资学、公司金融、资产定价\n\n**核心功能**：\n- 资金融通\n- 风险转移\n- 价格发现"
+    },
+    {
+      "id": "investment",
+      "type": "text",
+      "x": 800,
+      "y": 200,
+      "width": 300,
+      "height": 150,
+      "color": "3",
+      "text": "## 投资学\n\n**本质**：在不确定条件下进行资产配置\n\n**核心问题**：\n- 如何选择资产\n- 如何分配权重\n- 如何管理风险\n\n**目标**：在可接受风险下获取最大收益"
+    },
+    {
+      "id": "relation",
+      "type": "text",
+      "x": 400,
+      "y": 450,
+      "width": 400,
+      "height": 180,
+      "color": "4",
+      "text": "## 三者的关系\n\n**经济学 → 金融学**\n- 提供宏观环境分析框架\n- 决定货币政策和财政政策\n- 影响市场整体趋势\n\n**金融学 → 投资学**\n- 提供定价模型和工具\n- 揭示风险收益特征\n- 建立市场运作机制\n\n**投资学 → 实体经济**\n- 引导资金流向\n- 促进资源优化配置\n- 反馈经济信号"
+    },
+    {
+      "id": "market_structure",
+      "type": "text",
+      "x": 0,
+      "y": 420,
+      "width": 280,
+      "height": 200,
+      "color": "5",
+      "text": "## 金融市场结构\n\n### 股票市场\n- 股权融资\n- 价格反映公司价值\n\n### 债券市场\n- 债权融资\n- 固定收益\n\n### 外汇市场\n- 汇率定价\n- 国际资本流动\n\n### 期货市场\n- 风险对冲\n- 价格发现"
+    },
+    {
+      "id": "investment_methods",
+      "type": "text",
+      "x": 920,
+      "y": 420,
+      "width": 280,
+      "height": 200,
+      "color": "5",
+      "text": "## 投资分析方法\n\n### 基本面分析\n- 宏观经济\n- 行业分析\n- 公司财务\n\n### 技术分析\n- 趋势判断\n- 支撑阻力\n- 量价关系\n\n### 量化投资\n- 数学建模\n- 算法交易\n- 统计套利"
+    },
+    {
+      "id": "first_principle",
+      "type": "text",
+      "x": 350,
+      "y": 700,
+      "width": 500,
+      "height": 250,
+      "color": "6",
+      "text": "## 第一性原理的应用\n\n### 投资决策的本质\n**用今天的现金换取未来更多的现金**\n\n### 三个核心问题\n1. **这家公司未来能创造多少现金流？**\n2. **这些现金流折现到今天值多少钱？**\n3. **当前价格是否便宜？**\n\n### 思维转变\n- 从\"预测股价涨跌\" → \"评估企业价值\"\n- 从\"技术指标\" → \"基本面本质\"\n- 从\"市场情绪\" → \"企业竞争力\""
+    },
+    {
+      "id": "risk_management",
+      "type": "text",
+      "x": 0,
+      "y": 700,
+      "width": 280,
+      "height": 220,
+      "color": "1",
+      "text": "## 风险管理\n\n### 四大步骤\n1. **风险识别**\n   - 市场风险\n   - 信用风险\n   - 流动性风险\n\n2. **风险评估**\n   - VaR模型\n   - 压力测试\n\n3. **风险控制**\n   - 分散投资\n   - 对冲策略\n\n4. **风险监控**\n   - 实时监测\n   - 动态调整"
+    },
+    {
+      "id": "macro_indicators",
+      "type": "text",
+      "x": 920,
+      "y": 700,
+      "width": 280,
+      "height": 220,
+      "color": "2",
+      "text": "## 宏观经济指标\n\n### 货币供应量\n- **M0**：流通中现金\n- **M1**：M0 + 活期存款\n- **M2**：M1 + 定期存款\n\n### 社融数据\n- 社会融资规模\n- 反映实体经济融资需求\n\n### 剪刀差分析\n- **M1-M2**：企业资金活性\n- **社融-M2**：资金供需平衡"
+    },
+    {
+      "id": "practical_framework",
+      "type": "text",
+      "x": 350,
+      "y": 1020,
+      "width": 500,
+      "height": 280,
+      "color": "4",
+      "text": "## 实战应用框架\n\n### 第一层：本质分析（最重要）\n- 行业前景如何？\n- 公司竞争优势是什么？\n- 未来3-5年能赚多少钱？\n\n### 第二层：价值评估\n- 合理估值是多少？\n- 当前价格是高估还是低估？\n- 安全边际够不够？\n\n### 第三层：技术辅助\n- 趋势是否向上？\n- 买卖时机如何选择？\n- 止损位设在哪里？"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge01",
+      "fromNode": "root001",
+      "fromSide": "bottom",
+      "toNode": "economics",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "经济学基础"
+    },
+    {
+      "id": "edge02",
+      "fromNode": "root001",
+      "fromSide": "bottom",
+      "toNode": "finance",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "金融学框架"
+    },
+    {
+      "id": "edge03",
+      "fromNode": "root001",
+      "fromSide": "bottom",
+      "toNode": "investment",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "投资学实践"
+    },
+    {
+      "id": "edge04",
+      "fromNode": "economics",
+      "fromSide": "right",
+      "toNode": "relation",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "edge05",
+      "fromNode": "finance",
+      "fromSide": "bottom",
+      "toNode": "relation",
+      "toSide": "top",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "edge06",
+      "fromNode": "investment",
+      "fromSide": "left",
+      "toNode": "relation",
+      "toSide": "right",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "edge07",
+      "fromNode": "economics",
+      "fromSide": "bottom",
+      "toNode": "market_structure",
+      "toSide": "top",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "edge08",
+      "fromNode": "investment",
+      "fromSide": "bottom",
+      "toNode": "investment_methods",
+      "toSide": "top",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "edge09",
+      "fromNode": "relation",
+      "fromSide": "bottom",
+      "toNode": "first_principle",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "第一性原理"
+    },
+    {
+      "id": "edge10",
+      "fromNode": "first_principle",
+      "fromSide": "bottom",
+      "toNode": "practical_framework",
+      "toSide": "top",
+      "toEnd": "arrow",
+      "label": "实战落地"
+    },
+    {
+      "id": "edge11",
+      "fromNode": "first_principle",
+      "fromSide": "left",
+      "toNode": "risk_management",
+      "toSide": "right",
+      "toEnd": "arrow",
+      "label": "风险管控"
+    },
+    {
+      "id": "edge12",
+      "fromNode": "first_principle",
+      "fromSide": "right",
+      "toNode": "macro_indicators",
+      "toSide": "left",
+      "toEnd": "arrow",
+      "label": "宏观指标"
+    },
+    {
+      "id": "edge13",
+      "fromNode": "market_structure",
+      "fromSide": "right",
+      "toNode": "first_principle",
+      "toSide": "left",
+      "toEnd": "arrow"
+    },
+    {
+      "id": "edge14",
+      "fromNode": "investment_methods",
+      "fromSide": "left",
+      "toNode": "first_principle",
+      "toSide": "right",
+      "toEnd": "arrow"
+    }
+  ]
+}
