@@ -1,0 +1,10 @@
+{
+  "servers": [
+    {
+      "name": "a-stock-data",
+      "command": "python3",
+      "args": ["/Users/houpengyuan/Documents/trae_projects/a-stock-data/a_stock_data_mcp.py"],
+      "transport": "stdio"
+    }
+  ]
+}

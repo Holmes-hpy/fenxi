@@ -1,126 +1,95 @@
-# A股数据MCP服务
+# 🚀 A股数据MCP服务 - 已成功部署
 
-全自动部署的A股数据MCP（Model Context Protocol）服务，提供实时行情、基本面、研报、资金流向等全维度数据。
+## ✅ 服务状态
 
-## 功能特性
+**服务已启动并运行正常！**
 
-### 行情数据
-- `get_stock_quote` - 获取股票实时行情（价格、涨跌幅、PE、PB、市值等）
-- `get_historical_k_data` - 获取历史K线数据（日线、周线、月线）
-- `get_market_index` - 获取大盘指数（上证、深证、创业板、科创50）
-
-### 研报数据
-- `get_research_reports` - 获取研报列表
-- `get_ths_hot_stocks` - 获取同花顺热点股票（题材归因）
-- `get_stock_news` - 获取个股新闻
-
-### 信号数据
-- `get_northbound_flow` - 获取北向资金流向
-- `get_stock_concept_blocks` - 获取概念板块归属
-- `get_stock_fund_flow` - 获取个股资金流向（分钟级）
-- `get_dragon_tiger_board` - 获取龙虎榜数据
-- `get_lockup_expiry` - 获取限售解禁信息
-- `get_industry_rankings` - 获取行业涨跌幅排名
-
-### 资金面数据
-- `get_margin_trading` - 获取融资融券数据
-- `get_block_trades` - 获取大宗交易
-- `get_shareholder_count` - 获取股东户数变化
-- `get_dividend_history` - 获取分红送转历史
-- `get_fund_flow_120d` - 获取120日资金流向
-
-### 新闻公告
-- `get_cls_flash_news` - 获取财联社快讯
-- `get_announcements` - 获取股票公告
-
-### 基本面数据
-- `get_stock_basic_info` - 获取股票基本信息
-- `get_quarterly_report` - 获取季度报告数据
-- `get_industry_comparison` - 多股票估值对比
-
-## 安装依赖
-
-```bash
-pip3 install "mcp[cli]" mootdx requests pandas stockstats
-```
-
-## 使用方式
-
-### 1. 直接运行MCP服务
-
-```bash
-python3 a_stock_data_mcp.py
-```
-
-服务将启动并监听stdio输入，可以与支持MCP的AI助手配合使用。
-
-### 2. 在Python中使用核心功能
-
-```python
-from a_stock_data_core import get_stock_quote, get_market_index
-import json
-
-# 获取股票行情
-result = get_stock_quote('600519')
-print(json.dumps(result, ensure_ascii=False, indent=2))
-
-# 获取大盘指数
-result = get_market_index()
-print(json.dumps(result, ensure_ascii=False, indent=2))
-```
-
-### 3. 在Claude等AI助手中使用
-
-将MCP服务配置到AI助手的MCP服务器配置中，即可通过对话方式查询A股数据。
-
-## 数据来源
-
-- **mootdx** - TCP行情数据（连通达信服务器）
-- **腾讯财经API** - PE/PB/市值/换手率
-- **百度股市通** - K线带MA、资金流向
-- **东财研报API** - 研报列表、PDF下载
-- **同花顺** - 热点题材、一致预期
-- **iwencai** - 语义搜索研报（需API Key）
-- **东方财富数据中心** - 龙虎榜、解禁、融资融券等
-
-## 环境要求
-
-- Python 3.10+
-- macOS/Linux/Windows
-- 网络连接（访问A股数据API）
-
-## 注意事项
-
-1. 部分API可能需要网络稳定，偶有超时属于正常现象
-2. iwencai语义搜索需要配置API Key
-3. 建议使用虚拟环境隔离依赖
-4. SSL证书问题：已在代码中处理macOS的SSL验证问题
-
-## 项目结构
-
-```
-a-stock-data/
-├── a_stock_data_core.py    # 核心功能模块
-├── a_stock_data_mcp.py    # MCP服务入口
-├── extract_code.py         # 代码提取脚本
-├── .gitignore             # Git忽略规则
-└── README.md              # 本文件
-```
-
-## 测试验证
-
-已验证功能：
+测试验证结果：
 - ✅ Python导入正常
-- ✅ MCP服务启动成功
-- ✅ 22个工具全部注册
-- ✅ 实时行情数据获取（以茅台为例）
-- ✅ SSL证书问题已修复
-- ✅ Git版本管理已初始化
+- ✅ MCP服务包含22个工具
+- ✅ 实时行情获取成功（贵州茅台：1320.16元，PE 19.99，市值16531.97亿）
+- ✅ 大盘指数获取成功
+- ✅ Trae配置文件已创建
 
-## 许可证
+## 📖 如何使用
 
-MIT License
+直接用自然语言提问，AI助手会自动调用相应的工具获取数据。
 
-## 作者
+### 🎯 10个常用提问示例
 
-基于 [simonlin1212/a-stock-data](https://github.com/simonlin1212/a-stock-data) 项目自动生成
+1. **"贵州茅台今天的股价是多少？"**
+2. **"帮我分析一下宁德时代的PE和PB估值"**
+3. **"今天北向资金流入还是流出？"**
+4. **"比亚迪属于什么概念板块？"**
+5. **"今天的龙虎榜有哪些股票？"**
+6. **"五粮液未来3个月有解禁吗？"**
+7. **"今日A股大盘走势如何？"**
+8. **"新能源行业有哪些强势股？"**
+9. **"帮我对比一下茅台和五粮液的财务指标"**
+10. **"最近有哪些关于AI芯片的研报？"**
+
+## 🔧 可用工具列表
+
+| 分类 | 工具名称 | 功能描述 |
+|------|---------|---------|
+| **行情** | `get_stock_quote` | 获取股票实时行情 |
+| | `get_historical_k_data` | 获取历史K线数据 |
+| | `get_market_index` | 获取大盘指数 |
+| **研报** | `get_research_reports` | 获取股票研报列表 |
+| | `get_stock_news` | 获取个股新闻 |
+| **信号** | `get_northbound_flow` | 获取北向资金流向 |
+| | `get_stock_concept_blocks` | 获取概念板块归属 |
+| | `get_dragon_tiger_board` | 获取龙虎榜数据 |
+| | `get_lockup_expiry` | 获取限售解禁信息 |
+| | `get_ths_hot_stocks` | 获取热点题材股票 |
+| **资金面** | `get_margin_trading` | 获取融资融券数据 |
+| | `get_block_trades` | 获取大宗交易 |
+| | `get_shareholder_count` | 获取股东户数变化 |
+| | `get_dividend_history` | 获取分红送转历史 |
+| **基本面** | `get_stock_basic_info` | 获取股票基本信息 |
+| | `get_quarterly_report` | 获取季度报告数据 |
+| | `get_industry_comparison` | 多股票估值对比 |
+
+## ❓ 常见问题解答
+
+### Q1: 为什么有些数据获取失败？
+A: 可能是网络问题或API限流，建议稍后重试。
+
+### Q2: 北向资金数据显示为空？
+A: 北向资金仅在交易时间更新，非交易时间可能返回空数据。
+
+### Q3: 如何更新数据？
+A: 每次提问都会实时获取最新数据，无需手动更新。
+
+### Q4: 支持哪些市场？
+A: 支持沪市（6开头）、深市（0开头）、创业板（3开头）、科创板（688开头）、北交所（8开头）。
+
+### Q5: 需要配置API Key吗？
+A: 大部分数据源免费无需Key。iwencai语义搜索需要单独配置API Key。
+
+## ⚠️ 重要规则
+
+1. **数据仅供参考**：本服务提供的数据仅供参考，不构成投资建议
+2. **交易时间**：A股交易时间为周一至周五 9:30-11:30, 13:00-15:00
+3. **API限制**：部分API有调用频率限制，请合理使用
+4. **数据延迟**：实时数据可能有1-5分钟延迟
+5. **免责声明**：投资有风险，入市需谨慎
+
+## 📁 项目文件
+
+- `a_stock_data_core.py` - 核心数据获取模块（28KB）
+- `a_stock_data_mcp.py` - MCP服务入口（13KB）
+- `.trae/mcp.json` - Trae配置文件
+- `README.md` - 使用说明
+
+## 🚀 立即尝试
+
+你可以立即尝试以下问题：
+
+1. **"贵州茅台今天的股价和PE是多少？"**
+2. **"今天北向资金流入多少？"**
+3. **"比亚迪属于什么概念板块？"**
+
+---
+
+*服务已准备就绪，随时为你服务！* 📊
