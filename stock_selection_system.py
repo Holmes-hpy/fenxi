@@ -276,7 +276,9 @@ class StockSelectionSystem:
         for code in candidates:
             try:
                 # 获取股票数据
-                quote = get_stock_quote(code)
+                quotes_result = get_stock_quote(code)
+                # get_stock_quote 返回的是字典，键是股票代码，值是行情数据
+                quote = quotes_result.get(code, {}) if code in quotes_result else {}
                 basic_info = get_stock_basic_info(code)
                 k_data = get_historical_k_data(code, period='daily', days=60)
                 
@@ -325,8 +327,9 @@ class StockSelectionSystem:
             }
         
         # 选择得分最高的股票
-        best_stock = max(scores.values(), key=lambda x: x['total_score'])
-        best_stock['code'] = max(scores.keys(), key=lambda k: scores[k]['total_score'])
+        best_code = max(scores.keys(), key=lambda k: scores[k]['total_score'])
+        best_stock = scores[best_code]
+        best_stock['code'] = best_code
         
         return best_stock
     
@@ -436,8 +439,10 @@ class StockSelectionSystem:
             low14 = k_data['low'].rolling(window=14).min()
             high14 = k_data['high'].rolling(window=14).max()
             rsv = (k_data['close'] - low14) / (high14 - low14) * 100
-            k = rsv.ewm(com=2, adjust=False).mean().iloc[-1]
-            d = k.ewm(com=2, adjust=False).mean().iloc[-1]
+            k_series = rsv.ewm(com=2, adjust=False).mean()
+            k_val = k_series.iloc[-1]
+            d_series = k_series.ewm(com=2, adjust=False).mean()
+            d_val = d_series.iloc[-1]
             
             # 技术指标评分
             # MACD
@@ -457,9 +462,9 @@ class StockSelectionSystem:
                 score += 5
             
             # KDJ
-            if k > d and k < 80:
+            if k_val > d_val and k_val < 80:
                 score += 10
-            elif k > 80:
+            elif k_val > 80:
                 score -= 10
             
             # 布林带位置
@@ -501,7 +506,9 @@ class StockSelectionSystem:
         
         try:
             # 获取数据
-            quote = get_stock_quote(stock_code)
+            quotes_result = get_stock_quote(stock_code)
+            # get_stock_quote 返回的是字典，键是股票代码，值是行情数据
+            quote = quotes_result.get(stock_code, {}) if stock_code in quotes_result else {}
             basic_info = get_stock_basic_info(stock_code)
             k_data = get_historical_k_data(stock_code, period='daily', days=60)
             
@@ -940,7 +947,9 @@ class StockSelectionSystem:
         
         try:
             # 获取今日收盘价
-            quote = get_stock_quote(stock_code)
+            quotes_result = get_stock_quote(stock_code)
+            # get_stock_quote 返回的是字典，键是股票代码，值是行情数据
+            quote = quotes_result.get(stock_code, {}) if stock_code in quotes_result else {}
             current_price = quote.get('price', 0)
             
             # 查找之前的选股记录
