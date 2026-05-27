@@ -1,0 +1,204 @@
+{
+  "report_date": "2026-05-22",
+  "report_time": "2026-05-22 15:03:56",
+  "market_summary": {
+    "sentiment": "中性",
+    "positive_signals": 1,
+    "negative_signals": 1,
+    "main_theme": "半导体/AI产业链持续活跃",
+    "market_characteristic": "结构性分化行情"
+  },
+  "northbound_flow": {
+    "沪股通": -9.28,
+    "深股通": -31.1,
+    "北向合计": -40.38,
+    "status": "净流出"
+  },
+  "hot_sectors": {
+    "涨幅前10": [
+      {
+        "name": "航空机场",
+        "change_pct": -1.21
+      },
+      {
+        "name": "铁路公路",
+        "change_pct": 0.83
+      },
+      {
+        "name": "物流",
+        "change_pct": 0.49
+      },
+      {
+        "name": "水泥",
+        "change_pct": 1.3
+      },
+      {
+        "name": "公用事业",
+        "change_pct": 1.0
+      },
+      {
+        "name": "电力",
+        "change_pct": 1.19
+      },
+      {
+        "name": "农林牧渔",
+        "change_pct": 0.37
+      },
+      {
+        "name": "纺织服饰",
+        "change_pct": 1.32
+      },
+      {
+        "name": "煤炭",
+        "change_pct": -0.16
+      },
+      {
+        "name": "食品饮料",
+        "change_pct": -0.4
+      }
+    ],
+    "跌幅前5": [
+      {
+        "name": "数字媒体",
+        "change_pct": 0.58
+      },
+      {
+        "name": "影视院线",
+        "change_pct": 1.68
+      },
+      {
+        "name": "其他电子Ⅱ",
+        "change_pct": 3.59
+      },
+      {
+        "name": "纺织制造",
+        "change_pct": 1.67
+      },
+      {
+        "name": "服装家纺",
+        "change_pct": 1.24
+      }
+    ]
+  },
+  "hot_stocks": {
+    "top_10": [
+      {
+        "name": "盈方微",
+        "code": "000670",
+        "theme": "长江存储代理+半导体分销+重大资产重组"
+      },
+      {
+        "name": "*ST立航",
+        "code": "603261",
+        "theme": "申请撤销退市风险警示+无人机+低空经济"
+      },
+      {
+        "name": "意华股份",
+        "code": "002897",
+        "theme": "800G高速连接器+华为链+CPO+液冷"
+      },
+      {
+        "name": "红板科技",
+        "code": "603459",
+        "theme": "PCB扩产+1.6T光模块+存储芯片"
+      },
+      {
+        "name": "*ST启环",
+        "code": "000826",
+        "theme": "预重整+数字环卫+锂电池"
+      },
+      {
+        "name": "泰和新材",
+        "code": "002254",
+        "theme": "光纤+芳纶涂覆+半固态电池+国企"
+      },
+      {
+        "name": "三祥新材",
+        "code": "603663",
+        "theme": "半导体产业链+核级锆+锆铪分离"
+      },
+      {
+        "name": "*ST宝实",
+        "code": "000595",
+        "theme": "撤销退市风险警示申请+风光储+宁夏国资"
+      },
+      {
+        "name": "慧智微",
+        "code": "688512",
+        "theme": "射频前端芯片+5G射频+三星订单+Phase8L量产"
+      },
+      {
+        "name": "*ST智胜",
+        "code": "002253",
+        "theme": "申请撤销退市风险+低空经济+军工射频"
+      }
+    ],
+    "total": 20
+  },
+  "key_stocks_performance": {
+    "贵州茅台": {
+      "code": "600519",
+      "price": 1290.2,
+      "change_pct": -1.59,
+      "amount_wan": 637239.0,
+      "status": "下跌"
+    },
+    "五 粮 液": {
+      "code": "000858",
+      "price": 84.03,
+      "change_pct": -1.55,
+      "amount_wan": 219621.0,
+      "status": "下跌"
+    },
+    "宁德时代": {
+      "code": "300750",
+      "price": 411.16,
+      "change_pct": -0.11,
+      "amount_wan": 1147259.0,
+      "status": "下跌"
+    },
+    "招商银行": {
+      "code": "600036",
+      "price": 37.02,
+      "change_pct": -0.35,
+      "amount_wan": 296127.0,
+      "status": "下跌"
+    },
+    "长电科技": {
+      "code": "600584",
+      "price": 72.88,
+      "change_pct": 9.04,
+      "amount_wan": 1982062.0,
+      "status": "上涨"
+    },
+    "中国平安": {
+      "code": "601318",
+      "price": 53.68,
+      "change_pct": -0.15,
+      "amount_wan": 360372.0,
+      "status": "下跌"
+    }
+  },
+  "market_insights": [
+    {
+      "category": "资金流向",
+      "insight": "北向资金连续净流出超30亿元，外资短期偏谨慎",
+      "implication": "可能压制市场情绪，但长期不改配置价值"
+    },
+    {
+      "category": "热点板块",
+      "insight": "半导体/AI产业链持续活跃，4只相关个股上榜热点",
+      "implication": "国产替代逻辑持续，可关注优质龙头回调机会"
+    },
+    {
+      "category": "板块轮动",
+      "insight": "消费白马股集体调整，显示市场风险偏好下降",
+      "implication": "资金可能向防御性板块或主题炒作转移"
+    },
+    {
+      "category": "产业趋势",
+      "insight": "PCB/算力基础设施持续受追捧，4只相关个股表现强势",
+      "implication": "AI产业链上游持续景气，业绩确定性较高"
+    }
+  ]
+}

@@ -28,6 +28,20 @@ def create_schedule_config():
                 "enabled": True
             },
             {
+                "name": "科技资讯爬取-上午",
+                "description": "每日上午9:30爬取科技前沿资讯，关注十五五规划相关产业",
+                "cron": "30 9 * * 1-5",
+                "function": "tech_news_crawler.TechNewsCrawler.run_crawl",
+                "enabled": True
+            },
+            {
+                "name": "科技资讯爬取-下午",
+                "description": "每日下午14:30爬取科技前沿资讯，关注十五五规划相关产业",
+                "cron": "30 14 * * 1-5",
+                "function": "tech_news_crawler.TechNewsCrawler.run_crawl",
+                "enabled": True
+            },
+            {
                 "name": "每周深度学习",
                 "description": "每周日进行深度学习并生成周度报告",
                 "cron": "0 20 * * 0",
@@ -43,7 +57,7 @@ def create_schedule_config():
             }
         ],
         "created_at": datetime.now().isoformat(),
-        "version": "1.0"
+        "version": "1.1"
     }
     
     import json

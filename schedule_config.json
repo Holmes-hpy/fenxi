@@ -1,0 +1,41 @@
+{
+  "tasks": [
+    {
+      "name": "每日学习-收盘后",
+      "description": "收盘后学习并生成每日简报",
+      "cron": "30 15 * * 1-5",
+      "function": "autonomous_learning_system.AutonomousLearningSystem.run_daily_learning_cycle",
+      "enabled": true
+    },
+    {
+      "name": "科技资讯爬取-上午",
+      "description": "每日上午9:30爬取科技前沿资讯，关注十五五规划相关产业",
+      "cron": "30 9 * * 1-5",
+      "function": "tech_news_crawler.TechNewsCrawler.run_crawl",
+      "enabled": true
+    },
+    {
+      "name": "科技资讯爬取-下午",
+      "description": "每日下午14:30爬取科技前沿资讯，关注十五五规划相关产业",
+      "cron": "30 14 * * 1-5",
+      "function": "tech_news_crawler.TechNewsCrawler.run_crawl",
+      "enabled": true
+    },
+    {
+      "name": "每周深度学习",
+      "description": "每周日进行深度学习并生成周度报告",
+      "cron": "0 20 * * 0",
+      "function": "autonomous_learning_system.AutonomousLearningSystem.weekly_deep_learning",
+      "enabled": true
+    },
+    {
+      "name": "月度进化报告",
+      "description": "每月最后一天生成进化报告",
+      "cron": "0 20 L * *",
+      "function": "autonomous_learning_system.AutonomousLearningSystem.monthly_evolution_report",
+      "enabled": true
+    }
+  ],
+  "created_at": "2026-05-26T15:34:43.341943",
+  "version": "1.1"
+}

@@ -1,0 +1,50 @@
+{
+  "crawl_time": "2026-05-27T14:31:23.248115",
+  "total_news": 83,
+  "relevant_news": 2,
+  "normal_news": [
+    {
+      "title": "中国—东盟人工智能产业创新中心成立",
+      "url": "http://www.miit.gov.cn/xwfb/bldhd/art/2026/art_0c1667782ca9420eaf25aefbb62079c0.html",
+      "source": "工信部",
+      "type": "government",
+      "crawl_time": "2026-05-27T14:31:01.942003",
+      "relevant_field": "人工智能",
+      "reverse_signal_score": 0,
+      "reverse_signal_keywords": [],
+      "is_reverse_signal": false,
+      "knowledge": {
+        "keywords": [
+          "人工智能"
+        ],
+        "industry": "人工智能",
+        "impact_level": "low",
+        "potential_stocks": [
+          "300750",
+          "000977",
+          "300454",
+          "603019"
+        ]
+      }
+    },
+    {
+      "title": "FranÃ§ais",
+      "url": "/fr/",
+      "source": "华为",
+      "type": "enterprise",
+      "crawl_time": "2026-05-27T14:31:03.948511",
+      "relevant_field": "AI",
+      "reverse_signal_score": 0,
+      "reverse_signal_keywords": [],
+      "is_reverse_signal": false,
+      "knowledge": {
+        "keywords": [],
+        "industry": "",
+        "impact_level": "low",
+        "potential_stocks": []
+      }
+    }
+  ],
+  "reverse_signals": [],
+  "knowledge_extracted": 0
+}

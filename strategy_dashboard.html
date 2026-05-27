@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>缠论量化策略分析仪表板</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        }
+        .card-hover {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-blue-50 min-h-screen">
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Header -->
+        <header class="gradient-bg rounded-3xl p-8 mb-8 shadow-xl">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-3">
+                        📊 缠论量化策略分析
+                    </h1>
+                    <p class="text-xl text-blue-100">最终优质策略 · 80%胜率 · 专业投资分析</p>
+                </div>
+                <div class="flex gap-4">
+                    <div class="bg-white/20 backdrop-blur-md rounded-xl px-6 py-4">
+                        <div class="text-3xl font-bold text-white">80%</div>
+                        <div class="text-sm text-blue-100">胜率</div>
+                    </div>
+                    <div class="bg-white/20 backdrop-blur-md rounded-xl px-6 py-4">
+                        <div class="text-3xl font-bold text-white">+5.39%</div>
+                        <div class="text-sm text-blue-100">总收益率</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Strategy Comparison Cards -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6">📈 策略性能对比</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Overnight Holding -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 border-l-4 border-red-400 card-hover">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">🌙</span>
+                        <div>
+                            <h3 class="font-semibold text-lg text-slate-800">隔夜持股法</h3>
+                            <p class="text-sm text-slate-500">简单但胜率低</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span class="text-slate-600">胜率</span>
+                            <span class="font-semibold text-red-600">42.86%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-600">收益率</span>
+                            <span class="font-semibold text-red-600">-0.03%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 rounded-full h-2 mt-2">
+                            <div class="bg-red-500 h-2 rounded-full" style="width: 42.86%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- All 3 Types -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 border-l-4 border-orange-400 card-hover">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">⚠️</span>
+                        <div>
+                            <h3 class="font-semibold text-lg text-slate-800">三类买卖点整合</h3>
+                            <p class="text-sm text-slate-500">太复杂，信号太多</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span class="text-slate-600">胜率</span>
+                            <span class="font-semibold text-orange-600">28.57%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-600">收益率</span>
+                            <span class="font-semibold text-orange-600">-7.68%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 rounded-full h-2 mt-2">
+                            <div class="bg-orange-500 h-2 rounded-full" style="width: 28.57%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Premium Chan Strategy -->
+                <div class="bg-white rounded-2xl shadow-lg p-6 border-l-4 border-emerald-400 card-hover ring-2 ring-emerald-100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">✨</span>
+                        <div>
+                            <h3 class="font-semibold text-lg text-slate-800">最终优质策略</h3>
+                            <p class="text-sm text-slate-500">简单有效，多指标共振</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span class="text-slate-600">胜率</span>
+                            <span class="font-semibold text-emerald-600">80.00%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-600">收益率</span>
+                            <span class="font-semibold text-emerald-600">+5.39%</span>
+                        </div>
+                        <div class="w-full bg-slate-100 rounded-full h-2 mt-2">
+                            <div class="bg-emerald-500 h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategy Performance -->
+                <div class="bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-2xl shadow-lg p-6 border-l-4 border-emerald-300 text-white card-hover">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">🏆</span>
+                        <div>
+                            <h3 class="font-semibold text-lg">推荐选择</h3>
+                            <p class="text-sm text-emerald-100">最优策略</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span class="text-emerald-100">平均盈利</span>
+                            <span class="font-semibold">+2.57%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-emerald-100">盈亏比</span>
+                            <span class="font-semibold">1.19</span>
+                        </div>
+                        <div class="pt-2 border-t border-white/30">
+                            <p class="text-sm text-emerald-100">✅ 强烈推荐</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts Section -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+            <!-- Performance Chart -->
+            <div class="bg-white rounded-2xl shadow-lg p-6">
+                <h3 class="text-xl font-semibold text-slate-800 mb-6">📊 策略回测表现</h3>
+                <canvas id="performanceChart"></canvas>
+            </div>
+            
+            <!-- Win/Loss Distribution -->
+            <div class="bg-white rounded-2xl shadow-lg p-6">
+                <h3 class="text-xl font-semibold text-slate-800 mb-6">🎯 盈亏分布</h3>
+                <canvas id="winLossChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Today's Stock Picks -->
+        <section class="mb-10">
+            <h2 class="text-2xl font-bold text-slate-800 mb-6">🎁 今日选股结果</h2>
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-slate-50">
+                            <tr>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-slate-600">排名</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-slate-600">股票名称</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-slate-600">代码</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-slate-600">现价</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-slate-600">评分</th>
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-slate-600">信号日期</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr class="hover:bg-slate-50">
+                                <td class="px-6 py-4">
+                                    <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">1st</span>
+                                </td>
+                                <td class="px-6 py-4 font-medium text-slate-800">宁德时代</td>
+                                <td class="px-6 py-4 text-slate-600 font-mono">300750</td>
+                                <td class="px-6 py-4 text-slate-800">¥460.00</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-emerald-600 font-bold">90</span>
+                                        <span class="text-slate-400">/100</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-slate-600">2026-05-06</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="px-6 py-4">
+                                    <span class="bg-slate-100 text-slate-800 px-3 py-1 rounded-full text-sm font-semibold">2nd</span>
+                                </td>
+                                <td class="px-6 py-4 font-medium text-slate-800">海康威视</td>
+                                <td class="px-6 py-4 text-slate-600 font-mono">002415</td>
+                                <td class="px-6 py-4 text-slate-800">¥32.64</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-emerald-600 font-bold">90</span>
+                                        <span class="text-slate-400">/100</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-slate-600">2026-02-06</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="px-6 py-4">
+                                    <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-semibold">3rd</span>
+                                </td>
+                                <td class="px-6 py-4 font-medium text-slate-800">北方华创</td>
+                                <td class="px-6 py-4 text-slate-600 font-mono">002371</td>
+                                <td class="px-6 py-4 text-slate-800">¥481.42</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-blue-600 font-bold">75</span>
+                                        <span class="text-slate-400">/100</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-slate-600">2025-12-23</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="px-6 py-4">
+                                    <span class="bg-slate-100 text-slate-800 px-3 py-1 rounded-full text-sm font-semibold">4th</span>
+                                </td>
+                                <td class="px-6 py-4 font-medium text-slate-800">中微公司</td>
+                                <td class="px-6 py-4 text-slate-600 font-mono">688012</td>
+                                <td class="px-6 py-4 text-slate-800">¥316.58</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-blue-600 font-bold">75</span>
+                                        <span class="text-slate-400">/100</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-slate-600">2026-04-13</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50">
+                                <td class="px-6 py-4">
+                                    <span class="bg-slate-100 text-slate-800 px-3 py-1 rounded-full text-sm font-semibold">5th</span>
+                                </td>
+                                <td class="px-6 py-4 font-medium text-slate-800">五粮液</td>
+                                <td class="px-6 py-4 text-slate-600 font-mono">000858</td>
+                                <td class="px-6 py-4 text-slate-800">¥110.77</td>
+                                <td class="px-6 py-4">
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-indigo-600 font-bold">70</span>
+                                        <span class="text-slate-400">/100</span>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-slate-600">2026-01-29</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategy Rules -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <h3 class="text-xl font-semibold text-slate-800 mb-6">🎯 策略选股逻辑</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4 p-4 bg-blue-50 rounded-xl">
+                        <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold shrink-0">1</div>
+                        <div>
+                            <h4 class="font-semibold text-slate-800">均线完美多头 (30分)</h4>
+                            <p class="text-slate-600 text-sm">MA5 > MA10 > MA20</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-4 bg-purple-50 rounded-xl">
+                        <div class="w-10 h-10 bg-purple-500 rounded-full flex items-center justify-center text-white font-bold shrink-0">2</div>
+                        <div>
+                            <h4 class="font-semibold text-slate-800">MACD金叉 (25分)</h4>
+                            <p class="text-slate-600 text-sm">DIF上穿DEA确认</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-4 bg-green-50 rounded-xl">
+                        <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold shrink-0">3</div>
+                        <div>
+                            <h4 class="font-semibold text-slate-800">布林带中轨上方 (20分)</h4>
+                            <p class="text-slate-600 text-sm">在趋势线上方运行</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-4 bg-orange-50 rounded-xl">
+                        <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold shrink-0">4</div>
+                        <div>
+                            <h4 class="font-semibold text-slate-800">RSI健康区间 (15分)</h4>
+                            <p class="text-slate-600 text-sm">50-70，不超买不超卖</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-4 bg-emerald-50 rounded-xl">
+                        <div class="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center text-white font-bold shrink-0">5</div>
+                        <div>
+                            <h4 class="font-semibold text-slate-800">底背驰 (可选+10分)</h4>
+                            <p class="text-slate-600 text-sm">有则加分项</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+                <h3 class="text-xl font-semibold text-slate-800 mb-6">🚀 执行建议</h3>
+                <div class="space-y-6">
+                    <div class="border-l-4 border-blue-500 pl-4 py-2">
+                        <h4 class="font-semibold text-slate-800 mb-1">选股时间</h4>
+                        <p class="text-slate-600">下午 2:30 - 2:50</p>
+                    </div>
+                    <div class="border-l-4 border-green-500 pl-4 py-2">
+                        <h4 class="font-semibold text-slate-800 mb-1">执行买入</h4>
+                        <p class="text-slate-600">下午 2:50 - 3:00</p>
+                    </div>
+                    <div class="border-l-4 border-yellow-500 pl-4 py-2">
+                        <h4 class="font-semibold text-slate-800 mb-1">止盈条件</h4>
+                        <p class="text-slate-600">次日涨 3% 立即卖出</p>
+                    </div>
+                    <div class="border-l-4 border-red-500 pl-4 py-2">
+                        <h4 class="font-semibold text-slate-800 mb-1">止损条件</h4>
+                        <p class="text-slate-600">次日跌 3% 严格止损</p>
+                    </div>
+                    <div class="border-l-4 border-purple-500 pl-4 py-2">
+                        <h4 class="font-semibold text-slate-800 mb-1">其余情况</h4>
+                        <p class="text-slate-600">次日收盘前卖出</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Risk Tips -->
+        <section class="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-8 mb-10">
+            <h3 class="text-xl font-semibold text-amber-800 mb-4 flex items-center gap-3">
+                <span class="text-2xl">⚠️</span>
+                重要风险提示
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h4 class="font-semibold text-slate-800 mb-3">严格止损</h4>
+                    <p class="text-slate-600 text-sm">触及3%止损立即卖出，绝不抱任何幻想</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h4 class="font-semibold text-slate-800 mb-3">仓位管理</h4>
+                    <p class="text-slate-600 text-sm">单次仓位不超过总资金的20%</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h4 class="font-semibold text-slate-800 mb-3">大盘择时</h4>
+                    <p class="text-slate-600 text-sm">大盘下跌趋势时暂停策略</p>
+                </div>
+                <div class="bg-white rounded-xl p-6 shadow-sm">
+                    <h4 class="font-semibold text-slate-800 mb-3">选股偏好</h4>
+                    <p class="text-slate-600 text-sm">优先考虑大消费、大科技龙头</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-slate-500 py-6">
+            <p class="mb-2">📅 分析日期: 2026-05-26</p>
+            <p class="text-sm">💡 免责声明: 本策略仅供参考，不构成投资建议。股市有风险，投资需谨慎。</p>
+        </footer>
+    </div>
+
+    <script>
+        // Performance Chart
+        const performanceCtx = document.getElementById('performanceChart').getContext('2d');
+        new Chart(performanceCtx, {
+            type: 'bar',
+            data: {
+                labels: ['隔夜持股法', '三类买卖点', '最终优质策略'],
+                datasets: [
+                    {
+                        label: '胜率 (%)',
+                        data: [42.86, 28.57, 80],
+                        backgroundColor: 'rgba(59, 130, 246, 0.8)',
+                        borderColor: 'rgba(59, 130, 246, 1)',
+                        borderWidth: 2,
+                        borderRadius: 8
+                    },
+                    {
+                        label: '收益率 (%)',
+                        data: [-0.03, -7.68, 5.39],
+                        backgroundColor: 'rgba(16, 185, 129, 0.8)',
+                        borderColor: 'rgba(16, 185, 129, 1)',
+                        borderWidth: 2,
+                        borderRadius: 8
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top'
+                    },
+                    title: {
+                        display: true,
+                        text: '策略性能对比'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Win/Loss Chart
+        const winLossCtx = document.getElementById('winLossChart').getContext('2d');
+        new Chart(winLossCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['盈利', '亏损'],
+                datasets: [
+                    {
+                        data: [4, 1],
+                        backgroundColor: [
+                            'rgba(16, 185, 129, 0.8)',
+                            'rgba(239, 68, 68, 0.8)'
+                        ],
+                        borderColor: [
+                            'rgba(16, 185, 129, 1)',
+                            'rgba(239, 68, 68, 1)'
+                        ],
+                        borderWidth: 3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    },
+                    title: {
+                        display: true,
+                        text: '回测交易盈亏分布'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

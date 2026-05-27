@@ -1,0 +1,279 @@
+{
+  "collect_time": "2026-05-25 10:15:54",
+  "week_range": "2026-05-19 to 2026-05-23",
+  "northbound": {
+    "hgt": -9.28,
+    "sgt": -31.1,
+    "total": -40.38
+  },
+  "index": [],
+  "key_stocks": [],
+  "industry": {
+    "top": [
+      {
+        "rank": 1,
+        "name": "航空机场",
+        "change_pct": 2.01,
+        "code": "BK0420",
+        "up_count": 13,
+        "down_count": 0,
+        "leader": "600115",
+        "leader_change": 5.07
+      },
+      {
+        "rank": 2,
+        "name": "铁路公路",
+        "change_pct": -0.07,
+        "code": "BK0421",
+        "up_count": 14,
+        "down_count": 14,
+        "leader": "002357",
+        "leader_change": 6.45
+      },
+      {
+        "rank": 3,
+        "name": "物流",
+        "change_pct": -0.23,
+        "code": "BK0422",
+        "up_count": 13,
+        "down_count": 33,
+        "leader": "603871",
+        "leader_change": 9.98
+      },
+      {
+        "rank": 4,
+        "name": "水泥",
+        "change_pct": -0.32,
+        "code": "BK0424",
+        "up_count": 6,
+        "down_count": 15,
+        "leader": "603916",
+        "leader_change": 4.09
+      },
+      {
+        "rank": 5,
+        "name": "公用事业",
+        "change_pct": 0.78,
+        "code": "BK0427",
+        "up_count": 90,
+        "down_count": 46,
+        "leader": "600578",
+        "leader_change": 9.98
+      },
+      {
+        "rank": 6,
+        "name": "电力",
+        "change_pct": 1.47,
+        "code": "BK0428",
+        "up_count": 84,
+        "down_count": 20,
+        "leader": "600578",
+        "leader_change": 9.98
+      },
+      {
+        "rank": 7,
+        "name": "农林牧渔",
+        "change_pct": -0.6,
+        "code": "BK0433",
+        "up_count": 28,
+        "down_count": 76,
+        "leader": "605198",
+        "leader_change": 10.0
+      },
+      {
+        "rank": 8,
+        "name": "纺织服饰",
+        "change_pct": -0.08,
+        "code": "BK0436",
+        "up_count": 44,
+        "down_count": 67,
+        "leader": "002674",
+        "leader_change": 9.99
+      },
+      {
+        "rank": 9,
+        "name": "煤炭",
+        "change_pct": 3.93,
+        "code": "BK0437",
+        "up_count": 32,
+        "down_count": 1,
+        "leader": "601666",
+        "leader_change": 10.0
+      },
+      {
+        "rank": 10,
+        "name": "食品饮料",
+        "change_pct": 0.37,
+        "code": "BK0438",
+        "up_count": 62,
+        "down_count": 64,
+        "leader": "603919",
+        "leader_change": 10.03
+      }
+    ],
+    "bottom": [
+      {
+        "rank": 91,
+        "name": "医药生物",
+        "change_pct": -0.56,
+        "code": "BK1216",
+        "up_count": 143,
+        "down_count": 351,
+        "leader": "002432",
+        "leader_change": 10.0
+      },
+      {
+        "rank": 92,
+        "name": "综合",
+        "change_pct": -1.28,
+        "code": "BK1217",
+        "up_count": 1,
+        "down_count": 16,
+        "leader": "000632",
+        "leader_change": 2.82
+      },
+      {
+        "rank": 93,
+        "name": "出版",
+        "change_pct": -0.28,
+        "code": "BK1218",
+        "up_count": 7,
+        "down_count": 19,
+        "leader": "301231",
+        "leader_change": 9.77
+      },
+      {
+        "rank": 94,
+        "name": "电视广播Ⅱ",
+        "change_pct": 2.71,
+        "code": "BK1219",
+        "up_count": 8,
+        "down_count": 5,
+        "leader": "600831",
+        "leader_change": 9.98
+      },
+      {
+        "rank": 95,
+        "name": "广告营销",
+        "change_pct": -1.35,
+        "code": "BK1220",
+        "up_count": 6,
+        "down_count": 22,
+        "leader": "002354",
+        "leader_change": 2.51
+      },
+      {
+        "rank": 96,
+        "name": "数字媒体",
+        "change_pct": -0.77,
+        "code": "BK1221",
+        "up_count": 3,
+        "down_count": 12,
+        "leader": "301313",
+        "leader_change": 7.24
+      },
+      {
+        "rank": 97,
+        "name": "影视院线",
+        "change_pct": -0.04,
+        "code": "BK1222",
+        "up_count": 8,
+        "down_count": 9,
+        "leader": "300528",
+        "leader_change": 2.89
+      },
+      {
+        "rank": 98,
+        "name": "其他电子Ⅱ",
+        "change_pct": 1.67,
+        "code": "BK1223",
+        "up_count": 21,
+        "down_count": 12,
+        "leader": "002388",
+        "leader_change": 9.96
+      },
+      {
+        "rank": 99,
+        "name": "纺织制造",
+        "change_pct": -0.57,
+        "code": "BK1224",
+        "up_count": 11,
+        "down_count": 22,
+        "leader": "002674",
+        "leader_change": 9.99
+      },
+      {
+        "rank": 100,
+        "name": "服装家纺",
+        "change_pct": 0.01,
+        "code": "BK1225",
+        "up_count": 25,
+        "down_count": 36,
+        "leader": "603001",
+        "leader_change": 9.18
+      }
+    ]
+  },
+  "hot_stocks": [
+    {
+      "name": "黄河旋风",
+      "code": "600172",
+      "涨跌幅": 0,
+      "题材": "金刚石散热+培育钻石+半导体+国企改革"
+    },
+    {
+      "name": "长海股份",
+      "code": "300196",
+      "涨跌幅": 0,
+      "题材": "PCB基材+玻纤制品+新能源车轻量化"
+    },
+    {
+      "name": "新亚制程",
+      "code": "002388",
+      "涨跌幅": 0,
+      "题材": "人形机器人+锂电池+华为客户"
+    },
+    {
+      "name": "奥康国际",
+      "code": "603001",
+      "涨跌幅": 0,
+      "题材": "皮鞋+C2M+一季报扭亏"
+    },
+    {
+      "name": "香江控股",
+      "code": "600162",
+      "涨跌幅": 0,
+      "题材": "广州项目+大湾区住宅+家居商贸"
+    },
+    {
+      "name": "百合花",
+      "code": "603823",
+      "涨跌幅": 0,
+      "题材": "PEEK材料+光刻胶颜料+有机颜料龙头"
+    },
+    {
+      "name": "双成药业",
+      "code": "002693",
+      "涨跌幅": 0,
+      "题材": "摘帽+多肽出口+紫杉醇美国获批"
+    },
+    {
+      "name": "九安医疗",
+      "code": "002432",
+      "涨跌幅": 0,
+      "题材": "月之暗面+AI医疗+家用检测+回购注销"
+    },
+    {
+      "name": "金徽酒",
+      "code": "603919",
+      "涨跌幅": 0,
+      "题材": "白酒+全国化扩张+高端产品升级"
+    },
+    {
+      "name": "华电能源",
+      "code": "600726",
+      "涨跌幅": 0,
+      "题材": "煤电联营+绿电转型+央企"
+    }
+  ]
+}

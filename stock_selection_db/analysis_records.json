@@ -47,6 +47,199 @@
         "support_3": 38.34
       },
       "timestamp": "2026-05-21T15:42:46.408661"
+    },
+    {
+      "stock_code": "601318",
+      "stock_name": "601318",
+      "current_price": 0,
+      "analysis_date": "2026-05-22",
+      "prediction": {
+        "score": 40,
+        "direction": "震荡偏跌",
+        "confidence": "中",
+        "factors": [
+          "RSI超卖"
+        ],
+        "predicted_change_pct": -2.0
+      },
+      "indicators": {
+        "price": 53.68,
+        "ma5": 54.18399999999999,
+        "ma10": 56.086,
+        "ma20": 57.3995,
+        "ma60": 59.08433333333333,
+        "macd_dif": -1.2836225654727258,
+        "macd_dea": -0.7574058183666902,
+        "macd_histogram": -0.5262167471060356,
+        "rsi": 10.235131396957144,
+        "kdj_k": 5.941632420897455,
+        "kdj_d": 13.485161636227458,
+        "kdj_j": -9.145426009762552,
+        "bb_upper": 61.87243368936692,
+        "bb_middle": 57.3995,
+        "bb_lower": 52.926566310633085,
+        "bb_position": 8.422142397929813,
+        "volume": 669699.0,
+        "vol_ma5": 819811.0,
+        "recent_return": -2.204408817635272
+      },
+      "key_findings": [
+        "RSI超卖，可能存在反弹机会"
+      ],
+      "risk_factors": [],
+      "support_resistance": {
+        "resistance_1": 55.28,
+        "resistance_2": 54.18,
+        "support_1": 54.18,
+        "support_2": 56.09,
+        "support_3": 57.4
+      },
+      "timestamp": "2026-05-22T15:30:34.555144"
+    },
+    {
+      "stock_code": "000333",
+      "stock_name": "000333",
+      "current_price": 0,
+      "analysis_date": "2026-05-26",
+      "prediction": {
+        "score": 60,
+        "direction": "震荡偏涨",
+        "confidence": "中",
+        "factors": [
+          "RSI处于健康区间"
+        ],
+        "predicted_change_pct": 2.0
+      },
+      "indicators": {
+        "price": 79.81,
+        "ma5": 80.81800000000001,
+        "ma10": 81.17699999999999,
+        "ma20": 80.74799999999999,
+        "ma60": 78.02716666666667,
+        "macd_dif": 0.7156357442273276,
+        "macd_dea": 0.9463952083928091,
+        "macd_histogram": -0.23075946416548154,
+        "rsi": 43.20337197049528,
+        "kdj_k": 39.669324950602366,
+        "kdj_d": 52.5364921033396,
+        "kdj_j": 13.934990645127897,
+        "bb_upper": 82.62988707083306,
+        "bb_middle": 80.74799999999999,
+        "bb_lower": 78.86611292916692,
+        "bb_position": 25.07820701523938,
+        "volume": 231274.0,
+        "vol_ma5": 298069.6,
+        "recent_return": -1.469135802469133
+      },
+      "key_findings": [],
+      "risk_factors": [],
+      "support_resistance": {
+        "resistance_1": 81.74,
+        "resistance_2": 80.82,
+        "support_1": 80.82,
+        "support_2": 81.18,
+        "support_3": 80.75
+      },
+      "timestamp": "2026-05-26T01:37:59.554944"
+    },
+    {
+      "stock_code": "600519",
+      "stock_name": "贵州茅台",
+      "current_price": 1285.88,
+      "analysis_date": "2026-05-26",
+      "prediction": {
+        "score": 55,
+        "direction": "震荡偏涨",
+        "confidence": "中",
+        "factors": [
+          "RSI超卖",
+          "KDJ多方信号",
+          "成交量放大"
+        ],
+        "predicted_change_pct": 1.0
+      },
+      "indicators": {
+        "price": 1285.88,
+        "ma5": 1305.276,
+        "ma10": 1322.3139999999999,
+        "ma20": 1358.758,
+        "ma60": 1409.0801666666666,
+        "macd_dif": -33.726191104937016,
+        "macd_dea": -27.813406251115936,
+        "macd_histogram": -5.91278485382108,
+        "rsi": 3.074295473953896,
+        "kdj_k": 3.773079411033576,
+        "kdj_d": 3.490742426182898,
+        "kdj_j": 4.337753380734933,
+        "bb_upper": 1448.9467374460087,
+        "bb_middle": 1358.758,
+        "bb_lower": 1268.5692625539914,
+        "bb_position": 9.596950759163118,
+        "volume": 46352.0,
+        "vol_ma5": 45023.6,
+        "recent_return": -2.9011553273427357
+      },
+      "key_findings": [
+        "RSI超卖，可能存在反弹机会"
+      ],
+      "risk_factors": [],
+      "support_resistance": {
+        "resistance_1": 1330.89,
+        "resistance_2": 1305.28,
+        "support_1": 1305.28,
+        "support_2": 1322.31,
+        "support_3": 1358.76
+      },
+      "timestamp": "2026-05-26T01:42:11.668479"
+    },
+    {
+      "stock_code": "000858",
+      "stock_name": "五 粮 液",
+      "current_price": 83.36,
+      "analysis_date": "2026-05-27",
+      "prediction": {
+        "score": 50,
+        "direction": "震荡",
+        "confidence": "中",
+        "factors": [
+          "RSI超卖",
+          "KDJ多方信号"
+        ],
+        "predicted_change_pct": 0.0
+      },
+      "indicators": {
+        "price": 83.36,
+        "ma5": 84.47,
+        "ma10": 85.871,
+        "ma20": 90.75800000000001,
+        "ma60": 98.68216666666667,
+        "macd_dif": -4.412119153414068,
+        "macd_dea": -3.9633883785972914,
+        "macd_histogram": -0.44873077481677637,
+        "rsi": 6.457925636007801,
+        "kdj_k": 5.165592050370092,
+        "kdj_d": 5.150615748323922,
+        "kdj_j": 5.195544654462433,
+        "bb_upper": 102.62093759660986,
+        "bb_middle": 90.75800000000001,
+        "bb_lower": 78.89506240339016,
+        "bb_position": 18.818853088655786,
+        "volume": 277303.0,
+        "vol_ma5": 292188.6,
+        "recent_return": -2.4687024687024683
+      },
+      "key_findings": [
+        "RSI超卖，可能存在反弹机会"
+      ],
+      "risk_factors": [],
+      "support_resistance": {
+        "resistance_1": 86.28,
+        "resistance_2": 84.47,
+        "support_1": 84.47,
+        "support_2": 85.87,
+        "support_3": 90.76
+      },
+      "timestamp": "2026-05-27T01:37:48.223097"
     }
   ],
   "success_cases": [],
