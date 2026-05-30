@@ -1,0 +1,23 @@
+{
+  "failure_case": {
+    "stock_code": "000858",
+    "stock_name": "五 粮 液",
+    "selection_date": "2026-05-27",
+    "prediction": "震荡",
+    "actual_change_pct": -2.2432821497120976,
+    "strategy": "value",
+    "prediction_factors": [
+      "RSI超卖",
+      "KDJ多方信号"
+    ],
+    "risk_factors": [],
+    "timestamp": "2026-05-29T01:40:40.721589"
+  },
+  "root_causes": [
+    "市场整体走势与个股预测不符"
+  ],
+  "suggestions": [
+    "选股时应更多考虑市场环境因素"
+  ],
+  "timestamp": "2026-05-29T01:40:40.722892"
+}

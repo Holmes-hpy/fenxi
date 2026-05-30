@@ -240,8 +240,246 @@
         "support_3": 90.76
       },
       "timestamp": "2026-05-27T01:37:48.223097"
+    },
+    {
+      "stock_code": "000001",
+      "stock_name": "平安银行",
+      "current_price": 10.76,
+      "analysis_date": "2026-05-28",
+      "prediction": {
+        "score": 50,
+        "direction": "震荡",
+        "confidence": "中",
+        "factors": [
+          "RSI超卖",
+          "KDJ多方信号"
+        ],
+        "predicted_change_pct": 0.0
+      },
+      "indicators": {
+        "price": 10.76,
+        "ma5": 10.722,
+        "ma10": 10.814,
+        "ma20": 11.0845,
+        "ma60": 11.008333333333333,
+        "macd_dif": -0.11162107537493249,
+        "macd_dea": -0.0636913728410675,
+        "macd_histogram": -0.047929702533864985,
+        "rsi": 13.25301204819273,
+        "kdj_k": 11.918621267953647,
+        "kdj_d": 11.25070079413644,
+        "kdj_j": 13.25446221558806,
+        "bb_upper": 11.688329010303587,
+        "bb_middle": 11.0845,
+        "bb_lower": 10.480670989696414,
+        "bb_position": 23.129810388138534,
+        "volume": 839727.0,
+        "vol_ma5": 880903.6,
+        "recent_return": 0.5607476635514066
+      },
+      "key_findings": [
+        "RSI超卖，可能存在反弹机会"
+      ],
+      "risk_factors": [],
+      "support_resistance": {
+        "resistance_1": 11.07,
+        "resistance_2": 10.72,
+        "support_1": 10.72,
+        "support_2": 10.81,
+        "support_3": 11.08
+      },
+      "timestamp": "2026-05-28T01:37:36.246938"
+    },
+    {
+      "stock_code": "600036",
+      "stock_name": "招商银行",
+      "current_price": 37.12,
+      "analysis_date": "2026-05-29",
+      "prediction": {
+        "score": 55,
+        "direction": "震荡偏涨",
+        "confidence": "中",
+        "factors": [
+          "RSI超卖",
+          "KDJ多方信号",
+          "成交量放大"
+        ],
+        "predicted_change_pct": 1.0
+      },
+      "indicators": {
+        "price": 37.12,
+        "ma5": 37.016,
+        "ma10": 37.189,
+        "ma20": 37.6855,
+        "ma60": 38.85483333333333,
+        "macd_dif": -0.547938225619859,
+        "macd_dea": -0.5221242133684341,
+        "macd_histogram": -0.02581401225142499,
+        "rsi": 16.935483870967786,
+        "kdj_k": 13.794545595716766,
+        "kdj_d": 8.122125465553928,
+        "kdj_j": 25.139385856042438,
+        "bb_upper": 38.98669742423743,
+        "bb_middle": 37.6855,
+        "bb_lower": 36.38430257576257,
+        "bb_position": 28.27001539249845,
+        "volume": 995791.0,
+        "vol_ma5": 811084.8,
+        "recent_return": 0.2701242571582775
+      },
+      "key_findings": [
+        "RSI超卖，可能存在反弹机会"
+      ],
+      "risk_factors": [],
+      "support_resistance": {
+        "resistance_1": 38.18,
+        "resistance_2": 37.02,
+        "support_1": 37.02,
+        "support_2": 37.19,
+        "support_3": 37.69
+      },
+      "timestamp": "2026-05-29T01:40:08.194433"
+    },
+    {
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "current_price": 424.0,
+      "analysis_date": "2026-05-30",
+      "prediction": {
+        "score": 80,
+        "direction": "上涨",
+        "confidence": "高",
+        "factors": [
+          "KDJ多方信号",
+          "价格处于布林带中部",
+          "成交量放大",
+          "适度上涨趋势"
+        ],
+        "predicted_change_pct": 6.0
+      },
+      "indicators": {
+        "price": 424.0,
+        "ma5": 411.97200000000004,
+        "ma10": 413.255,
+        "ma20": 426.21000000000004,
+        "ma60": 411.9916666666667,
+        "macd_dif": -2.790127044296412,
+        "macd_dea": -1.0487805858579735,
+        "macd_histogram": -1.7413464584384384,
+        "rsi": 34.66500208073242,
+        "kdj_k": 28.756915049220932,
+        "kdj_d": 19.200830575618966,
+        "kdj_j": 47.86908399642486,
+        "bb_upper": 458.3815003004051,
+        "bb_middle": 426.21000000000004,
+        "bb_lower": 394.038499699595,
+        "bb_position": 46.565282968832804,
+        "volume": 498118.0,
+        "vol_ma5": 418444.2,
+        "recent_return": 5.242255758538524
+      },
+      "key_findings": [],
+      "risk_factors": [],
+      "support_resistance": {
+        "resistance_1": 439.48,
+        "resistance_2": 411.97,
+        "support_1": 411.97,
+        "support_2": 413.26,
+        "support_3": 426.21
+      },
+      "timestamp": "2026-05-30T21:51:18.696566"
+    },
+    {
+      "stock_code": "000333",
+      "stock_name": "美的集团",
+      "current_price": 80.85,
+      "analysis_date": "2026-05-30",
+      "prediction": {
+        "score": 75,
+        "direction": "上涨",
+        "confidence": "高",
+        "factors": [
+          "RSI处于健康区间",
+          "价格处于布林带中部",
+          "成交量放大"
+        ],
+        "predicted_change_pct": 5.0
+      },
+      "indicators": {
+        "price": 80.85,
+        "ma5": 79.838,
+        "ma10": 80.63,
+        "ma20": 80.744,
+        "ma60": 78.0995,
+        "macd_dif": 0.3613373154943673,
+        "macd_dea": 0.6633551331420453,
+        "macd_histogram": -0.302017817647678,
+        "rsi": 50.81374321880648,
+        "kdj_k": 30.822011166541895,
+        "kdj_d": 33.25690384057513,
+        "kdj_j": 25.952225818475426,
+        "bb_upper": 82.71105925311497,
+        "bb_middle": 80.744,
+        "bb_lower": 78.77694074688503,
+        "bb_position": 52.694377402005976,
+        "volume": 429729.0,
+        "vol_ma5": 280768.0,
+        "recent_return": 1.3030948502693798
+      },
+      "key_findings": [],
+      "risk_factors": [],
+      "support_resistance": {
+        "resistance_1": 82.89,
+        "resistance_2": 79.84,
+        "support_1": 79.84,
+        "support_2": 80.63,
+        "support_3": 80.74
+      },
+      "timestamp": "2026-05-30T21:56:32.856216"
     }
   ],
-  "success_cases": [],
-  "failure_cases": []
+  "success_cases": [
+    {
+      "stock_code": "000858",
+      "stock_name": "五 粮 液",
+      "selection_date": "2026-05-27",
+      "prediction": "震荡",
+      "actual_change_pct": 0.6357965451055676,
+      "strategy": "value",
+      "success_factors": [
+        "RSI超卖",
+        "KDJ多方信号"
+      ],
+      "timestamp": "2026-05-28T01:38:37.658858"
+    },
+    {
+      "stock_code": "000858",
+      "stock_name": "五 粮 液",
+      "selection_date": "2026-05-27",
+      "prediction": "震荡",
+      "actual_change_pct": 0.6357965451055676,
+      "strategy": "value",
+      "success_factors": [
+        "RSI超卖",
+        "KDJ多方信号"
+      ],
+      "timestamp": "2026-05-28T01:39:25.352108"
+    }
+  ],
+  "failure_cases": [
+    {
+      "stock_code": "000858",
+      "stock_name": "五 粮 液",
+      "selection_date": "2026-05-27",
+      "prediction": "震荡",
+      "actual_change_pct": -2.2432821497120976,
+      "strategy": "value",
+      "prediction_factors": [
+        "RSI超卖",
+        "KDJ多方信号"
+      ],
+      "risk_factors": [],
+      "timestamp": "2026-05-29T01:40:40.721589"
+    }
+  ]
 }

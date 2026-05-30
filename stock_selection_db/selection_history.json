@@ -250,8 +250,180 @@
         "momentum": 50.0,
         "technical": 55.0
       },
-      "timestamp": "2026-05-27T01:37:47.666550"
+      "timestamp": "2026-05-27T01:37:47.666550",
+      "result": "correct",
+      "actual_price": 83.89,
+      "actual_change_pct": 0.6357965451055676,
+      "verified_date": "2026-05-28"
+    },
+    {
+      "stock_code": "000001",
+      "stock_name": "平安银行",
+      "price": 10.76,
+      "selection_date": "2026-05-28",
+      "market_status": {
+        "trend": "neutral",
+        "description": "市场震荡",
+        "avg_change": -0.28,
+        "northbound": -40.38,
+        "indices": {
+          "000001": {
+            "name": "平安银行",
+            "price": 10.76,
+            "last_close": 10.79,
+            "open": 10.76,
+            "change_amt": -0.03,
+            "change_pct": -0.28,
+            "high": 10.85,
+            "low": 10.72,
+            "amount_wan": 90571.0,
+            "turnover_pct": 0.43,
+            "pe_ttm": 4.85,
+            "amplitude_pct": 1.2,
+            "mcap_yi": 2088.04,
+            "float_mcap_yi": 2088.08,
+            "pb": 0.45,
+            "limit_up": 11.87,
+            "limit_down": 9.71,
+            "vol_ratio": 0.97,
+            "pe_static": 3.59
+          }
+        }
+      },
+      "strategy": "value",
+      "strategy_scores": {
+        "value": 80.0,
+        "momentum": 50.0,
+        "technical": 55.0
+      },
+      "timestamp": "2026-05-28T01:37:35.502169"
+    },
+    {
+      "stock_code": "600036",
+      "stock_name": "招商银行",
+      "price": 37.12,
+      "selection_date": "2026-05-29",
+      "market_status": {
+        "trend": "mixed",
+        "description": "市场分歧",
+        "avg_change": -0.93,
+        "northbound": 382.0,
+        "indices": {
+          "000001": {
+            "name": "平安银行",
+            "price": 10.66,
+            "last_close": 10.76,
+            "open": 10.76,
+            "change_amt": -0.1,
+            "change_pct": -0.93,
+            "high": 10.79,
+            "low": 10.63,
+            "amount_wan": 96370.0,
+            "turnover_pct": 0.46,
+            "pe_ttm": 4.8,
+            "amplitude_pct": 1.49,
+            "mcap_yi": 2068.64,
+            "float_mcap_yi": 2068.67,
+            "pb": 0.45,
+            "limit_up": 11.84,
+            "limit_down": 9.68,
+            "vol_ratio": 1.02,
+            "pe_static": 3.56
+          }
+        }
+      },
+      "strategy": "value",
+      "strategy_scores": {
+        "value": 80.0,
+        "momentum": 50.0,
+        "technical": 60.0
+      },
+      "timestamp": "2026-05-29T01:40:07.459622"
+    },
+    {
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "price": 424.0,
+      "selection_date": "2026-05-30",
+      "market_status": {
+        "trend": "mixed",
+        "description": "市场分歧",
+        "avg_change": 2.53,
+        "northbound": -40.38,
+        "indices": {
+          "000001": {
+            "name": "平安银行",
+            "price": 10.93,
+            "last_close": 10.66,
+            "open": 10.65,
+            "change_amt": 0.27,
+            "change_pct": 2.53,
+            "high": 10.93,
+            "low": 10.62,
+            "amount_wan": 151569.0,
+            "turnover_pct": 0.72,
+            "pe_ttm": 4.93,
+            "amplitude_pct": 2.91,
+            "mcap_yi": 2121.03,
+            "float_mcap_yi": 2121.07,
+            "pb": 0.46,
+            "limit_up": 11.73,
+            "limit_down": 9.59,
+            "vol_ratio": 1.67,
+            "pe_static": 3.65
+          }
+        }
+      },
+      "strategy": "momentum",
+      "strategy_scores": {
+        "value": 60.0,
+        "momentum": 70.0,
+        "technical": 60.0
+      },
+      "timestamp": "2026-05-30T21:51:17.761140"
+    },
+    {
+      "stock_code": "000333",
+      "stock_name": "美的集团",
+      "price": 80.85,
+      "selection_date": "2026-05-30",
+      "market_status": {
+        "trend": "mixed",
+        "description": "市场分歧",
+        "avg_change": 2.53,
+        "northbound": -40.38,
+        "indices": {
+          "000001": {
+            "name": "平安银行",
+            "price": 10.93,
+            "last_close": 10.66,
+            "open": 10.65,
+            "change_amt": 0.27,
+            "change_pct": 2.53,
+            "high": 10.93,
+            "low": 10.62,
+            "amount_wan": 151569.0,
+            "turnover_pct": 0.72,
+            "pe_ttm": 4.93,
+            "amplitude_pct": 2.91,
+            "mcap_yi": 2121.03,
+            "float_mcap_yi": 2121.07,
+            "pb": 0.46,
+            "limit_up": 11.73,
+            "limit_down": 9.59,
+            "vol_ratio": 1.67,
+            "pe_static": 3.65
+          }
+        }
+      },
+      "strategy": "value",
+      "strategy_scores": {
+        "value": 80.0,
+        "momentum": 50.0,
+        "technical": 65.0
+      },
+      "timestamp": "2026-05-30T21:56:31.170776"
     }
   ],
-  "total_count": 6
+  "total_count": 10
 }
