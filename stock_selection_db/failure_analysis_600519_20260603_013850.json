@@ -1,0 +1,24 @@
+{
+  "failure_case": {
+    "stock_code": "600519",
+    "stock_name": "贵州茅台",
+    "selection_date": "2026-06-03",
+    "prediction": "上涨",
+    "actual_change_pct": 0.0,
+    "strategy": "technical",
+    "prediction_factors": [
+      "RSI处于健康区间",
+      "KDJ多方信号",
+      "价格处于布林带中部"
+    ],
+    "risk_factors": [],
+    "timestamp": "2026-06-03T01:38:50.617223"
+  },
+  "root_causes": [
+    "市场整体走势与个股预测不符"
+  ],
+  "suggestions": [
+    "选股时应更多考虑市场环境因素"
+  ],
+  "timestamp": "2026-06-03T01:38:50.618965"
+}

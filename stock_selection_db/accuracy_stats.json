@@ -1,14 +1,19 @@
 {
-  "total_predictions": 1,
+  "total_predictions": 2,
   "correct_predictions": 1,
-  "incorrect_predictions": 0,
-  "accuracy_rate": 100.0,
+  "incorrect_predictions": 1,
+  "accuracy_rate": 50.0,
   "strategy_accuracy": {
     "value": {
       "total": 1,
       "correct": 1,
       "accuracy": 100.0
+    },
+    "technical": {
+      "total": 1,
+      "correct": 0,
+      "accuracy": 0.0
     }
   },
-  "last_updated": "2026-05-29T01:40:40.720652"
+  "last_updated": "2026-06-03T01:38:51.032122"
 }

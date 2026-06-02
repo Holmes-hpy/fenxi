@@ -423,7 +423,53 @@
         "technical": 65.0
       },
       "timestamp": "2026-05-30T21:56:31.170776"
+    },
+    {
+      "stock_code": "600519",
+      "stock_name": "贵州茅台",
+      "price": 1307.22,
+      "selection_date": "2026-06-03",
+      "market_status": {
+        "trend": "mixed",
+        "description": "市场分歧",
+        "avg_change": 0.82,
+        "northbound": -40.38,
+        "indices": {
+          "000001": {
+            "name": "平安银行",
+            "price": 11.08,
+            "last_close": 10.99,
+            "open": 10.98,
+            "change_amt": 0.09,
+            "change_pct": 0.82,
+            "high": 11.1,
+            "low": 10.94,
+            "amount_wan": 97816.0,
+            "turnover_pct": 0.46,
+            "pe_ttm": 4.99,
+            "amplitude_pct": 1.46,
+            "mcap_yi": 2150.14,
+            "float_mcap_yi": 2150.18,
+            "pb": 0.46,
+            "limit_up": 12.09,
+            "limit_down": 9.89,
+            "vol_ratio": 0.9,
+            "pe_static": 3.7
+          }
+        }
+      },
+      "strategy": "technical",
+      "strategy_scores": {
+        "value": 70.0,
+        "momentum": 50.0,
+        "technical": 85.0
+      },
+      "timestamp": "2026-06-03T01:38:03.862264",
+      "result": "incorrect",
+      "actual_price": 1307.22,
+      "actual_change_pct": 0.0,
+      "verified_date": "2026-06-03"
     }
   ],
-  "total_count": 10
+  "total_count": 11
 }

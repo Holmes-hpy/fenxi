@@ -436,6 +436,56 @@
         "support_3": 80.74
       },
       "timestamp": "2026-05-30T21:56:32.856216"
+    },
+    {
+      "stock_code": "600519",
+      "stock_name": "贵州茅台",
+      "current_price": 1307.22,
+      "analysis_date": "2026-06-03",
+      "prediction": {
+        "score": 80,
+        "direction": "上涨",
+        "confidence": "高",
+        "factors": [
+          "RSI处于健康区间",
+          "KDJ多方信号",
+          "价格处于布林带中部"
+        ],
+        "predicted_change_pct": 6.0
+      },
+      "indicators": {
+        "price": 1307.22,
+        "ma5": 1304.36,
+        "ma10": 1299.726,
+        "ma20": 1324.9344999999998,
+        "ma60": 1394.327,
+        "macd_dif": -26.612390512409775,
+        "macd_dea": -29.038306976692365,
+        "macd_histogram": 2.42591646428259,
+        "rsi": 40.7245283018868,
+        "kdj_k": 41.73618544255059,
+        "kdj_d": 30.56820871636383,
+        "kdj_j": 64.07213889492411,
+        "bb_upper": 1388.1581552915204,
+        "bb_middle": 1324.9344999999998,
+        "bb_lower": 1261.7108447084793,
+        "bb_position": 35.99060753580341,
+        "volume": 36361.0,
+        "vol_ma5": 57059.8,
+        "recent_return": 0.3238679969301632
+      },
+      "key_findings": [
+        "MACD柱状图为正，动能强劲"
+      ],
+      "risk_factors": [],
+      "support_resistance": {
+        "resistance_1": 1352.89,
+        "resistance_2": 1304.36,
+        "support_1": 1304.36,
+        "support_2": 1299.73,
+        "support_3": 1324.93
+      },
+      "timestamp": "2026-06-03T01:38:04.425830"
     }
   ],
   "success_cases": [
@@ -464,6 +514,35 @@
         "KDJ多方信号"
       ],
       "timestamp": "2026-05-28T01:39:25.352108"
+    },
+    {
+      "stock_code": "000333",
+      "stock_name": "美的集团",
+      "selection_date": "2026-05-30",
+      "prediction": "上涨",
+      "actual_change_pct": 2.164502164502165,
+      "strategy": "value",
+      "success_factors": [
+        "RSI处于健康区间",
+        "价格处于布林带中部",
+        "成交量放大"
+      ],
+      "timestamp": "2026-06-03T01:38:50.821105"
+    },
+    {
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "selection_date": "2026-05-30",
+      "prediction": "上涨",
+      "actual_change_pct": 2.3325471698113174,
+      "strategy": "momentum",
+      "success_factors": [
+        "KDJ多方信号",
+        "价格处于布林带中部",
+        "成交量放大",
+        "适度上涨趋势"
+      ],
+      "timestamp": "2026-06-03T01:38:51.032754"
     }
   ],
   "failure_cases": [
@@ -480,6 +559,21 @@
       ],
       "risk_factors": [],
       "timestamp": "2026-05-29T01:40:40.721589"
+    },
+    {
+      "stock_code": "600519",
+      "stock_name": "贵州茅台",
+      "selection_date": "2026-06-03",
+      "prediction": "上涨",
+      "actual_change_pct": 0.0,
+      "strategy": "technical",
+      "prediction_factors": [
+        "RSI处于健康区间",
+        "KDJ多方信号",
+        "价格处于布林带中部"
+      ],
+      "risk_factors": [],
+      "timestamp": "2026-06-03T01:38:50.617223"
     }
   ]
 }

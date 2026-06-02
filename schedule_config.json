@@ -11,7 +11,7 @@
       "name": "科技资讯爬取-上午",
       "description": "每日上午9:30爬取科技前沿资讯，关注十五五规划相关产业",
       "cron": "30 9 * * 1-5",
-      "function": "tech_news_crawler.TechNewsCrawler.run_crawl",
+      "function": "daily_tech_intel_system_v2.DailyTechIntelSystemV2.run",
       "enabled": true
     },
     {
