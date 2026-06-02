@@ -16,9 +16,9 @@
     },
     {
       "name": "科技资讯爬取-下午",
-      "description": "每日下午14:30爬取科技前沿资讯，关注十五五规划相关产业",
+      "description": "每日下午14:30爬取科技前沿资讯，关注十五五规划相关产业，分析资讯并提取知识，结合缠论进行知识沉淀，识别反向信号（自媒体标题党、资本雇佣枪手发文）",
       "cron": "30 14 * * 1-5",
-      "function": "tech_news_crawler.TechNewsCrawler.run_crawl",
+      "function": "daily_tech_intel_system_v2.DailyTechIntelSystemV2.run",
       "enabled": true
     },
     {
@@ -37,5 +37,5 @@
     }
   ],
   "created_at": "2026-05-26T15:34:43.341943",
-  "version": "1.1"
+  "version": "1.2"
 }

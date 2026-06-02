@@ -24,3 +24,6 @@ venv/
 *.swo
 *~
 .cache/
+daily_tech_intel/*.md
+daily_tech_intel/*.json
+reports/
