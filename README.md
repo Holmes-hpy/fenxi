@@ -1,95 +1,125 @@
-# 🚀 A股数据MCP服务 - 已成功部署
+# A股数据 MCP 服务
 
-## ✅ 服务状态
+一个基于 MCP (Model Context Protocol) 的 A股数据获取和分析工具集，提供实时行情、研报、资金流向、基本面分析等功能。
 
-**服务已启动并运行正常！**
+## ✨ 功能特性
 
-测试验证结果：
-- ✅ Python导入正常
-- ✅ MCP服务包含22个工具
-- ✅ 实时行情获取成功（贵州茅台：1320.16元，PE 19.99，市值16531.97亿）
-- ✅ 大盘指数获取成功
-- ✅ Trae配置文件已创建
+### 行情数据
+- 实时股票行情获取
+- 历史K线数据（日/周/月）
+- 大盘指数实时数据
 
-## 📖 如何使用
+### 研报与新闻
+- 个股研报列表
+- 个股新闻资讯
+- 财联社快讯
 
-直接用自然语言提问，AI助手会自动调用相应的工具获取数据。
+### 资金信号
+- 北向资金实时流向
+- 概念板块归属
+- 龙虎榜数据
+- 限售解禁信息
+- 融资融券数据
+- 大宗交易
+- 股东户数变化
+- 分红送转历史
 
-### 🎯 10个常用提问示例
+### 基本面分析
+- 股票基本信息
+- 季度报告数据
+- 多股票估值对比
 
-1. **"贵州茅台今天的股价是多少？"**
-2. **"帮我分析一下宁德时代的PE和PB估值"**
-3. **"今天北向资金流入还是流出？"**
-4. **"比亚迪属于什么概念板块？"**
-5. **"今天的龙虎榜有哪些股票？"**
-6. **"五粮液未来3个月有解禁吗？"**
-7. **"今日A股大盘走势如何？"**
-8. **"新能源行业有哪些强势股？"**
-9. **"帮我对比一下茅台和五粮液的财务指标"**
-10. **"最近有哪些关于AI芯片的研报？"**
+## 🚀 快速开始
+
+### 安装依赖
+
+```bash
+pip install requests pandas mootdx
+```
+
+### 基本使用
+
+```python
+from a_stock_data_core import (
+    get_stock_quote,
+    get_market_index,
+    get_research_reports,
+    get_northbound_flow
+)
+
+# 获取实时行情
+quote = get_stock_quote("600519")
+print(quote)
+
+# 获取大盘指数
+index = get_market_index()
+print(index)
+
+# 获取北向资金
+northbound = get_northbound_flow()
+print(northbound)
+```
+
+### MCP 服务使用
+
+直接在支持 MCP 的环境中使用，通过自然语言提问即可：
+
+- "贵州茅台今天的股价和PE是多少？"
+- "今天北向资金流入多少？"
+- "比亚迪属于什么概念板块？"
+
+## 📁 项目结构
+
+```
+a-stock-data/
+├── a_stock_data_core.py    # 核心数据获取模块
+├── a_stock_data_mcp.py     # MCP服务入口
+├── README.md              # 项目说明文档
+├── USAGE_GUIDE.md         # 使用指南
+├── STOCK_SELECTION_GUIDE.md # 选股指南
+└── .gitignore             # Git忽略配置
+```
+
+## ⚙️ 配置
+
+### 环境变量（可选）
+
+- `IWENCAI_API_KEY`: iwencai API Key（用于语义搜索）
+- `IWENCAI_BASE_URL`: iwencai API 地址
 
 ## 🔧 可用工具列表
 
-| 分类 | 工具名称 | 功能描述 |
-|------|---------|---------|
-| **行情** | `get_stock_quote` | 获取股票实时行情 |
-| | `get_historical_k_data` | 获取历史K线数据 |
-| | `get_market_index` | 获取大盘指数 |
-| **研报** | `get_research_reports` | 获取股票研报列表 |
-| | `get_stock_news` | 获取个股新闻 |
-| **信号** | `get_northbound_flow` | 获取北向资金流向 |
-| | `get_stock_concept_blocks` | 获取概念板块归属 |
-| | `get_dragon_tiger_board` | 获取龙虎榜数据 |
-| | `get_lockup_expiry` | 获取限售解禁信息 |
-| | `get_ths_hot_stocks` | 获取热点题材股票 |
-| **资金面** | `get_margin_trading` | 获取融资融券数据 |
-| | `get_block_trades` | 获取大宗交易 |
-| | `get_shareholder_count` | 获取股东户数变化 |
-| | `get_dividend_history` | 获取分红送转历史 |
-| **基本面** | `get_stock_basic_info` | 获取股票基本信息 |
-| | `get_quarterly_report` | 获取季度报告数据 |
-| | `get_industry_comparison` | 多股票估值对比 |
+| 工具名称 | 功能描述 |
+|---------|---------|
+| `get_stock_quote` | 获取股票实时行情 |
+| `get_historical_k_data` | 获取历史K线数据 |
+| `get_market_index` | 获取大盘指数 |
+| `get_research_reports` | 获取股票研报列表 |
+| `get_stock_news` | 获取个股新闻 |
+| `get_northbound_flow` | 获取北向资金流向 |
+| `get_stock_concept_blocks` | 获取概念板块归属 |
+| `get_dragon_tiger_board` | 获取龙虎榜数据 |
+| `get_lockup_expiry` | 获取限售解禁信息 |
+| `get_ths_hot_stocks` | 获取热点题材股票 |
+| `get_margin_trading` | 获取融资融券数据 |
+| `get_block_trades` | 获取大宗交易 |
+| `get_shareholder_count` | 获取股东户数变化 |
+| `get_dividend_history` | 获取分红送转历史 |
+| `get_stock_basic_info` | 获取股票基本信息 |
+| `get_quarterly_report` | 获取季度报告数据 |
+| `get_industry_comparison` | 多股票估值对比 |
 
-## ❓ 常见问题解答
+## ⚠️ 重要说明
 
-### Q1: 为什么有些数据获取失败？
-A: 可能是网络问题或API限流，建议稍后重试。
+- 数据仅供参考，不构成投资建议
+- A股交易时间：周一至周五 9:30-11:30, 13:00-15:00
+- 部分API有调用频率限制，请合理使用
+- 实时数据可能有1-5分钟延迟
 
-### Q2: 北向资金数据显示为空？
-A: 北向资金仅在交易时间更新，非交易时间可能返回空数据。
+## 📝 许可证
 
-### Q3: 如何更新数据？
-A: 每次提问都会实时获取最新数据，无需手动更新。
-
-### Q4: 支持哪些市场？
-A: 支持沪市（6开头）、深市（0开头）、创业板（3开头）、科创板（688开头）、北交所（8开头）。
-
-### Q5: 需要配置API Key吗？
-A: 大部分数据源免费无需Key。iwencai语义搜索需要单独配置API Key。
-
-## ⚠️ 重要规则
-
-1. **数据仅供参考**：本服务提供的数据仅供参考，不构成投资建议
-2. **交易时间**：A股交易时间为周一至周五 9:30-11:30, 13:00-15:00
-3. **API限制**：部分API有调用频率限制，请合理使用
-4. **数据延迟**：实时数据可能有1-5分钟延迟
-5. **免责声明**：投资有风险，入市需谨慎
-
-## 📁 项目文件
-
-- `a_stock_data_core.py` - 核心数据获取模块（28KB）
-- `a_stock_data_mcp.py` - MCP服务入口（13KB）
-- `.trae/mcp.json` - Trae配置文件
-- `README.md` - 使用说明
-
-## 🚀 立即尝试
-
-你可以立即尝试以下问题：
-
-1. **"贵州茅台今天的股价和PE是多少？"**
-2. **"今天北向资金流入多少？"**
-3. **"比亚迪属于什么概念板块？"**
+本项目仅供学习交流使用。
 
 ---
 
-*服务已准备就绪，随时为你服务！* 📊
+**免责声明：投资有风险，入市需谨慎！**

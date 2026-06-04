@@ -27,3 +27,15 @@ venv/
 daily_tech_intel/*.md
 daily_tech_intel/*.json
 reports/
+knowledge/
+learning/
+stock_selection_db/
+knowledge_base/
+knowledge_graph/
+.trae/
+筛选结果.json
+test.txt
+*.json
+!requirements.txt
+!mcp_config.json
+!schedule_config.json
