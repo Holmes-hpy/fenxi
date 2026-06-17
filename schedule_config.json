@@ -9,16 +9,37 @@
     },
     {
       "name": "科技资讯爬取-上午",
-      "description": "每日上午9:30爬取科技前沿资讯，关注十五五规划相关产业，使用真实新闻源，结合缠论进行知识沉淀，识别反向信号",
+      "description": "每日上午9:30爬取科技前沿资讯，关注十五五规划相关产业（人工智能、半导体、新能源、数字经济等）",
       "cron": "30 9 * * 1-5",
-      "function": "daily_tech_intel_system_v4.DailyTechIntelSystemV4.run",
+      "function": "daily_tech_intel_system_v6.DailyTechIntelSystemV6.run",
       "enabled": true
     },
     {
       "name": "科技资讯爬取-下午",
-      "description": "每日下午14:30爬取科技前沿资讯，关注十五五规划相关产业，分析资讯并提取知识，结合缠论进行知识沉淀，识别反向信号（自媒体标题党、资本雇佣枪手发文）",
+      "description": "每日下午14:30爬取科技前沿资讯，分析资讯并提取知识",
       "cron": "30 14 * * 1-5",
-      "function": "daily_tech_intel_system_v4.DailyTechIntelSystemV4.run",
+      "function": "daily_tech_intel_system_v6.DailyTechIntelSystemV6.run",
+      "enabled": true
+    },
+    {
+      "name": "BOM产业链每日选股",
+      "description": "每日上午9:15执行BOM产业链三高环节选股",
+      "cron": "15 9 * * 1-5",
+      "function": "bom_stock_system.BOMStockSystem.run_stock_selection",
+      "enabled": true
+    },
+    {
+      "name": "BOM产业链每日监测",
+      "description": "每日收盘后15:45监测所选股票的涨幅表现",
+      "cron": "45 15 * * 1-5",
+      "function": "bom_stock_system.BOMStockSystem.run_monitoring",
+      "enabled": true
+    },
+    {
+      "name": "BOM产业链每周回测",
+      "description": "每周五16:00执行策略回测验证",
+      "cron": "0 16 * * 5",
+      "function": "bom_stock_system.BOMStockSystem.run_backtest",
       "enabled": true
     },
     {
@@ -37,5 +58,5 @@
     }
   ],
   "created_at": "2026-05-26T15:34:43.341943",
-  "version": "1.2"
+  "version": "1.3"
 }
