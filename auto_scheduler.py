@@ -56,43 +56,53 @@ def get_function_from_path(function_path):
     try:
         # 处理类似 "module.Class.method" 的路径
         parts = function_path.split('.')
-        
-        # 尝试不同的组合方式
-        # 首先尝试直接导入模块
-        for i in range(1, len(parts)):
+
+        # 遍历所有可能的模块-分割点
+        for i in range(1, len(parts) + 1):
             module_name = '.'.join(parts[:i])
             try:
                 module = importlib.import_module(module_name)
                 remaining = parts[i:]
-                
+
+                # 如果没有剩余部分，就是模块本身（不太可能是可调用的）
+                if not remaining:
+                    continue
+
                 obj = module
                 for part in remaining:
                     obj = getattr(obj, part)
-                
-                # 如果是类方法，需要实例化
-                if hasattr(obj, '__self__'):
+
+                # 判断结果类型
+                if callable(obj):
+                    # 如果是类，实例化并返回run方法
+                    if isinstance(obj, type):
+                        instance = obj()
+                        if hasattr(instance, 'run') and callable(getattr(instance, 'run')):
+                            return instance.run
+                        return instance
+                    # 如果已是方法/函数，直接返回
                     return obj
-                elif hasattr(obj, '__call__') and not hasattr(obj, '__init__'):
-                    return obj
-                elif hasattr(obj, '__init__'):
-                    # 是类，尝试实例化并调用run方法
-                    instance = obj()
-                    if hasattr(instance, 'run'):
-                        return instance.run
-                    return instance
             except (ImportError, AttributeError):
                 continue
-        
-        # 尝试 daily_tech_intel_system_v2 的特殊处理
-        if 'daily_tech_intel_system_v2' in function_path:
-            module = importlib.import_module('daily_tech_intel_system_v2')
-            if hasattr(module, 'DailyTechIntelSystemV2'):
-                cls = getattr(module, 'DailyTechIntelSystemV2')
-                instance = cls()
-                return instance.run
-        
+
+        # 兜底：尝试直接以 "模块.类" 的形式处理
+        last_parts = function_path.rsplit('.', 2)
+        if len(last_parts) >= 2:
+            # 尝试 module.Class 形式
+            module_name = '.'.join(last_parts[:-1])
+            class_name = last_parts[-1]
+            try:
+                module = importlib.import_module(module_name)
+                cls = getattr(module, class_name)
+                if isinstance(cls, type):
+                    instance = cls()
+                    if hasattr(instance, 'run'):
+                        return instance.run
+            except (ImportError, AttributeError):
+                pass
+
         raise ImportError(f"无法加载: {function_path}")
-        
+
     except Exception as e:
         print(f"❌ 加载函数失败 {function_path}: {e}")
         import traceback
@@ -105,23 +115,30 @@ def run_task(task_name, function_path):
     print(f"🚀 定时任务触发 - {task_name}")
     print(f"⏰ 执行时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print("="*80)
-    
+
     try:
         # 特殊处理常见任务
+        if 'daily_tech_intel_system_v6' in function_path:
+            from daily_tech_intel_system_v6 import DailyTechIntelSystemV6
+            system = DailyTechIntelSystemV6()
+            system.run()
+            print("\n✅ 任务执行完成!")
+            return
+
         if 'daily_tech_intel_system_v2' in function_path:
             from daily_tech_intel_system_v2 import DailyTechIntelSystemV2
             system = DailyTechIntelSystemV2()
             system.run()
             print("\n✅ 任务执行完成!")
             return
-        
+
         if 'tech_news_crawler' in function_path:
             from tech_news_crawler import TechNewsCrawler
             crawler = TechNewsCrawler()
             crawler.run_crawl()
             print("\n✅ 任务执行完成!")
             return
-        
+
         if 'autonomous_learning_system' in function_path:
             from autonomous_learning_system import AutonomousLearningSystem
             system = AutonomousLearningSystem()
@@ -133,7 +150,7 @@ def run_task(task_name, function_path):
                 system.monthly_evolution_report()
             print("\n✅ 任务执行完成!")
             return
-        
+
         # 通用处理
         func = get_function_from_path(function_path)
         if func:
@@ -167,40 +184,59 @@ def start_scheduler():
     # 添加所有启用的任务
     tasks = config.get('tasks', [])
     added_count = 0
-    
+
     for task in tasks:
         if not task.get('enabled', True):
             continue
-        
+
         # 解析cron表达式
         cron_parts = task['cron'].split()
         if len(cron_parts) != 5:
             print(f"⚠️  跳过无效cron表达式: {task['name']} - {task['cron']}")
             continue
-        
+
         minute, hour, day, month, day_of_week = cron_parts
-        
-        # 创建任务包装函数
-        def create_task_wrapper(tn, fp):
-            def wrapper():
-                run_task(tn, fp)
-            return wrapper
-        
-        # 添加任务
-        scheduler.add_job(
-            create_task_wrapper(task['name'], task['function']),
-            trigger=CronTrigger(
-                minute=int(minute) if minute != '*' else None,
-                hour=int(hour) if hour != '*' else None,
-                day=int(day) if day != '*' and day != 'L' else None,
-                month=int(month) if month != '*' else None,
-                day_of_week=day_of_week if day_of_week != '*' else None
-            ),
-            id=task['name'].replace(' ', '_'),
-            name=task['name'],
-            replace_existing=True
-        )
-        added_count += 1
+
+        # 创建任务包装函数（使用默认参数正确捕获循环变量）
+        task_name = task['name']
+        func_path = task['function']
+
+        def task_wrapper(tn=task_name, fp=func_path):
+            run_task(tn, fp)
+
+        # 构建cron参数（处理特殊值如'L'表示每月最后一天）
+        cron_kwargs = {}
+        if minute != '*':
+            cron_kwargs['minute'] = int(minute)
+        if hour != '*':
+            cron_kwargs['hour'] = int(hour)
+        if day != '*':
+            if day == 'L':
+                cron_kwargs['day'] = 'last'
+            else:
+                try:
+                    cron_kwargs['day'] = int(day)
+                except ValueError:
+                    pass
+        if month != '*':
+            try:
+                cron_kwargs['month'] = int(month)
+            except ValueError:
+                pass
+        if day_of_week != '*':
+            cron_kwargs['day_of_week'] = day_of_week
+
+        try:
+            scheduler.add_job(
+                task_wrapper,
+                trigger=CronTrigger(**cron_kwargs),
+                id=task_name.replace(' ', '_'),
+                name=task_name,
+                replace_existing=True
+            )
+            added_count += 1
+        except Exception as e:
+            print(f"⚠️  任务 {task_name} 添加失败: {e}")
     
     if added_count == 0:
         print("❌ 没有启用的任务")
@@ -231,9 +267,10 @@ def start_scheduler():
         print("✅ 调度器已停止")
 
 def run_now():
-    """立即执行一次下午的科技资讯分析任务（用于测试）"""
+    """立即执行一次科技前沿资讯分析任务（用于测试）"""
     print("🧪 立即执行一次科技前沿资讯分析任务...")
-    run_task("科技资讯分析-测试", "daily_tech_intel_system_v2.DailyTechIntelSystemV2.run")
+    run_task("科技资讯分析-测试", "daily_tech_intel_system_v6.DailyTechIntelSystemV6.run")
+
 
 def show_help():
     """显示帮助信息"""
@@ -245,7 +282,7 @@ def show_help():
 
 命令:
     start    - 启动定时任务调度器（持续运行）
-    now      - 立即执行一次下午的科技资讯分析任务（测试用）
+    now      - 立即执行一次科技资讯分析任务（测试用）
     help     - 显示此帮助信息
 
 示例:
@@ -253,7 +290,7 @@ def show_help():
     python auto_scheduler.py now      # 立即执行一次测试
 
 配置文件:
-    schedule_config.json - 包含所有定时任务配置
+    schedule_config.json - 包含所有定时任务配置（上午9:30、下午14:30执行）
 """)
 
 def main():
