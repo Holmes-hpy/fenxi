@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOM产业链知识图谱 - A股产业链分析</title>
+<script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; overflow: hidden; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; color: #e8edf3; }
+  body {
+    background: linear-gradient(135deg, #0a1428 0%, #101e3c 40%, #0a1428 100%);
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    height: 62px;
+    padding: 0 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg, rgba(20,40,80,0.85), rgba(15,30,60,0.85));
+    border-bottom: 1px solid rgba(80,140,220,0.25);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.35);
+    z-index: 10;
+  }
+  header h1 { font-size: 20px; font-weight: 600; letter-spacing: 1px; color: #fff; }
+  header h1 span { color: #5aa9ff; font-weight: 400; font-size: 13px; margin-left: 10px; }
+  .header-stats { font-size: 13px; color: #a8c3e8; }
+  .header-stats b { color: #fff; margin: 0 4px; }
+
+  .main { flex: 1; display: flex; overflow: hidden; }
+
+  /* 左侧面板 */
+  .panel-left {
+    width: 280px;
+    background: rgba(12,22,42,0.78);
+    border-right: 1px solid rgba(80,140,220,0.2);
+    padding: 18px 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .panel-left h3 { font-size: 13px; color: #8fb6e8; margin-bottom: 10px; letter-spacing: 1px; border-left: 3px solid #3498db; padding-left: 8px; }
+  .search-box { width: 100%; padding: 10px 12px; background: rgba(20,35,65,0.8); border: 1px solid rgba(80,140,220,0.3); border-radius: 6px; color: #fff; font-size: 13px; outline: none; transition: border-color 0.2s; }
+  .search-box:focus { border-color: #5aa9ff; box-shadow: 0 0 8px rgba(90,169,255,0.3); }
+
+  .btn-group { display: flex; flex-wrap: wrap; gap: 6px; }
+  .btn {
+    padding: 7px 12px;
+    background: rgba(30,50,85,0.7);
+    border: 1px solid rgba(80,140,220,0.25);
+    border-radius: 5px;
+    color: #cfe0f5;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn:hover { background: rgba(50,90,150,0.8); transform: translateY(-1px); }
+  .btn.active { background: linear-gradient(135deg, #3498db, #2980b9); color: #fff; border-color: #5aa9ff; box-shadow: 0 2px 8px rgba(52,152,219,0.4); }
+  .btn.btn-green.active { background: linear-gradient(135deg, #27ae60, #1e8449); border-color: #2ecc71; }
+  .btn.btn-red.active { background: linear-gradient(135deg, #e74c3c, #c0392b); border-color: #ff7666; }
+  .btn.btn-orange.active { background: linear-gradient(135deg, #f39c12, #d35400); border-color: #fbb450; }
+
+  .legend { padding: 10px; background: rgba(15,28,55,0.6); border-radius: 6px; border: 1px solid rgba(80,140,220,0.15); }
+  .legend-item { display: flex; align-items: center; gap: 10px; padding: 6px 4px; font-size: 12px; color: #cfe0f5; }
+  .legend-item i { display: inline-block; width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0; }
+  .legend-item i.diamond { border-radius: 3px; transform: rotate(45deg); }
+  .legend-item i.box { border-radius: 3px; }
+
+  /* 中间图谱 */
+  .panel-center { flex: 1; position: relative; background: radial-gradient(ellipse at center, rgba(20,40,80,0.4) 0%, rgba(10,20,40,0.6) 100%); }
+  #graph { width: 100%; height: 100%; }
+  .toolbar {
+    position: absolute;
+    top: 14px; right: 14px;
+    display: flex;
+    gap: 6px;
+    background: rgba(12,22,42,0.85);
+    border: 1px solid rgba(80,140,220,0.25);
+    border-radius: 6px;
+    padding: 6px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  }
+  .tool-btn {
+    width: 32px; height: 32px;
+    border: none;
+    background: rgba(30,50,85,0.7);
+    color: #cfe0f5;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+  .tool-btn:hover { background: #3498db; color: #fff; }
+  .stats-bar {
+    position: absolute;
+    bottom: 14px; left: 14px;
+    background: rgba(12,22,42,0.85);
+    border: 1px solid rgba(80,140,220,0.25);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 12px;
+    color: #a8c3e8;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  }
+  .stats-bar b { color: #fff; margin: 0 3px; }
+  .stats-bar span.sep { color: #3a5a80; margin: 0 8px; }
+
+  /* 右侧详情 */
+  .panel-right {
+    width: 360px;
+    background: rgba(12,22,42,0.78);
+    border-left: 1px solid rgba(80,140,220,0.2);
+    padding: 18px 20px;
+    overflow-y: auto;
+  }
+  .panel-right h2 { font-size: 18px; color: #fff; margin-bottom: 4px; }
+  .panel-right .sub-title { font-size: 12px; color: #8fb6e8; margin-bottom: 16px; }
+  .detail-section { margin-bottom: 18px; }
+  .detail-section h3 {
+    font-size: 13px; color: #8fb6e8;
+    margin-bottom: 8px;
+    border-left: 3px solid #3498db;
+    padding-left: 8px;
+    letter-spacing: 1px;
+  }
+  .detail-section p { font-size: 13px; line-height: 1.7; color: #d8e3f3; }
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .info-item { background: rgba(20,35,65,0.6); border-radius: 5px; padding: 8px 10px; border-left: 3px solid #3498db; }
+  .info-item .label { font-size: 11px; color: #8fb6e8; display: block; margin-bottom: 2px; }
+  .info-item .value { font-size: 13px; color: #fff; font-weight: 500; }
+
+  .stock-list { display: flex; flex-direction: column; gap: 6px; }
+  .stock-item {
+    background: linear-gradient(90deg, rgba(46,204,113,0.12), rgba(46,204,113,0.02));
+    border: 1px solid rgba(46,204,113,0.25);
+    border-radius: 5px;
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .stock-item:hover { background: rgba(46,204,113,0.22); transform: translateX(4px); border-color: #2ecc71; }
+  .stock-item .name { font-size: 14px; color: #fff; font-weight: 500; margin-bottom: 2px; }
+  .stock-item .code { font-size: 12px; color: #8fb6e8; font-family: monospace; }
+
+  .flow-diagram {
+    background: rgba(20,35,65,0.6);
+    border-radius: 6px;
+    padding: 14px 10px;
+    margin-top: 6px;
+  }
+  .flow-layers { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
+  .flow-layer {
+    flex: 1;
+    text-align: center;
+    padding: 14px 8px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 500;
+    min-height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5;
+  }
+  .flow-layer.up { background: linear-gradient(135deg, #8e44ad, #9b59b6); }
+  .flow-layer.mid { background: linear-gradient(135deg, #16a085, #1abc9c); }
+  .flow-layer.down { background: linear-gradient(135deg, #d35400, #e67e22); }
+  .flow-arrow { color: #5aa9ff; font-size: 20px; font-weight: bold; }
+
+  .empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #6a85ad;
+    font-size: 14px;
+  }
+  .empty-state .icon { font-size: 48px; margin-bottom: 14px; opacity: 0.5; }
+
+  /* 滚动条 */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: rgba(10,20,40,0.4); }
+  ::-webkit-scrollbar-thumb { background: rgba(80,140,220,0.4); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(80,140,220,0.7); }
+</style>
+</head>
+<body>
+  <header>
+    <h1>BOM产业链知识图谱 <span>| A股产业链可视化分析系统</span></h1>
+    <div class="header-stats" id="headerStats"></div>
+  </header>
+  <div class="main">
+
+    <aside class="panel-left">
+      <div>
+        <h3>搜索</h3>
+        <input type="text" id="searchInput" class="search-box" placeholder="搜索环节或股票代码...">
+      </div>
+
+      <div>
+        <h3>行业筛选</h3>
+        <div class="btn-group" id="industryBtns">
+          <button class="btn active" data-industry="all">全部</button>
+          <button class="btn btn-blue" data-industry="semiconductor">半导体</button>
+          <button class="btn btn-green" data-industry="newenergy">新能源</button>
+          <button class="btn btn-red" data-industry="medical">医药医疗</button>
+          <button class="btn btn-orange" data-industry="ai">人工智能</button>
+        </div>
+      </div>
+
+      <div>
+        <h3>层级筛选</h3>
+        <div class="btn-group" id="levelBtns">
+          <button class="btn active" data-level="all">全部</button>
+          <button class="btn" data-level="up">上游</button>
+          <button class="btn" data-level="mid">中游</button>
+          <button class="btn" data-level="down">下游</button>
+        </div>
+      </div>
+
+      <div>
+        <h3>显示模式</h3>
+        <div class="btn-group" id="modeBtns">
+          <button class="btn active" data-mode="full">完整图谱</button>
+          <button class="btn" data-mode="sector">仅环节</button>
+          <button class="btn" data-mode="minimal">简洁模式</button>
+        </div>
+      </div>
+
+      <div>
+        <h3>图例说明</h3>
+        <div class="legend">
+          <div class="legend-item"><i style="background:#3498db;"></i><span>行业节点 - 大圆形</span></div>
+          <div class="legend-item"><i class="diamond" style="background:#9b59b6;"></i><span>上游层级 - 菱形</span></div>
+          <div class="legend-item"><i class="diamond" style="background:#1abc9c;"></i><span>中游层级 - 菱形</span></div>
+          <div class="legend-item"><i class="diamond" style="background:#e67e22;"></i><span>下游层级 - 菱形</span></div>
+          <div class="legend-item"><i class="box" style="background:#5aa9ff;"></i><span>环节节点 - 方块</span></div>
+          <div class="legend-item"><i style="background:#2ecc71;"></i><span>企业/股票节点 - 圆形</span></div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="panel-center">
+      <div id="graph"></div>
+      <div class="toolbar">
+        <button class="tool-btn" id="zoomIn" title="放大">+</button>
+        <button class="tool-btn" id="zoomOut" title="缩小">−</button>
+        <button class="tool-btn" id="fit" title="适应窗口">⛶</button>
+        <button class="tool-btn" id="refresh" title="刷新">↻</button>
+      </div>
+      <div class="stats-bar" id="statsBar"></div>
+    </main>
+
+    <aside class="panel-right" id="detailPanel">
+      <div class="empty-state">
+        <div class="icon">⚙</div>
+        <p>点击图谱中的任意节点</p>
+        <p style="margin-top:6px;">查看详细产业链信息</p>
+      </div>
+    </aside>
+
+  </div>
+
+<script>
+/* ============================================================
+   BOM产业链知识图谱 - 完整数据与交互
+   ============================================================ */
+
+const INDUSTRY_COLORS = {
+  semiconductor: '#3498db',
+  newenergy: '#27ae60',
+  medical: '#e74c3c',
+  ai: '#f39c12'
+};
+const INDUSTRY_NAMES = {
+  semiconductor: '半导体',
+  newenergy: '新能源',
+  medical: '医药医疗',
+  ai: '人工智能'
+};
+const LEVEL_NAMES = { up: '上游', mid: '中游', down: '下游' };
+const LEVEL_COLORS = { up: '#9b59b6', mid: '#1abc9c', down: '#e67e22' };
+
+/* ================= 完整产业链数据 ================= */
+const industryData = {
+  semiconductor: {
+    name: '半导体',
+    color: '#3498db',
+    description: '半导体产业是信息产业的核心，涵盖集成电路设计、制造、封测及相关材料与设备。国产替代加速推进，政策大力扶持。',
+    marketSize: '2025年全球市场规模约6500亿美元，中国约1800亿美元',
+    growthRate: '年均复合增长率(CAGR)约8-12%',
+    sectors: {
+      up: [
+        {
+          id: 'scmr_up1', name: '光刻胶', level: 'up',
+          desc: '光刻胶是光刻工艺中的关键感光材料，直接决定芯片制程精度。高端ArF/EUV光刻胶技术壁垒极高，长期被日本JSR、东京应化等企业垄断，国产替代空间广阔。',
+          barrier: '高 - 核心配方、纯化技术、光源匹配',
+          supply: '供给端：全球供给高度集中于日本(约70%)，国产自给率不足10%；需求端：晶圆厂扩产拉动需求持续增长。',
+          market: '全球约90亿美元/年，中国约25亿美元/年',
+          growth: '15-20%',
+          stocks: [
+            { name: '彤程新材', code: '603650' },
+            { name: '晶瑞电材', code: '300655' },
+            { name: '雅克科技', code: '002409' }
+          ]
+        },
+        {
+          id: 'scmr_up2', name: '电子特气', level: 'up',
+          desc: '电子特气是半导体制造中用量最大的化学品，涵盖高纯气体、掺杂气体、蚀刻气体等，纯度要求达到6N-9N级别。',
+          barrier: '中高 - 气体提纯、气瓶处理、配送体系',
+          supply: '海外企业占全球80%以上市场，国内华特气体、和远气体等加速国产替代。',
+          market: '全球约80亿美元/年',
+          growth: '10-15%',
+          stocks: [
+            { name: '华特气体', code: '688268' },
+            { name: '雅克科技', code: '002409' },
+            { name: '和远气体', code: '002971' }
+          ]
+        },
+        {
+          id: 'scmr_up3', name: '硅片晶圆', level: 'up',
+          desc: '硅片是芯片制造的核心基础材料，12英寸大硅片是先进制程的主流。国内企业已实现12英寸硅片量产，但高端产品仍依赖进口。',
+          barrier: '高 - 单晶生长、薄片切割、平整度控制',
+          supply: '全球市场由信越化学、SUMCO、环球晶圆等垄断，国内沪硅产业、中环股份等加速突破。',
+          market: '全球约120亿美元/年',
+          growth: '10-18%',
+          stocks: [
+            { name: '沪硅产业', code: '688126' },
+            { name: '中环股份', code: '002129' }
+          ]
+        },
+        {
+          id: 'scmr_up4', name: 'CMP抛光液', level: 'up',
+          desc: '化学机械抛光(CMP)是晶圆制造中实现全局平坦化的关键工艺，抛光液含纳米磨料、表面活性剂等多种成分。',
+          barrier: '高 - 配方技术、纳米颗粒控制',
+          supply: '海外Cabot、Fujimi占主导，安集科技为国内龙头，国产替代快速推进。',
+          market: '全球约25亿美元/年',
+          growth: '12-18%',
+          stocks: [
+            { name: '安集科技', code: '688019' },
+            { name: '鼎龙股份', code: '300054' }
+          ]
+        },
+        {
+          id: 'scmr_up5', name: '湿电子化学品', level: 'up',
+          desc: '湿电子化学品包括超净高纯试剂、光刻胶配套试剂等，用于晶圆清洗、蚀刻等环节，对纯度和颗粒控制要求极高。',
+          barrier: '中高 - 超纯提纯、颗粒控制、包装运输',
+          supply: '国内晶瑞电材、江化微等已实现部分品类国产替代，高端仍依赖进口。',
+          market: '全球约35亿美元/年',
+          growth: '8-12%',
+          stocks: [
+            { name: '江化微', code: '603078' },
+            { name: '晶瑞电材', code: '300655' }
+          ]
+        },
+        {
+          id: 'scmr_up6', name: '靶材', level: 'up',
+          desc: '溅射靶材用于沉积金属/氧化物薄膜，是半导体、平板显示、光伏等领域的关键材料。高纯铜靶、铝靶、钛靶是主要品种。',
+          barrier: '中高 - 高纯金属冶炼、晶粒控制、绑定工艺',
+          supply: '国产替代进展较快，江丰电子、阿石创等在部分领域实现突破。',
+          market: '全球约20亿美元/年',
+          growth: '10-15%',
+          stocks: [
+            { name: '阿石创', code: '300706' },
+            { name: '江丰电子', code: '300666' }
+          ]
+        },
+        {
+          id: 'scmr_up7', name: '光刻机', level: 'up',
+          desc: '光刻机是半导体制造中最核心、最昂贵的设备，决定芯片制程能力。EUV光刻机全球仅ASML能制造，DUV领域国产正在突破。',
+          barrier: '极高 - 光学系统、精密机械、光源',
+          supply: 'ASML垄断高端市场，上海微电子在28nm DUV领域取得突破，国产替代任重道远。',
+          market: '全球约180亿美元/年',
+          growth: '20-25%',
+          stocks: [
+            { name: '北方华创', code: '002371' },
+            { name: '中微公司', code: '688012' }
+          ]
+        },
+        {
+          id: 'scmr_up8', name: '蚀刻机', level: 'up',
+          desc: '蚀刻机通过等离子体对晶圆进行微观雕刻，是晶圆制造核心设备之一。CCP与ICP双频技术是主流。',
+          barrier: '高 - 等离子体控制、射频源、反应腔设计',
+          supply: '中微公司、北方华创等国内企业已在5nm/7nm领域取得突破，国产替代进展显著。',
+          market: '全球约150亿美元/年',
+          growth: '18-25%',
+          stocks: [
+            { name: '中微公司', code: '688012' },
+            { name: '北方华创', code: '002371' }
+          ]
+        },
+        {
+          id: 'scmr_up9', name: '涂胶显影设备', level: 'up',
+          desc: '涂胶显影设备用于光刻胶涂布与显影工艺，是光刻工艺链中的关键设备，与光刻机紧密配合。',
+          barrier: '高 - 精密涂布、温控、洁净度控制',
+          supply: '东京电子(TEL)全球领先，芯源微为国内主要厂商，国产替代正在加速。',
+          market: '全球约60亿美元/年',
+          growth: '15-20%',
+          stocks: [
+            { name: '芯源微', code: '688037' }
+          ]
+        },
+        {
+          id: 'scmr_up10', name: '测试设备', level: 'up',
+          desc: '半导体测试设备包括探针台、分选机、测试系统等，用于晶圆和成品芯片的性能测试验证。',
+          barrier: '高 - 高精度测量、信号完整性、测试算法',
+          supply: '华峰测控、芯原股份等国内企业在模拟/数模混合测试领域实现突破。',
+          market: '全球约70亿美元/年',
+          growth: '12-18%',
+          stocks: [
+            { name: '华峰测控', code: '688200' },
+            { name: '芯原股份', code: '688521' }
+          ]
+        }
+      ],
+      mid: [
+        {
+          id: 'scmr_mid1', name: '晶圆代工', level: 'mid',
+          desc: '晶圆代工是将设计好的电路图在晶圆上实现的制造过程，包括逻辑芯片代工和存储芯片代工。先进制程(7nm/5nm/3nm)是竞争焦点。',
+          barrier: '极高 - 先进制程工艺、产能投入、良率控制',
+          supply: '台积电全球领先(约60%市占)，中芯国际为国内龙头，已实现14nm/7nm工艺量产。',
+          market: '全球约1200亿美元/年',
+          growth: '10-15%',
+          stocks: [
+            { name: '中芯国际', code: '688981' },
+            { name: '华虹半导体', code: '688347' }
+          ]
+        },
+        {
+          id: 'scmr_mid2', name: '存储芯片', level: 'mid',
+          desc: '存储芯片包括DRAM(动态随机存取)、NAND Flash(非易失性存储)、NOR Flash等，是数字世界的基础设施。',
+          barrier: '极高 - 先进制程、微缩工艺、3D堆叠',
+          supply: '三星、美光、SK海力士垄断90%以上DRAM市场，长鑫存储实现国产DRAM零的突破。',
+          market: '全球约1500亿美元/年(周期性波动)',
+          growth: '8-15%(长期)',
+          stocks: [
+            { name: '长鑫存储(未上市)', code: '待上市' },
+            { name: '兆易创新', code: '603986' }
+          ]
+        }
+      ],
+      down: [
+        {
+          id: 'scmr_down1', name: '芯片设计', level: 'down',
+          desc: '芯片设计是半导体产业链的下游环节，包括CPU、GPU、AI芯片、射频芯片等多类产品。国产EDA工具和IP核正在快速发展。',
+          barrier: '高 - 算法架构、EDA工具、先进制程适配',
+          supply: '国产AI芯片、射频芯片、功率芯片等领域成长迅速，但高端CPU/GPU仍高度依赖进口。',
+          market: '全球约5500亿美元/年',
+          growth: '15-25%(AI芯片)',
+          stocks: [
+            { name: '寒武纪', code: '688256' },
+            { name: '海光信息', code: '688041' },
+            { name: '卓胜微', code: '300782' }
+          ]
+        }
+      ]
+    }
+  },
+
+  newenergy: {
+    name: '新能源',
+    color: '#27ae60',
+    description: '新能源产业涵盖动力电池、光伏、风电、新能源汽车等多个子领域。双碳目标下，产业迎来黄金发展期，中国企业在全球产业链中占据重要地位。',
+    marketSize: '2025年全球新能源相关市场规模超5万亿美元',
+    growthRate: '动力电池CAGR约25%，光伏CAGR约20%',
+    sectors: {
+      up: [
+        {
+          id: 'ne_up1', name: '锂矿锂盐', level: 'up',
+          desc: '锂是动力电池最核心的原材料，包括锂辉石、锂云母、盐湖卤水等资源，加工后形成碳酸锂、氢氧化锂。',
+          barrier: '中高 - 资源禀赋、提锂技术、环保要求',
+          supply: '全球锂资源集中于南美(盐湖)、澳洲(锂矿)、中国(盐湖+锂云母)。价格受供需和周期影响剧烈。',
+          market: '全球碳酸锂需求约150万吨/年(2025)',
+          growth: '20-30%',
+          stocks: [
+            { name: '赣锋锂业', code: '002460' },
+            { name: '天齐锂业', code: '002466' }
+          ]
+        },
+        {
+          id: 'ne_up2', name: '正极材料', level: 'up',
+          desc: '正极材料决定电池能量密度和安全性。主流技术路线包括三元材料(NCM/NCA)和磷酸铁锂(LFP)，高镍三元和磷酸锰铁锂是发展方向。',
+          barrier: '中 - 前驱体配方、烧结工艺、成本控制',
+          supply: '中国企业占全球正极材料产能70%以上，容百科技、当升科技为高镍三元龙头。',
+          market: '全球正极材料市场约800亿元/年',
+          growth: '25-35%',
+          stocks: [
+            { name: '当升科技', code: '300073' },
+            { name: '容百科技', code: '688005' }
+          ]
+        },
+        {
+          id: 'ne_up3', name: '负极材料', level: 'up',
+          desc: '负极材料以人造石墨和天然石墨为主，硅基负极是下一代高能量密度电池的重要技术方向。',
+          barrier: '中 - 石墨化加工、针状焦原料、硅碳技术',
+          supply: '中国占据全球负极材料85%以上产能，杉杉股份、中科电气等为头部企业。',
+          market: '全球负极材料市场约600亿元/年',
+          growth: '20-30%',
+          stocks: [
+            { name: '中科电气', code: '300035' },
+            { name: '杉杉股份', code: '600884' }
+          ]
+        },
+        {
+          id: 'ne_up4', name: '电解液电解质', level: 'up',
+          desc: '电解液是锂电池的"血液"，由锂盐、溶剂、添加剂组成。新型锂盐(LiFSI)和固态电解质是技术发展方向。',
+          barrier: '中 - 锂盐合成、添加剂配方、纯度控制',
+          supply: '天赐材料为全球电解液龙头，市占率超30%。新宙邦等企业紧随其后。',
+          market: '全球电解液市场约500亿元/年',
+          growth: '20-28%',
+          stocks: [
+            { name: '天赐材料', code: '002709' },
+            { name: '新宙邦', code: '300037' }
+          ]
+        }
+      ],
+      mid: [
+        {
+          id: 'ne_mid1', name: '锂电池电芯', level: 'mid',
+          desc: '电芯是电池的核心单元，方形、软包、圆柱是三大主流形态。CTP/CTC/刀片电池等结构创新提升系统能量密度。',
+          barrier: '高 - 电池设计、制造工艺、品控良率、规模产能',
+          supply: '宁德时代全球动力电池市占率约40%，比亚迪凭借刀片电池快速增长。',
+          market: '全球动力电池出货量约2000GWh/年(2025)',
+          growth: '30-40%',
+          stocks: [
+            { name: '宁德时代', code: '300750' },
+            { name: '比亚迪', code: '002594' }
+          ]
+        },
+        {
+          id: 'ne_mid2', name: '光伏硅料', level: 'mid',
+          desc: '多晶硅是光伏产业链的上游原材料，经提炼后用于生产硅片、电池片、组件。N型硅料和颗粒硅是技术方向。',
+          barrier: '中高 - 化工提纯、能耗控制、成本竞争',
+          supply: '中国多晶硅产能占全球95%以上，通威股份、大全能源等为龙头，行业集中度高且新产能持续扩张。',
+          market: '全球多晶硅需求约180万吨/年(2025)',
+          growth: '25-35%',
+          stocks: [
+            { name: '隆基绿能', code: '601012' },
+            { name: '通威股份', code: '600438' }
+          ]
+        }
+      ],
+      down: [
+        {
+          id: 'ne_down1', name: '新能源汽车整车', level: 'down',
+          desc: '新能源汽车包括纯电动(BEV)、插电混动(PHEV)、增程式等技术路线。智能化(自动驾驶、智能座舱)是差异化竞争焦点。',
+          barrier: '高 - 整车平台、三电集成、智能化能力、品牌渠道',
+          supply: '中国新能源汽车产销量占全球60%以上，比亚迪销量全球领先，华为系(赛力斯)高端市场快速崛起。',
+          market: '全球新能源汽车销量约2500万辆/年(2025)',
+          growth: '25-35%',
+          stocks: [
+            { name: '比亚迪', code: '002594' },
+            { name: '赛力斯', code: '601127' }
+          ]
+        }
+      ]
+    }
+  },
+
+  medical: {
+    name: '医药医疗',
+    color: '#e74c3c',
+    description: '医药医疗产业涵盖医疗器械、生物药、创新药、原料药等多个领域。人口老龄化和消费升级推动行业持续成长，国产替代和创新驱动是两大主线。',
+    marketSize: '中国医药市场规模约2.5万亿元人民币',
+    growthRate: '创新药CAGR约15%，高端医疗器械CAGR约12%',
+    sectors: {
+      up: [
+        {
+          id: 'med_up1', name: 'CT球管', level: 'up',
+          desc: 'CT球管是CT扫描仪的核心部件，产生X射线束。高端CT球管长期被飞利浦、GE、西门子等外资企业垄断，国产替代空间巨大。',
+          barrier: '极高 - 真空电子技术、热管理、精密制造',
+          supply: '奕瑞科技等国内企业在探测器领域实现突破，CT球管国产替代正在攻坚阶段。',
+          market: '全球CT球管市场约50亿美元/年',
+          growth: '8-12%',
+          stocks: [
+            { name: '奕瑞科技', code: '688301' }
+          ]
+        },
+        {
+          id: 'med_up2', name: 'X线探测器', level: 'up',
+          desc: 'X线探测器是DR、CT、乳腺机等医学影像设备的核心部件，将X射线转换为数字信号。非晶硅(a-Si)和IGZO是主流技术，光子计数是下一代方向。',
+          barrier: '高 - 半导体工艺、面板设计、信号读出芯片',
+          supply: '奕瑞科技为全球平板探测器龙头，康众医疗在细分市场有重要地位，国产替代成效显著。',
+          market: '全球X线探测器市场约40亿美元/年',
+          growth: '10-15%',
+          stocks: [
+            { name: '奕瑞科技', code: '688301' },
+            { name: '康众医疗', code: '688607' }
+          ]
+        },
+        {
+          id: 'med_up3', name: '医用同位素', level: 'up',
+          desc: '医用同位素(如F-18、Tc-99m、I-131、Lu-177等)广泛用于核医学诊断显像和靶向治疗(核素治疗)，是精准医疗的重要组成部分。',
+          barrier: '高 - 核反应堆或加速器生产、放射性处理、冷链配送',
+          supply: '中核科技、中广核技等国内企业在核医学领域布局，进口替代空间广阔。',
+          market: '全球医用同位素市场约80亿美元/年',
+          growth: '15-20%',
+          stocks: [
+            { name: '中核科技', code: '000777' },
+            { name: '中广核技', code: '000881' }
+          ]
+        },
+        {
+          id: 'med_up4', name: 'API原料药', level: 'up',
+          desc: '原料药(API)是药物的活性成分，包括化学原料药、发酵原料药、特色原料药等。中国是全球最大的原料药生产和出口国。',
+          barrier: '中高 - 合成工艺、质量标准、环保合规、注册认证',
+          supply: '华海药业、天宇股份等在特色原料药领域具有全球竞争力，高端API仍有进口替代空间。',
+          market: '全球原料药市场约1800亿美元/年',
+          growth: '6-10%',
+          stocks: [
+            { name: '华海药业', code: '600521' },
+            { name: '天宇股份', code: '300702' }
+          ]
+        },
+        {
+          id: 'med_up5', name: '细胞培养基', level: 'up',
+          desc: '细胞培养基是生物药(单抗、双抗、ADC、疫苗等)生产的关键原材料，决定细胞表达量和产品质量。',
+          barrier: '高 - 配方技术、质量一致性、GMP生产',
+          supply: '赛默飞、默克等外资占据高端市场，奥浦迈、健顺生物等国内企业快速崛起，国产替代加速。',
+          market: '全球细胞培养基市场约60亿美元/年',
+          growth: '15-20%',
+          stocks: [
+            { name: '奥浦迈', code: '688361' },
+            { name: '健顺生物', code: '872808(北交所)' }
+          ]
+        }
+      ],
+      mid: [
+        {
+          id: 'med_mid1', name: '医疗影像设备', level: 'mid',
+          desc: '医疗影像设备包括CT、MR(磁共振)、PET-CT、PET-MR、DR、超声等，是精准诊断的核心基础设施。',
+          barrier: '极高 - 系统集成、核心部件、临床应用、AI辅助',
+          supply: '联影医疗实现高端CT/MR国产替代突破，迈瑞医疗在超声、监护等领域全球领先，进口替代大幕已开启。',
+          market: '全球医学影像设备市场约500亿美元/年',
+          growth: '8-12%',
+          stocks: [
+            { name: '联影医疗', code: '688271' },
+            { name: '迈瑞医疗', code: '300760' }
+          ]
+        },
+        {
+          id: 'med_mid2', name: '常规医疗设备', level: 'mid',
+          desc: '常规医疗设备包括监护仪、呼吸机、麻醉机、体外诊断设备等，是医院基础医疗装备的核心组成。',
+          barrier: '中高 - 临床工程、渠道网络、海外认证',
+          supply: '迈瑞医疗为全球监护和生命支持设备龙头，中国企业在常规设备领域已具备全球竞争力。',
+          market: '全球常规医疗设备市场约600亿美元/年',
+          growth: '6-10%',
+          stocks: [
+            { name: '迈瑞医疗', code: '300760' }
+          ]
+        },
+        {
+          id: 'med_mid3', name: '创新药生物药', level: 'mid',
+          desc: '创新药包括小分子创新药和生物药(单抗、双抗、ADC、融合蛋白、基因细胞治疗等)，是医药产业创新升级的核心方向。',
+          barrier: '极高 - 靶点发现、临床开发、商业化能力、全球权益',
+          supply: '恒瑞医药为国内创新药龙头，百济神州在全球创新药开发和商业化能力领先，创新药浪潮风起云涌。',
+          market: '中国创新药市场约3000亿元/年',
+          growth: '15-20%',
+          stocks: [
+            { name: '恒瑞医药', code: '600276' },
+            { name: '百济神州', code: '688235' }
+          ]
+        }
+      ],
+      down: []
+    }
+  },
+
+  ai: {
+    name: '人工智能',
+    color: '#f39c12',
+    description: '人工智能产业以大模型为核心，拉动AI芯片、AI服务器、EDA工具、算法应用等全产业链爆发。大模型训练和推理对算力需求呈指数级增长。',
+    marketSize: '2025年全球AI市场规模超1万亿美元(含算力+应用)',
+    growthRate: 'AI芯片CAGR约50%，大模型CAGR约80%',
+    sectors: {
+      up: [
+        {
+          id: 'ai_up1', name: 'AI芯片', level: 'up',
+          desc: 'AI芯片(包括GPU、NPU、ASIC、TPU等)是大模型训练和推理的核心算力支撑。NVIDIA凭借CUDA生态在全球AI芯片市场占据绝对主导地位。国产AI芯片加速发展。',
+          barrier: '极高 - 芯片架构、先进制程、软件生态、显存带宽',
+          supply: 'NVIDIA全球市占率超80%，国产海光信息(兼容x86)、寒武纪(自研架构)等企业加速突破，国产替代空间巨大。',
+          market: '全球AI芯片市场约3000亿美元/年(2025)',
+          growth: '50-80%',
+          stocks: [
+            { name: '寒武纪-U', code: '688256' },
+            { name: '海光信息', code: '688041' }
+          ]
+        },
+        {
+          id: 'ai_up2', name: 'EDA工具', level: 'up',
+          desc: 'EDA(电子设计自动化)工具是芯片设计的基础软件，贯穿芯片设计、仿真、验证、布局布线全流程。新思科技、楷登电子、西门子EDA三家垄断全球市场。',
+          barrier: '极高 - 算法积累、工艺节点支持、生态兼容性',
+          supply: '概伦电子在器件建模和电路仿真领域实现国产替代突破，华大九天在数字/模拟全流程EDA加速布局。',
+          market: '全球EDA市场约160亿美元/年',
+          growth: '15-20%',
+          stocks: [
+            { name: '概伦电子', code: '688206' },
+            { name: '华大九天', code: '002411' }
+          ]
+        }
+      ],
+      mid: [
+        {
+          id: 'ai_mid1', name: '大模型算法', level: 'mid',
+          desc: '大模型(LLM)是生成式AI的核心技术，基于Transformer架构和海量语料预训练。包括通用大模型(如GPT系列、文心一言、天工)和垂直领域大模型。',
+          barrier: '高 - 大模型训练算法、数据工程、对齐技术、应用场景',
+          supply: 'OpenAI全球领先，百度、阿里、华为、商汤、昆仑万维(天工大模型)等国内企业纷纷推出自研大模型，开源生态蓬勃发展。',
+          market: '全球大模型相关市场超1000亿美元/年',
+          growth: '60-100%',
+          stocks: [
+            { name: '昆仑万维', code: '300418' }
+          ]
+        }
+      ],
+      down: []
+    }
+  }
+};
+
+/* ================= 全局状态 ================= */
+let network = null;
+let allNodes = [];
+let allEdges = [];
+let currentIndustry = 'all';
+let currentLevel = 'all';
+let currentMode = 'full';
+let currentSearch = '';
+
+/* ================= 构建节点和边 ================= */
+function buildGraphData() {
+  const nodes = [];
+  const edges = [];
+  const stockNodeIds = new Set();
+
+  const industryPositions = {
+    'semiconductor': { x: -600, y: 0 },
+    'newEnergy': { x: -200, y: 0 },
+    'medical': { x: 200, y: 0 },
+    'ai': { x: 600, y: 0 }
+  };
+
+  Object.keys(industryData).forEach(indKey => {
+    const industry = industryData[indKey];
+    const basePos = industryPositions[indKey] || { x: 0, y: 0 };
+
+    // 行业节点 - 位于中心
+    nodes.push({
+      id: `ind_${indKey}`,
+      label: industry.name,
+      title: `${industry.name} - ${industry.description.substring(0, 50)}...`,
+      shape: 'dot',
+      size: 38,
+      color: {
+        background: industry.color,
+        border: '#ffffff',
+        highlight: { background: industry.color, border: '#ffffff' }
+      },
+      font: { color: '#ffffff', size: 16, face: 'PingFang SC', strokeWidth: 2, strokeColor: '#000000' },
+      group: 'industry',
+      industry: indKey,
+      rawData: industry,
+      rawType: 'industry',
+      x: basePos.x,
+      y: basePos.y,
+      physics: { enabled: true }
+    });
+
+    // 层级位置偏移 - 实现辐射效果
+    const levelOffsets = {
+      'up': { dx: 0, dy: -280 },      // 上游 - 向上辐射
+      'mid': { dx: 220, dy: 180 },    // 中游 - 向右下辐射
+      'down': { dx: -180, dy: 200 }    // 下游 - 向左下辐射
+    };
+
+    ['up', 'mid', 'down'].forEach(level => {
+      const sectors = industry.sectors[level] || [];
+      if (sectors.length === 0) return;
+
+      const offset = levelOffsets[level];
+      const levelX = basePos.x + offset.dx;
+      const levelY = basePos.y + offset.dy;
+
+      // 层级节点 - 围绕行业节点辐射
+      nodes.push({
+        id: `lvl_${indKey}_${level}`,
+        label: LEVEL_NAMES[level],
+        title: `${industry.name} - ${LEVEL_NAMES[level]}`,
+        shape: 'diamond',
+        size: 22,
+        color: {
+          background: LEVEL_COLORS[level],
+          border: '#ffffff',
+          highlight: { background: LEVEL_COLORS[level], border: '#ffffff' }
+        },
+        font: { color: '#ffffff', size: 13, face: 'PingFang SC', strokeWidth: 2, strokeColor: '#000000' },
+        group: 'level',
+        industry: indKey,
+        level: level,
+        rawData: { name: LEVEL_NAMES[level], industry: industry.name, level: level },
+        rawType: 'level',
+        x: levelX,
+        y: levelY,
+        physics: { enabled: true }
+      });
+
+      edges.push({
+        id: `e_ind_lvl_${indKey}_${level}`,
+        from: `ind_${indKey}`,
+        to: `lvl_${indKey}_${level}`,
+        color: { color: industry.color, opacity: 0.6 },
+        width: 2.5,
+        smooth: { type: 'continuous' }
+      });
+
+      // 计算环节节点的辐射位置
+      const sectorCount = sectors.length;
+      const sectorRadius = 160;
+
+      sectors.forEach((sector, index) => {
+        // 围绕层级节点均匀分布
+        const angle = (index / sectorCount) * Math.PI * 2 - Math.PI / 2;
+        const sectorX = levelX + Math.cos(angle) * sectorRadius;
+        const sectorY = levelY + Math.sin(angle) * sectorRadius;
+
+        // 环节节点 - 围绕层级节点辐射
+        nodes.push({
+          id: sector.id,
+          label: sector.name,
+          title: `${sector.name} - ${sector.desc.substring(0, 60)}...`,
+          shape: 'box',
+          size: 18,
+          color: {
+            background: industry.color,
+            border: '#ffffff',
+            highlight: { background: industry.color, border: '#ffffff' }
+          },
+          font: { color: '#ffffff', size: 13, face: 'PingFang SC', align: 'center' },
+          shapeProperties: { borderRadius: 4 },
+          margin: 10,
+          group: 'sector',
+          industry: indKey,
+          level: level,
+          rawData: sector,
+          rawType: 'sector',
+          x: sectorX,
+          y: sectorY,
+          physics: { enabled: true }
+        });
+
+        edges.push({
+          id: `e_lvl_sec_${sector.id}`,
+          from: `lvl_${indKey}_${level}`,
+          to: sector.id,
+          color: { color: LEVEL_COLORS[level], opacity: 0.55 },
+          width: 1.8,
+          smooth: { type: 'continuous' }
+        });
+
+        // 股票节点 - 围绕环节节点辐射
+        const stockCount = sector.stocks.length;
+        sector.stocks.forEach((stock, stockIndex) => {
+          const stockId = `stock_${stock.code}`;
+          if (!stockNodeIds.has(stockId)) {
+            // 围绕环节节点均匀分布
+            const stockAngle = (stockIndex / stockCount) * Math.PI * 2 + Math.PI / 4;
+            const stockRadius = 100;
+            const stockX = sectorX + Math.cos(stockAngle) * stockRadius;
+            const stockY = sectorY + Math.sin(stockAngle) * stockRadius;
+
+            stockNodeIds.add(stockId);
+            nodes.push({
+              id: stockId,
+              label: `${stock.name}\n${stock.code}`,
+              title: `${stock.name} (${stock.code})`,
+              shape: 'dot',
+              size: 12,
+              color: {
+                background: '#2ecc71',
+                border: '#ffffff',
+                highlight: { background: '#2ecc71', border: '#ffffff' }
+              },
+              font: { color: '#ffffff', size: 11, face: 'PingFang SC', align: 'center', strokeWidth: 2, strokeColor: '#000000' },
+              group: 'stock',
+              industry: indKey,
+              level: level,
+              rawData: stock,
+              rawType: 'stock',
+              parentSector: sector,
+              x: stockX,
+              y: stockY,
+              physics: { enabled: true }
+            });
+          }
+          edges.push({
+            id: `e_sec_stk_${sector.id}_${stock.code}`,
+            from: sector.id,
+            to: stockId,
+            color: { color: '#2ecc71', opacity: 0.45 },
+            width: 1.2,
+            smooth: { type: 'continuous' }
+          });
+        });
+      });
+    });
+  });
+
+  allNodes = nodes;
+  allEdges = edges;
+  return { nodes, edges };
+}
+
+/* ================= 过滤节点 ================= */
+function applyFilter() {
+  if (!network) return;
+
+  let filteredNodes = allNodes.slice();
+  let filteredEdges = allEdges.slice();
+
+  // 行业过滤
+  if (currentIndustry !== 'all') {
+    filteredNodes = filteredNodes.filter(n => n.industry === currentIndustry);
+  }
+  // 层级过滤
+  if (currentLevel !== 'all') {
+    filteredNodes = filteredNodes.filter(n => {
+      if (n.rawType === 'industry') return true;
+      if (n.rawType === 'level') return n.level === currentLevel;
+      return n.level === currentLevel;
+    });
+  }
+  // 显示模式过滤
+  if (currentMode === 'sector') {
+    // 仅环节：保留行业+层级+环节，去除股票节点
+    filteredNodes = filteredNodes.filter(n => n.rawType !== 'stock');
+  } else if (currentMode === 'minimal') {
+    // 简洁模式：只保留行业和层级节点
+    filteredNodes = filteredNodes.filter(n => n.rawType === 'industry' || n.rawType === 'level');
+  }
+  // 搜索过滤
+  if (currentSearch && currentSearch.trim().length > 0) {
+    const kw = currentSearch.trim().toLowerCase();
+    const matchedIds = new Set();
+    filteredNodes.forEach(n => {
+      const name = (n.rawData.name || n.rawData.label || '').toLowerCase();
+      const code = (n.rawData.code || '').toString().toLowerCase();
+      if (name.includes(kw) || code.includes(kw)) {
+        matchedIds.add(n.id);
+      }
+    });
+    if (matchedIds.size > 0) {
+      filteredNodes = filteredNodes.filter(n => matchedIds.has(n.id));
+    }
+  }
+
+  // 根据节点过滤边
+  const visibleIds = new Set(filteredNodes.map(n => n.id));
+  filteredEdges = filteredEdges.filter(e => visibleIds.has(e.from) && visibleIds.has(e.to));
+
+  network.setData({
+    nodes: new vis.DataSet(filteredNodes),
+    edges: new vis.DataSet(filteredEdges)
+  });
+
+  updateStats(filteredNodes, filteredEdges);
+  setTimeout(() => network.fit({ animation: { duration: 600, easingFunction: 'easeInOutQuad' } }), 100);
+}
+
+/* ================= 更新统计 ================= */
+function updateStats(nodes, edges) {
+  const sectorCount = nodes.filter(n => n.rawType === 'sector').length;
+  const stockCount = nodes.filter(n => n.rawType === 'stock').length;
+  const indCount = new Set(nodes.filter(n => n.rawType === 'industry').map(n => n.industry)).size;
+
+  document.getElementById('statsBar').innerHTML =
+    `<b>${nodes.length}</b>节点<span class="sep">|</span><b>${edges.length}</b>关系<span class="sep">|</span><b>${indCount}</b>行业<span class="sep">|</span><b>${sectorCount}</b>环节<span class="sep">|</span><b>${stockCount}</b>股票`;
+
+  document.getElementById('headerStats').innerHTML =
+    `涵盖 <b>${Object.keys(industryData).length}</b> 大行业 · <b>${countTotalSectors()}</b> 个产业链环节 · <b>${countTotalStocks()}</b> 家代表企业`;
+}
+
+function countTotalSectors() {
+  let total = 0;
+  Object.values(industryData).forEach(ind => {
+    Object.values(ind.sectors).forEach(arr => { total += arr.length; });
+  });
+  return total;
+}
+function countTotalStocks() {
+  let total = 0;
+  Object.values(industryData).forEach(ind => {
+    Object.values(ind.sectors).forEach(arr => {
+      arr.forEach(s => { total += s.stocks.length; });
+    });
+  });
+  return total;
+}
+
+/* ================= 显示详情 ================= */
+function showNodeDetail(node) {
+  const panel = document.getElementById('detailPanel');
+
+  if (node.rawType === 'industry') {
+    const d = node.rawData;
+    const sectorHtml = renderSectorsOfIndustry(d);
+    panel.innerHTML = `
+      <h2 style="color:${d.color}">${d.name}</h2>
+      <div class="sub-title">行业总览</div>
+      <div class="detail-section"><h3>行业概述</h3><p>${d.description}</p></div>
+      <div class="detail-section">
+        <h3>核心数据</h3>
+        <div class="info-grid">
+          <div class="info-item"><span class="label">市场规模</span><span class="value">${d.marketSize}</span></div>
+          <div class="info-item" style="border-left-color:#2ecc71"><span class="label">增长速度</span><span class="value">${d.growthRate}</span></div>
+        </div>
+      </div>
+      <div class="detail-section"><h3>上下游关系</h3><div class="flow-diagram">${renderFlowDiagram(d)}</div></div>
+      <div class="detail-section"><h3>产业链环节</h3>${sectorHtml}</div>
+    `;
+  } else if (node.rawType === 'level') {
+    const d = node.rawData;
+    panel.innerHTML = `
+      <h2 style="color:${LEVEL_COLORS[d.level]}">${d.industry} - ${d.name}</h2>
+      <div class="sub-title">产业链层级</div>
+      <div class="detail-section">
+        <h3>层级说明</h3>
+        <p>${getLevelDescription(d.level)}</p>
+      </div>
+      <div class="detail-section"><h3>上下游关系</h3><div class="flow-diagram">${renderFlowDiagram(null, d.level)}</div></div>
+    `;
+  } else if (node.rawType === 'sector') {
+    const d = node.rawData;
+    const indColor = INDUSTRY_COLORS[node.industry];
+    const stocksHtml = d.stocks.map(s =>
+      `<div class="stock-item"><div class="name">${s.name}</div><div class="code">${s.code}</div></div>`
+    ).join('');
+    panel.innerHTML = `
+      <h2 style="color:${indColor}">${d.name}</h2>
+      <div class="sub-title">${INDUSTRY_NAMES[node.industry]} · ${LEVEL_NAMES[d.level]}环节</div>
+      <div class="detail-section"><h3>环节描述</h3><p>${d.desc}</p></div>
+      <div class="detail-section">
+        <h3>关键指标</h3>
+        <div class="info-grid">
+          <div class="info-item"><span class="label">技术壁垒</span><span class="value">${d.barrier}</span></div>
+          <div class="info-item" style="border-left-color:#2ecc71"><span class="label">增长速度</span><span class="value">${d.growth}</span></div>
+          <div class="info-item" style="border-left-color:#f39c12"><span class="label">市场规模</span><span class="value">${d.market}</span></div>
+        </div>
+      </div>
+      <div class="detail-section"><h3>供需状况</h3><p>${d.supply}</p></div>
+      <div class="detail-section"><h3>上下游关系</h3><div class="flow-diagram">${renderFlowDiagram(null, d.level)}</div></div>
+      <div class="detail-section"><h3>代表企业 (${d.stocks.length}家)</h3><div class="stock-list">${stocksHtml}</div></div>
+    `;
+  } else if (node.rawType === 'stock') {
+    const d = node.rawData;
+    const parent = node.parentSector;
+    const indColor = INDUSTRY_COLORS[node.industry];
+    panel.innerHTML = `
+      <h2 style="color:#2ecc71">${d.name}</h2>
+      <div class="sub-title">A股代码 ${d.code} · ${INDUSTRY_NAMES[node.industry]} · ${LEVEL_NAMES[node.level]}</div>
+      <div class="detail-section">
+        <h3>企业简介</h3>
+        <p>${d.name}是A股${LEVEL_NAMES[node.level]}环节的代表性企业，股票代码${d.code}。公司专注于${parent ? parent.name : '相关'}领域的产品研发、生产与销售，受益于${INDUSTRY_NAMES[node.industry]}产业的快速发展与国产替代进程。</p>
+      </div>
+      ${parent ? `
+      <div class="detail-section"><h3>所属产业链环节</h3>
+        <div class="info-grid">
+          <div class="info-item" style="grid-column: span 2; border-left-color:${indColor}">
+            <span class="label">环节名称</span><span class="value">${parent.name}</span>
+          </div>
+        </div>
+        <p style="margin-top:8px">${parent.desc}</p>
+      </div>
+      <div class="detail-section">
+        <h3>环节关键数据</h3>
+        <div class="info-grid">
+          <div class="info-item"><span class="label">技术壁垒</span><span class="value">${parent.barrier}</span></div>
+          <div class="info-item" style="border-left-color:#2ecc71"><span class="label">增长速度</span><span class="value">${parent.growth}</span></div>
+          <div class="info-item" style="border-left-color:#f39c12; grid-column: span 2"><span class="label">市场规模</span><span class="value">${parent.market}</span></div>
+        </div>
+      </div>
+      ` : ''}
+    `;
+  }
+}
+
+function renderSectorsOfIndustry(industry) {
+  let html = '';
+  ['up', 'mid', 'down'].forEach(level => {
+    const sectors = industry.sectors[level] || [];
+    if (sectors.length === 0) return;
+    html += `<div style="margin-bottom:12px">
+      <div style="font-size:12px;color:${LEVEL_COLORS[level]};margin-bottom:6px;font-weight:600">◆ ${LEVEL_NAMES[level]}</div>
+      ${sectors.map(s =>
+        `<div class="stock-item" style="border-color:${industry.color};background:linear-gradient(90deg,${industry.color}22,transparent)">
+          <div class="name">${s.name}</div>
+          <div class="code">${s.stocks.map(st => st.name).join(' · ')}</div>
+        </div>`
+      ).join('')}
+    </div>`;
+  });
+  return html || '<p style="color:#6a85ad;font-size:13px">暂无环节数据</p>';
+}
+
+function renderFlowDiagram(industry, highlightLevel) {
+  const upActive = highlightLevel === 'up' ? 'box-shadow:0 0 20px #9b59b6;border:2px solid #fff' : '';
+  const midActive = highlightLevel === 'mid' ? 'box-shadow:0 0 20px #1abc9c;border:2px solid #fff' : '';
+  const downActive = highlightLevel === 'down' ? 'box-shadow:0 0 20px #e67e22;border:2px solid #fff' : '';
+  return `<div class="flow-layers">
+    <div class="flow-layer up" style="${upActive}">上游<br>(原材料/设备)</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-layer mid" style="${midActive}">中游<br>(制造/代工)</div>
+    <span class="flow-arrow">→</span>
+    <div class="flow-layer down" style="${downActive}">下游<br>(产品/应用)</div>
+  </div>`;
+}
+
+function getLevelDescription(level) {
+  const desc = {
+    up: '上游环节主要提供原材料、核心零部件和专用设备，是产业链的基础。往往技术壁垒高、资源依赖性强、研发投入大，国产替代空间广阔。',
+    mid: '中游环节主要将上游原材料加工为核心组件或成品，属于制造与代工环节。规模效应显著，产能建设和良率控制是关键竞争力。',
+    down: '下游环节面向终端客户，提供最终产品或应用解决方案。品牌、渠道、用户体验和差异化功能是主要竞争维度。'
+  };
+  return desc[level] || '';
+}
+
+/* ================= 初始化网络 ================= */
+function initNetwork() {
+  buildGraphData();
+
+  const container = document.getElementById('graph');
+  const data = {
+    nodes: new vis.DataSet(allNodes),
+    edges: new vis.DataSet(allEdges)
+  };
+
+  const options = {
+    nodes: {
+      borderWidth: 2,
+      borderWidthSelected: 3,
+      shadow: { enabled: true, color: 'rgba(0,0,0,0.5)', size: 8, x: 2, y: 2 }
+    },
+    edges: {
+      smooth: { type: 'continuous', roundness: 0.4 },
+      hoverWidth: 2
+    },
+    physics: {
+      enabled: true,
+      solver: 'forceAtlas2Based',
+      forceAtlas2Based: {
+        gravitationalConstant: -600,
+        centralGravity: 0.05,
+        springLength: 220,
+        springConstant: 0.04,
+        avoidOverlap: 1.5,
+        damping: 0.6
+      },
+      maxVelocity: 30,
+      minVelocity: 0.2,
+      stabilization: { enabled: true, iterations: 500, updateInterval: 20 }
+    },
+    interaction: {
+      hover: true,
+      tooltipDelay: 150,
+      zoomView: true,
+      dragView: true,
+      multiselect: false
+    },
+    layout: { 
+      improvedLayout: true,
+      hierarchical: {
+        enabled: false,
+        levelSeparation: 150,
+        nodeSpacing: 80,
+        treeSpacing: 200,
+        blockShifting: true,
+        edgeMinimization: true,
+        parentCentralization: true,
+        direction: 'UD',
+        sortMethod: 'directed'
+      }
+    }
+  };
+
+  network = new vis.Network(container, data, options);
+
+  network.on('click', (params) => {
+    if (params.nodes.length > 0) {
+      const nodeId = params.nodes[0];
+      const node = allNodes.find(n => n.id === nodeId);
+      if (node) showNodeDetail(node);
+    }
+  });
+
+  network.on('doubleClick', (params) => {
+    if (params.nodes.length > 0) {
+      network.focus(params.nodes[0], { scale: 1.8, animation: { duration: 800, easingFunction: 'easeInOutQuad' } });
+    }
+  });
+
+  updateStats(allNodes, allEdges);
+}
+
+/* ================= 事件绑定 ================= */
+function bindEvents() {
+  // 行业按钮
+  document.querySelectorAll('#industryBtns .btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#industryBtns .btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentIndustry = btn.dataset.industry;
+      applyFilter();
+    });
+  });
+  // 层级按钮
+  document.querySelectorAll('#levelBtns .btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#levelBtns .btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentLevel = btn.dataset.level;
+      applyFilter();
+    });
+  });
+  // 显示模式按钮
+  document.querySelectorAll('#modeBtns .btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('#modeBtns .btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentMode = btn.dataset.mode;
+      applyFilter();
+    });
+  });
+  // 搜索
+  let searchTimer;
+  document.getElementById('searchInput').addEventListener('input', (e) => {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => {
+      currentSearch = e.target.value;
+      applyFilter();
+    }, 300);
+  });
+  // 工具栏
+  document.getElementById('zoomIn').addEventListener('click', () => network.scale(network.getScale() * 1.3));
+  document.getElementById('zoomOut').addEventListener('click', () => network.scale(network.getScale() * 0.75));
+  document.getElementById('fit').addEventListener('click', () => network.fit({ animation: { duration: 600 } }));
+  document.getElementById('refresh').addEventListener('click', () => {
+    network.stopSimulation();
+    initNetwork();
+    currentIndustry = 'all'; currentLevel = 'all'; currentMode = 'full'; currentSearch = '';
+    document.getElementById('searchInput').value = '';
+    document.querySelectorAll('#industryBtns .btn').forEach((b, i) => b.classList.toggle('active', i === 0));
+    document.querySelectorAll('#levelBtns .btn').forEach((b, i) => b.classList.toggle('active', i === 0));
+    document.querySelectorAll('#modeBtns .btn').forEach((b, i) => b.classList.toggle('active', i === 0));
+  });
+}
+
+/* ================= 启动 ================= */
+window.addEventListener('DOMContentLoaded', () => {
+  initNetwork();
+  bindEvents();
+});
+</script>
+</body>
+</html>

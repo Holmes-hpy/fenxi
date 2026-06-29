@@ -1,0 +1,573 @@
+
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>BOM产业链选股系统 - 监控面板</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1600px; margin: 0 auto; }
+        .header {
+            background: white; border-radius: 12px; padding: 24px;
+            margin-bottom: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        .header h1 { color: #2c3e50; font-size: 28px; margin-bottom: 8px; }
+        .header p { color: #7f8c8d; font-size: 14px; }
+        .strategy-badge {
+            display: inline-block; background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white; padding: 8px 16px; border-radius: 20px;
+            font-size: 13px; margin-top: 10px; margin-right: 10px;
+        }
+        .grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 20px; }
+        .metric-card {
+            background: white; border-radius: 12px; padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .metric-card h3 { color: #2c3e50; font-size: 16px; margin-bottom: 15px; border-bottom: 2px solid #ecf0f1; padding-bottom: 10px; }
+        .metric-value { font-size: 36px; font-weight: bold; margin: 10px 0; }
+        .metric-barrier .metric-value { color: #e74c3c; }
+        .metric-growth .metric-value { color: #27ae60; }
+        .metric-profit .metric-value { color: #f39c12; }
+        .metric-supply .metric-value { color: #9b59b6; }
+        .metric-total .metric-value { color: #2980b9; font-size: 42px; }
+        .metric-desc { color: #7f8c8d; font-size: 12px; margin-top: 5px; }
+        .table-container {
+            background: white; border-radius: 12px; padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1); overflow-x: auto;
+        }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        th { background: #f8f9fa; padding: 12px 10px; text-align: left; color: #2c3e50;
+            border-bottom: 2px solid #e0e0e0; font-weight: 600; }
+        td { padding: 10px; border-bottom: 1px solid #ecf0f1; }
+        .stock-row:hover { background: #f8f9fa; }
+        .rank { font-weight: bold; color: #2980b9; font-size: 16px; }
+        .name { font-weight: 600; color: #2c3e50; font-size: 14px; }
+        .code { color: #7f8c8d; font-family: monospace; }
+        .node { color: #34495e; }
+        .category, .level { color: #95a5a6; font-size: 12px; }
+        .score-barrier { color: #e74c3c; font-weight: 600; }
+        .score-growth { color: #27ae60; font-weight: 600; }
+        .score-profit { color: #f39c12; font-weight: 600; }
+        .score-sd { color: #9b59b6; font-weight: 600; }
+        .score-total { color: #2980b9; font-weight: bold; background: #ecf0f1; border-radius: 4px; padding: 4px 8px; }
+        .reason { color: #7f8c8d; font-size: 11px; }
+        .chart-section {
+            background: white; border-radius: 12px; padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-top: 20px;
+        }
+        .chart-section h3 { color: #2c3e50; font-size: 18px; margin-bottom: 20px; }
+        canvas { max-width: 100%; margin-bottom: 20px; }
+        .methodology {
+            background: linear-gradient(135deg, #f39c12 0%, #e74c3c 100%);
+            color: white; border-radius: 12px; padding: 24px; margin-top: 20px;
+        }
+        .methodology h3 { font-size: 18px; margin-bottom: 15px; }
+        .methodology li { margin: 8px 0; line-height: 1.6; margin-left: 20px; }
+    </style>
+    <script src='https://cdn.jsdelivr.net/npm/chart.js'></script>
+</head>
+<body>
+    <div class='container'>
+        <div class='header'>
+            <h1>🏭 BOM产业链选股系统 - 监控面板</h1>
+            <p>通过产业链拆解(BOM) + 三高筛选(高壁垒·高增长·高利润·供需失衡)的科学选股方法</p>
+            <span class='strategy-badge'>⏰ 生成时间: 2026-06-17 09:30:07</span>
+            <span class='strategy-badge' style='background: linear-gradient(135deg, #27ae60, #16a085);'>🎯 选出 20 只股票</span>
+        </div>
+
+        <div class='grid-container'>
+            <div class='metric-card metric-barrier'>
+                <h3>🛡️ 高壁垒评分</h3>
+                <div class='metric-value'>91.7</div>
+                <div class='metric-desc'>技术壁垒·专利壁垒·资源壁垒</div>
+            </div>
+            <div class='metric-card metric-growth'>
+                <h3>📈 高增长评分</h3>
+                <div class='metric-value'>32.0</div>
+                <div class='metric-desc'>行业增长·企业增速·市场空间</div>
+            </div>
+            <div class='metric-card metric-profit'>
+                <h3>💰 高利润评分</h3>
+                <div class='metric-value'>47.0</div>
+                <div class='metric-desc'>市场份额·龙头地位·利润空间</div>
+            </div>
+            <div class='metric-card metric-supply'>
+                <h3>⚖️ 供需失衡评分</h3>
+                <div class='metric-value'>51.5</div>
+                <div class='metric-desc'>国产替代·供需紧张·定价权</div>
+            </div>
+            <div class='metric-card metric-total'>
+                <h3>🏆 综合评分</h3>
+                <div class='metric-value'>57.6</div>
+                <div class='metric-desc'>四维度加权综合评估</div>
+            </div>
+        </div>
+
+        <div class='table-container'>
+            <h3 style='color:#2c3e50;font-size:18px;margin-bottom:20px;'>📊 选股详情表</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>排名</th><th>名称</th><th>代码</th><th>产业链环节</th>
+                        <th>行业</th><th>层级</th><th>壁垒</th><th>增长</th>
+                        <th>利润</th><th>供需</th><th>总分</th><th>现价</th>
+                        <th>涨跌</th><th>PE</th><th>市值</th><th>选股理由</th>
+                    </tr>
+                </thead>
+                <tbody>
+    <tr class='stock-row'>
+        <td class='rank'>1</td>
+        <td class='name'>奕瑞科技</td>
+        <td class='code'>688301</td>
+        <td class='node'>CT球管</td>
+        <td class='category'>医药医疗</td>
+        <td class='level'>上游</td>
+        <td class='score-barrier'>100</td>
+        <td class='score-growth'>35</td>
+        <td class='score-profit'>55</td>
+        <td class='score-sd'>70</td>
+        <td class='score-total'>⭐⭐⭐⭐ 66</td>
+        <td class='price'>116.01</td>
+        <td class='change' style='color:#e74c3c'>-0.68%</td>
+        <td class='pe'>50.1</td>
+        <td class='mcap'>343亿</td>
+        <td class='reason'>高壁垒(100)、供需失衡机会(70)</td>
+    </tr>
+    
+    <tr class='stock-row'>
+        <td class='rank'>2</td>
+        <td class='name'>彤程新材</td>
+        <td class='code'>603650</td>
+        <td class='node'>光刻胶</td>
+        <td class='category'>半导体</td>
+        <td class='level'>上游</td>
+        <td class='score-barrier'>100</td>
+        <td class='score-growth'>30</td>
+        <td class='score-profit'>65</td>
+        <td class='score-sd'>55</td>
+        <td class='score-total'>⭐⭐⭐⭐ 64</td>
+        <td class='price'>62.00</td>
+        <td class='change' style='color:#e74c3c'>-3.11%</td>
+        <td class='pe'>65.3</td>
+        <td class='mcap'>380亿</td>
+        <td class='reason'>高壁垒(100)、高利润地位(65)</td>
+    </tr>
+    
+    <tr class='stock-row'>
+        <td class='rank'>3</td>
+        <td class='name'>雅克科技</td>
+        <td class='code'>002409</td>
+        <td class='node'>光刻胶</td>
+        <td class='category'>半导体</td>
+        <td class='level'>上游</td>
+        <td class='score-barrier'>100</td>
+        <td class='score-growth'>30</td>
+        <td class='score-profit'>65</td>
+        <td class='score-sd'>55</td>
+        <td class='score-total'>⭐⭐⭐⭐ 64</td>
+        <td class='price'>137.00</td>
+        <td class='change' style='color:#e74c3c'>-0.55%</td>
+        <td class='pe'>64.8</td>
+        <td class='mcap'>436亿</td>
+        <td class='reason'>高壁垒(100)、高利润地位(65)</td>
+    </tr>
+    
+    <tr class='stock-row'>
+        <td class='rank'>4</td>
+        <td class='name'>晶瑞电材</td>
+        <td class='code'>300655</td>
+        <td class='node'>光刻胶</td>
+        <td class='category'>半导体</td>
+        <td class='level'>上游</td>
+        <td class='score-barrier'>100</td>
+        <td class='score-growth'>30</td>
+        <td class='score-profit'>55</td>
+        <td class='score-sd'>55</td>
+        <td class='score-total'>⭐⭐⭐⭐ 62</td>
+        <td class='price'>15.81</td>
+        <td class='change' style='color:#e74c3c'>-2.17%</td>
+        <td class='pe'>158.3</td>
+        <td class='mcap'>177亿</td>
+        <td class='reason'>高壁垒(100)</td>
+    </tr>
+    
+    <tr class='stock-row'>
+        <td class='rank'>5</td>
+        <td class='name'>中芯国际</td>
+        <td class='code'>688981</td>
+        <td class='node'>晶圆代工(制造)</td>
+        <td class='category'>半导体</td>
+        <td class='level'>中游</td>
+        <td class='score-barrier'>72</td>
+        <td class='score-growth'>30</td>
+        <td class='score-profit'>50</td>
+        <td class='score-sd'>70</td>
+        <td class='score-total'>⭐⭐⭐ 55</td>
+        <td class='price'>127.91</td>
+        <td class='change' style='color:#e74c3c'>-1.71%</td>
+        <td class='pe'>203.2</td>
+        <td class='mcap'>2557亿</td>
+        <td class='reason'>高壁垒(72)、供需失衡机会(70)</td>
+    </tr>
+    
+    <tr class='stock-row'>
+        <td class='rank'>6</td>
+        <td class='name'>沪硅产业</td>
+        <td class='code'>688126</td>
+        <td class='node'>硅片(晶圆)</td>
+        <td class='category'>半导体</td>
+        <td class='level'>上游</td>
+        <td class='score-barrier'>89</td>
+        <td class='score-growth'>30</td>
+        <td class='score-profit'>45</td>
+        <td class='score-sd'>45</td>
+        <td class='score-total'>⭐⭐⭐ 54</td>
+        <td class='price'>30.00</td>
+        <td class='change' style='color:#e74c3c'>-3.38%</td>
+        <td class='pe'>-55.6</td>
+        <td class='mcap'>819亿</td>
+        <td class='reason'>高壁垒(89)</td>
+    </tr>
+    
+    <tr class='stock-row'>
+        <td class='rank'>7</td>
+        <td class='name'>寒武纪-U</td>
+        <td class='code'>688256</td>
+        <td class='node'>AI芯片(GPU/ASIC/NPU)</td>
+        <td class='category'>人工智能</td>
+        <td class='level'>上游</td>
+        <td class='score-barrier'>97</td>
+        <td class='score-growth'>40</td>
+        <td class='score-profit'>25</td>
+        <td class='score-sd'>45</td>
+        <td class='score-total'>⭐⭐⭐ 54</td>
+        <td class='price'>1290.40</td>
+        <td class='change' style='color:#e74c3c'>-1.27%</td>
+        <td class='pe'>298.4</td>
+        <td class='mcap'>8107亿</td>
+        <td class='reason'>高壁垒(97)</td>
+    </tr>
+    
+    <tr class='stock-row'>
+        <td class='rank'>8</td>
+        <td class='name'>概伦电子</td>
+        <td class='code'>688206</td>
+        <td class='node'>EDA工具</td>
+        <td class='category'>人工智能</td>
+        <td class='level'>上游</td>
+        <td class='score-barrier'>100</td>
+        <td class='score-growth'>35</td>
+        <td class='score-profit'>35</td>
+        <td class='score-sd'>30</td>
+        <td class='score-total'>⭐⭐⭐ 53</td>
+        <td class='price'>37.13</td>
+        <td class='change' style='color:#e74c3c'>-1.04%</td>
+        <td class='pe'>792.8</td>
+        <td class='mcap'>162亿</td>
+        <td class='reason'>高壁垒(100)</td>
+    </tr>
+    
+    <tr class='stock-row'>
+        <td class='rank'>9</td>
+        <td class='name'>中环股份</td>
+        <td class='code'>603986</td>
+        <td class='node'>硅片(晶圆)</td>
+        <td class='category'>半导体</td>
+        <td class='level'>上游</td>
+        <td class='score-barrier'>83</td>
+        <td class='score-growth'>30</td>
+        <td class='score-profit'>35</td>
+        <td class='score-sd'>45</td>
+        <td class='score-total'>⭐⭐⭐ 50</td>
+        <td class='price'>521.00</td>
+        <td class='change' style='color:#e74c3c'>-2.21%</td>
+        <td class='pe'>127.1</td>
+        <td class='mcap'>3479亿</td>
+        <td class='reason'>高壁垒(83)</td>
+    </tr>
+    
+    <tr class='stock-row'>
+        <td class='rank'>10</td>
+        <td class='name'>奥浦迈</td>
+        <td class='code'>688361</td>
+        <td class='node'>细胞培养基</td>
+        <td class='category'>医药医疗</td>
+        <td class='level'>上游</td>
+        <td class='score-barrier'>76</td>
+        <td class='score-growth'>30</td>
+        <td class='score-profit'>40</td>
+        <td class='score-sd'>45</td>
+        <td class='score-total'>⭐⭐⭐ 49</td>
+        <td class='price'>234.97</td>
+        <td class='change' style='color:#e74c3c'>-2.50%</td>
+        <td class='pe'>14559.9</td>
+        <td class='mcap'>822亿</td>
+        <td class='reason'>高壁垒(76)</td>
+    </tr>
+    
+    <tr class='stock-row'>
+        <td class='rank'>11</td>
+        <td class='name'>赣锋锂业</td>
+        <td class='code'>002460</td>
+        <td class='node'>锂矿/锂盐</td>
+        <td class='category'>新能源</td>
+        <td class='level'>上游</td>
+        <td class='score-barrier'>53</td>
+        <td class='score-growth'>10</td>
+        <td class='score-profit'>75</td>
+        <td class='score-sd'>60</td>
+        <td class='score-total'>⭐⭐⭐ 49</td>
+        <td class='price'>71.60</td>
+        <td class='change' style='color:#27ae60'>+0.21%</td>
+        <td class='pe'>39.4</td>
+        <td class='mcap'>867亿</td>
+        <td class='reason'>高利润地位(75)、供需失衡机会(60)</td>
+    </tr>
+    
+    <tr class='stock-row'>
+        <td class='rank'>12</td>
+        <td class='name'>天齐锂业</td>
+        <td class='code'>002466</td>
+        <td class='node'>锂矿/锂盐</td>
+        <td class='category'>新能源</td>
+        <td class='level'>上游</td>
+        <td class='score-barrier'>53</td>
+        <td class='score-growth'>10</td>
+        <td class='score-profit'>75</td>
+        <td class='score-sd'>60</td>
+        <td class='score-total'>⭐⭐⭐ 49</td>
+        <td class='price'>64.49</td>
+        <td class='change' style='color:#27ae60'>+0.78%</td>
+        <td class='pe'>49.5</td>
+        <td class='mcap'>951亿</td>
+        <td class='reason'>高利润地位(75)、供需失衡机会(60)</td>
+    </tr>
+    
+    <tr class='stock-row'>
+        <td class='rank'>13</td>
+        <td class='name'>北方华创</td>
+        <td class='code'>002371</td>
+        <td class='node'>光刻机</td>
+        <td class='category'>半导体</td>
+        <td class='level'>上游</td>
+        <td class='score-barrier'>100</td>
+        <td class='score-growth'>35</td>
+        <td class='score-profit'>15</td>
+        <td class='score-sd'>30</td>
+        <td class='score-total'>⭐⭐⭐ 48</td>
+        <td class='price'>660.39</td>
+        <td class='change' style='color:#e74c3c'>-1.76%</td>
+        <td class='pe'>85.8</td>
+        <td class='mcap'>4782亿</td>
+        <td class='reason'>高壁垒(100)</td>
+    </tr>
+    
+    <tr class='stock-row'>
+        <td class='rank'>14</td>
+        <td class='name'>中微公司</td>
+        <td class='code'>688012</td>
+        <td class='node'>光刻机</td>
+        <td class='category'>半导体</td>
+        <td class='level'>上游</td>
+        <td class='score-barrier'>100</td>
+        <td class='score-growth'>35</td>
+        <td class='score-profit'>15</td>
+        <td class='score-sd'>30</td>
+        <td class='score-total'>⭐⭐⭐ 48</td>
+        <td class='price'>314.00</td>
+        <td class='change' style='color:#e74c3c'>-1.57%</td>
+        <td class='pe'>107.8</td>
+        <td class='mcap'>2942亿</td>
+        <td class='reason'>高壁垒(100)</td>
+    </tr>
+    
+    <tr class='stock-row'>
+        <td class='rank'>15</td>
+        <td class='name'>健顺生物</td>
+        <td class='code'>872808</td>
+        <td class='node'>细胞培养基</td>
+        <td class='category'>医药医疗</td>
+        <td class='level'>上游</td>
+        <td class='score-barrier'>73</td>
+        <td class='score-growth'>30</td>
+        <td class='score-profit'>40</td>
+        <td class='score-sd'>45</td>
+        <td class='score-total'>⭐⭐⭐ 48</td>
+        <td class='price'>43.48</td>
+        <td class='change' style='color:#95a5a6'>+0.00%</td>
+        <td class='pe'>420.6</td>
+        <td class='mcap'>84亿</td>
+        <td class='reason'>高壁垒(73)</td>
+    </tr>
+    
+    <tr class='stock-row'>
+        <td class='rank'>16</td>
+        <td class='name'>联影医疗</td>
+        <td class='code'>688271</td>
+        <td class='node'>医疗影像设备</td>
+        <td class='category'>医药医疗</td>
+        <td class='level'>中游</td>
+        <td class='score-barrier'>74</td>
+        <td class='score-growth'>30</td>
+        <td class='score-profit'>55</td>
+        <td class='score-sd'>10</td>
+        <td class='score-total'>⭐⭐⭐ 45</td>
+        <td class='price'>111.30</td>
+        <td class='change' style='color:#27ae60'>+0.27%</td>
+        <td class='pe'>48.3</td>
+        <td class='mcap'>917亿</td>
+        <td class='reason'>高壁垒(74)</td>
+    </tr>
+    
+    <tr class='stock-row'>
+        <td class='rank'>17</td>
+        <td class='name'>迈瑞医疗</td>
+        <td class='code'>300760</td>
+        <td class='node'>医疗影像设备</td>
+        <td class='category'>医药医疗</td>
+        <td class='level'>中游</td>
+        <td class='score-barrier'>71</td>
+        <td class='score-growth'>30</td>
+        <td class='score-profit'>55</td>
+        <td class='score-sd'>10</td>
+        <td class='score-total'>⭐⭐⭐ 44</td>
+        <td class='price'>142.87</td>
+        <td class='change' style='color:#e74c3c'>-0.02%</td>
+        <td class='pe'>22.1</td>
+        <td class='mcap'>1730亿</td>
+        <td class='reason'>高壁垒(71)</td>
+    </tr>
+    
+    <tr class='stock-row'>
+        <td class='rank'>18</td>
+        <td class='name'>宁德时代</td>
+        <td class='code'>300750</td>
+        <td class='node'>锂电池电芯</td>
+        <td class='category'>新能源</td>
+        <td class='level'>中游</td>
+        <td class='score-barrier'>54</td>
+        <td class='score-growth'>30</td>
+        <td class='score-profit'>65</td>
+        <td class='score-sd'>20</td>
+        <td class='score-total'>⭐⭐⭐ 43</td>
+        <td class='price'>400.00</td>
+        <td class='change' style='color:#e74c3c'>-0.87%</td>
+        <td class='pe'>23.4</td>
+        <td class='mcap'>17028亿</td>
+        <td class='reason'>高利润地位(65)</td>
+    </tr>
+    
+    <tr class='stock-row'>
+        <td class='rank'>19</td>
+        <td class='name'>中核科技</td>
+        <td class='code'>000777</td>
+        <td class='node'>医用同位素</td>
+        <td class='category'>医药医疗</td>
+        <td class='level'>上游</td>
+        <td class='score-barrier'>74</td>
+        <td class='score-growth'>45</td>
+        <td class='score-profit'>25</td>
+        <td class='score-sd'>20</td>
+        <td class='score-total'>⭐⭐⭐ 43</td>
+        <td class='price'>21.86</td>
+        <td class='change' style='color:#27ae60'>+10.02%</td>
+        <td class='pe'>53.3</td>
+        <td class='mcap'>83亿</td>
+        <td class='reason'>高壁垒(74)</td>
+    </tr>
+    
+    <tr class='stock-row'>
+        <td class='rank'>20</td>
+        <td class='name'>长鑫存储</td>
+        <td class='code'>688041</td>
+        <td class='node'>存储芯片</td>
+        <td class='category'>半导体</td>
+        <td class='level'>中游</td>
+        <td class='score-barrier'>92</td>
+        <td class='score-growth'>30</td>
+        <td class='score-profit'>15</td>
+        <td class='score-sd'>10</td>
+        <td class='score-total'>⭐⭐⭐ 40</td>
+        <td class='price'>288.00</td>
+        <td class='change' style='color:#e74c3c'>-2.14%</td>
+        <td class='pe'>245.6</td>
+        <td class='mcap'>6694亿</td>
+        <td class='reason'>高壁垒(92)</td>
+    </tr>
+    </tbody>
+            </table>
+        </div>
+
+        <div class='chart-section'>
+            <h3>📈 四维评分雷达图 (TOP 10)</h3>
+            <canvas id='radarChart' height='120'></canvas>
+            <h3 style='margin-top:40px;'>🏭 行业分布图</h3>
+            <canvas id='pieChart' height='120'></canvas>
+        </div>
+
+        <div class='methodology'>
+            <h3>🧭 选股方法论</h3>
+            <ul>
+                <li><strong>BOM产业链拆解:</strong> 将半导体、新能源、医药等行业按上游/中游/下游拆解，识别关键环节</li>
+                <li><strong>高壁垒筛选:</strong> 识别技术、专利、资源壁垒高的环节，优先选择难以替代的核心节点</li>
+                <li><strong>高增长筛选:</strong> 评估行业增长空间、政策支持、市场规模扩张潜力</li>
+                <li><strong>高利润筛选:</strong> 评估龙头企业市场份额、毛利率、净利润率及利润弹性</li>
+                <li><strong>供需失衡分析:</strong> 寻找'需求扩张 × 供给受限'的环节，优先国产替代空间大的领域</li>
+                <li><strong>龙头识别:</strong> 在每个三高环节中选择全球/国内市场份额领先的企业</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const scoreData = [{"name": "奕瑞科技", "barrier": 100, "growth": 35, "profit": 55, "supply": 70, "total": 66}, {"name": "彤程新材", "barrier": 100, "growth": 30, "profit": 65, "supply": 55, "total": 64}, {"name": "雅克科技", "barrier": 100, "growth": 30, "profit": 65, "supply": 55, "total": 64}, {"name": "晶瑞电材", "barrier": 100, "growth": 30, "profit": 55, "supply": 55, "total": 62}, {"name": "中芯国际", "barrier": 72, "growth": 30, "profit": 50, "supply": 70, "total": 55}, {"name": "沪硅产业", "barrier": 89, "growth": 30, "profit": 45, "supply": 45, "total": 54}, {"name": "寒武纪-U", "barrier": 97, "growth": 40, "profit": 25, "supply": 45, "total": 54}, {"name": "概伦电子", "barrier": 100, "growth": 35, "profit": 35, "supply": 30, "total": 53}, {"name": "中环股份", "barrier": 83, "growth": 30, "profit": 35, "supply": 45, "total": 50}, {"name": "奥浦迈", "barrier": 76, "growth": 30, "profit": 40, "supply": 45, "total": 49}, {"name": "赣锋锂业", "barrier": 53, "growth": 10, "profit": 75, "supply": 60, "total": 49}, {"name": "天齐锂业", "barrier": 53, "growth": 10, "profit": 75, "supply": 60, "total": 49}, {"name": "北方华创", "barrier": 100, "growth": 35, "profit": 15, "supply": 30, "total": 48}, {"name": "中微公司", "barrier": 100, "growth": 35, "profit": 15, "supply": 30, "total": 48}, {"name": "健顺生物", "barrier": 73, "growth": 30, "profit": 40, "supply": 45, "total": 48}];
+        const categoryData = [{"name": "医药医疗", "count": 3}, {"name": "半导体", "count": 8}, {"name": "人工智能", "count": 2}, {"name": "新能源", "count": 2}];
+
+        // 雷达图
+        const avgBarrier = scoreData.reduce((s, d) => s + d.barrier, 0) / scoreData.length;
+        const avgGrowth = scoreData.reduce((s, d) => s + d.growth, 0) / scoreData.length;
+        const avgProfit = scoreData.reduce((s, d) => s + d.profit, 0) / scoreData.length;
+        const avgSupply = scoreData.reduce((s, d) => s + d.supply, 0) / scoreData.length;
+
+        new Chart(document.getElementById('radarChart'), {
+            type: 'radar',
+            data: {
+                labels: ['高壁垒', '高增长', '高利润', '供需失衡'],
+                datasets: [{
+                    label: 'TOP 10 平均',
+                    data: [avgBarrier, avgGrowth, avgProfit, avgSupply],
+                    backgroundColor: 'rgba(102, 126, 234, 0.2)',
+                    borderColor: '#667eea',
+                    borderWidth: 3,
+                    pointBackgroundColor: '#764ba2',
+                    pointBorderColor: '#fff',
+                    pointRadius: 6,
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: { r: { beginAtZero: true, max: 100 } }
+            }
+        });
+
+        // 饼图
+        new Chart(document.getElementById('pieChart'), {
+            type: 'doughnut',
+            data: {
+                labels: categoryData.map(d => d.name),
+                datasets: [{
+                    data: categoryData.map(d => d.count),
+                    backgroundColor: ['#667eea', '#764ba2', '#2980b9', '#27ae60', '#f39c12', '#e74c3c'],
+                }]
+            },
+            options: { responsive: true }
+        });
+    </script>
+</body>
+</html>
