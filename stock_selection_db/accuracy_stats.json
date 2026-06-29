@@ -1,19 +1,24 @@
 {
-  "total_predictions": 2,
-  "correct_predictions": 1,
-  "incorrect_predictions": 1,
-  "accuracy_rate": 50.0,
+  "total_predictions": 18,
+  "correct_predictions": 13,
+  "incorrect_predictions": 5,
+  "accuracy_rate": 72.22222222222221,
   "strategy_accuracy": {
     "value": {
-      "total": 1,
-      "correct": 1,
+      "total": 12,
+      "correct": 12,
       "accuracy": 100.0
     },
-    "technical": {
-      "total": 1,
+    "momentum": {
+      "total": 2,
       "correct": 0,
       "accuracy": 0.0
+    },
+    "technical": {
+      "total": 4,
+      "correct": 1,
+      "accuracy": 25.0
     }
   },
-  "last_updated": "2026-06-03T01:38:51.032122"
+  "last_updated": "2026-06-26T15:35:09.139008"
 }

@@ -118,6 +118,13 @@ def run_task(task_name, function_path):
 
     try:
         # 特殊处理常见任务
+        if 'daily_tech_intel_system_v7' in function_path:
+            from daily_tech_intel_system_v7 import DailyTechIntelSystemV7
+            system = DailyTechIntelSystemV7()
+            system.run()
+            print("\n✅ 任务执行完成!")
+            return
+
         if 'daily_tech_intel_system_v6' in function_path:
             from daily_tech_intel_system_v6 import DailyTechIntelSystemV6
             system = DailyTechIntelSystemV6()
@@ -269,7 +276,7 @@ def start_scheduler():
 def run_now():
     """立即执行一次科技前沿资讯分析任务（用于测试）"""
     print("🧪 立即执行一次科技前沿资讯分析任务...")
-    run_task("科技资讯分析-测试", "daily_tech_intel_system_v6.DailyTechIntelSystemV6.run")
+    run_task("科技资讯分析-测试", "daily_tech_intel_system_v7.DailyTechIntelSystemV7.run")
 
 
 def show_help():

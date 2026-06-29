@@ -22,8 +22,8 @@ def main():
     
     system = StockSelectionSystem()
     
-    # 验证五粮液(000858)的预测结果
-    stock_code = "000858"
+    # 验证宁德时代(300750)的预测结果
+    stock_code = "300750"
     result = system.verify_prediction(stock_code)
     
     print()

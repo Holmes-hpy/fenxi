@@ -27,6 +27,14 @@ except AttributeError:
 else:
     ssl._create_default_https_context = _create_unverified_https_context
 
+# 创建全局requests会话（禁用代理，避免代理问题）
+session = requests.Session()
+session.trust_env = False  # 不使用环境变量中的代理设置
+session.headers.update({
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Referer": "https://quote.eastmoney.com/",
+})
+
 # ==================== 全局常量 ====================
 
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
@@ -78,54 +86,84 @@ def _claw_headers(call_type: str = "normal") -> dict:
 # ==================== Layer 1: 行情层 ====================
 
 def get_stock_quote(stock_code: str) -> dict:
-    """获取股票实时行情（腾讯财经API）"""
+    """获取股票实时行情（东方财富批量查询接口，带重试机制）"""
     code = normalize_code(stock_code)
-    prefixed = []
-    for c in [code]:
-        if c.startswith(("6", "9")):
-            prefixed.append(f"sh{c}")
-        elif c.startswith("8"):
-            prefixed.append(f"bj{c}")
-        else:
-            prefixed.append(f"sz{c}")
-
-    url = "https://qt.gtimg.cn/q=" + ",".join(prefixed)
-    req = urllib.request.Request(url)
-    req.add_header("User-Agent", "Mozilla/5.0")
-    resp = urllib.request.urlopen(req, timeout=10)
-    data = resp.read().decode("gbk")
-
-    result = {}
-    for line in data.strip().split(";"):
-        if not line.strip() or "=" not in line or '"' not in line:
-            continue
-        key = line.split("=")[0].split("_")[-1]
-        vals = line.split('"')[1].split("~")
-        if len(vals) < 53:
-            continue
-        code = key[2:]
-        result[code] = {
-            "name":         vals[1],
-            "price":        float(vals[3]) if vals[3] else 0,
-            "last_close":   float(vals[4]) if vals[4] else 0,
-            "open":         float(vals[5]) if vals[5] else 0,
-            "change_amt":   float(vals[31]) if vals[31] else 0,
-            "change_pct":   float(vals[32]) if vals[32] else 0,
-            "high":         float(vals[33]) if vals[33] else 0,
-            "low":          float(vals[34]) if vals[34] else 0,
-            "amount_wan":   float(vals[37]) if vals[37] else 0,
-            "turnover_pct": float(vals[38]) if vals[38] else 0,
-            "pe_ttm":       float(vals[39]) if vals[39] else 0,
-            "amplitude_pct":float(vals[43]) if vals[43] else 0,
-            "mcap_yi":      float(vals[44]) if vals[44] else 0,
-            "float_mcap_yi":float(vals[45]) if vals[45] else 0,
-            "pb":           float(vals[46]) if vals[46] else 0,
-            "limit_up":     float(vals[47]) if vals[47] else 0,
-            "limit_down":   float(vals[48]) if vals[48] else 0,
-            "vol_ratio":    float(vals[49]) if vals[49] else 0,
-            "pe_static":    float(vals[52]) if vals[52] else 0,
-        }
-    return result
+    
+    if code.startswith(("6", "9")):
+        secid = f"1.{code}"
+    elif code.startswith("8"):
+        secid = f"0.{code}"
+    else:
+        secid = f"0.{code}"
+    
+    url = "https://push2.eastmoney.com/api/qt/ulist.np/get"
+    params = {
+        "fltt": "2",
+        "invt": "2",
+        "fields": "f2,f3,f4,f5,f6,f7,f8,f9,f10,f12,f13,f14,f15,f16,f17,f18,f20,f21,f23",
+        "secids": secid,
+        "ut": "fa5fd1943c7b386f172d6893dbfba10b",
+    }
+    
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            resp = session.get(url, params=params, timeout=10)
+            data = resp.json()
+            
+            if data.get("rc") == 0 and data.get("data") and data["data"].get("diff"):
+                diff_list = data["data"]["diff"]
+                
+                if len(diff_list) == 0:
+                    if attempt < max_retries - 1:
+                        time.sleep(0.5)
+                        continue
+                    return {}
+                
+                d = diff_list[0]
+                
+                def safe_float(val):
+                    try:
+                        return float(val) if val and val != "-" else 0.0
+                    except:
+                        return 0.0
+                
+                result = {
+                    code: {
+                        "name":         d.get("f14", ""),
+                        "price":        safe_float(d.get("f2")),
+                        "last_close":   safe_float(d.get("f18")),
+                        "open":         safe_float(d.get("f17")),
+                        "change_amt":   safe_float(d.get("f4")),
+                        "change_pct":   safe_float(d.get("f3")),
+                        "high":         safe_float(d.get("f15")),
+                        "low":          safe_float(d.get("f16")),
+                        "amount_wan":   safe_float(d.get("f6")) / 10000,
+                        "turnover_pct": safe_float(d.get("f8")),
+                        "pe_ttm":       safe_float(d.get("f9")),
+                        "amplitude_pct":safe_float(d.get("f7")),
+                        "mcap_yi":      safe_float(d.get("f20")) / 100000000,
+                        "float_mcap_yi":safe_float(d.get("f21")) / 100000000,
+                        "pb":           safe_float(d.get("f23")),
+                        "limit_up":     0.0,
+                        "limit_down":   0.0,
+                        "vol_ratio":    safe_float(d.get("f10")),
+                        "pe_static":    safe_float(d.get("f9")),
+                        "volume":       safe_float(d.get("f5")),
+                    }
+                }
+                return result
+            else:
+                if attempt < max_retries - 1:
+                    time.sleep(0.5)
+                    continue
+                return {}
+        except Exception as e:
+            if attempt < max_retries - 1:
+                time.sleep(0.5)
+                continue
+            print(f"[get_stock_quote] 东方财富API失败（重试{max_retries}次）: {e}")
+            return {}
 
 def get_historical_k_data(stock_code: str, period: str = "daily", days: int = 30) -> pd.DataFrame:
     """获取股票历史K线数据（mootdx）"""
@@ -162,10 +200,84 @@ def baidu_kline_with_ma(code: str, start_time: str = "") -> dict:
     return {"keys": keys, "rows": rows}
 
 def get_market_index() -> dict:
-    """获取大盘指数实时数据"""
-    index_codes = ["000001", "000300", "399006", "000688"]
-    quotes = get_stock_quote("000001")
-    return quotes
+    """获取大盘指数实时数据（上证指数、深证成指、创业板指、科创50）"""
+    index_list = [
+        ("shanghai", "1.000001", "上证指数"),
+        ("shenzhen", "0.399001", "深证成指"),
+        ("chuangye", "0.399006", "创业板指"),
+        ("kechuang", "1.000688", "科创50"),
+    ]
+    
+    result = {}
+    secids = ",".join([item[1] for item in index_list])
+    
+    url = "https://push2.eastmoney.com/api/qt/ulist.np/get"
+    params = {
+        "fltt": "2",
+        "invt": "2",
+        "fields": "f2,f3,f4,f5,f6,f7,f12,f13,f14,f15,f16,f17,f18",
+        "secids": secids,
+        "ut": "fa5fd1943c7b386f172d6893dbfba10b",
+    }
+    
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            resp = session.get(url, params=params, timeout=10)
+            data = resp.json()
+            
+            if data.get("rc") == 0 and data.get("data") and data["data"].get("diff"):
+                diff_list = data["data"]["diff"]
+                
+                # 建立secid到数据的映射
+                data_map = {}
+                for item in diff_list:
+                    market = item.get("f13", "")
+                    code = item.get("f12", "")
+                    secid = f"{market}.{code}"
+                    data_map[secid] = item
+                
+                # 填充结果
+                for key, secid, name in index_list:
+                    if secid in data_map:
+                        d = data_map[secid]
+                        def safe_float(val):
+                            try:
+                                return float(val) if val and val != "-" else 0.0
+                            except:
+                                return 0.0
+                        
+                        result[key] = {
+                            "name": d.get("f14", name),
+                            "price": safe_float(d.get("f2")),
+                            "change_pct": safe_float(d.get("f3")),
+                            "change_amt": safe_float(d.get("f4")),
+                            "high": safe_float(d.get("f15")),
+                            "low": safe_float(d.get("f16")),
+                            "open": safe_float(d.get("f17")),
+                            "last_close": safe_float(d.get("f18")),
+                            "amplitude": safe_float(d.get("f7")),
+                        }
+                    else:
+                        result[key] = {"name": name, "price": 0, "change_pct": 0}
+                
+                return result
+            else:
+                if attempt < max_retries - 1:
+                    time.sleep(1)
+                    continue
+        except Exception as e:
+            if attempt < max_retries - 1:
+                time.sleep(1)
+                continue
+            print(f"[get_market_index] 获取指数失败（重试{max_retries}次）: {e}")
+    
+    # 全部失败时返回默认值
+    for key, secid, name in index_list:
+        if key not in result:
+            result[key] = {"name": name, "price": 0, "change_pct": 0}
+    
+    return result
 
 # ==================== Layer 2: 研报层 ====================
 
@@ -639,8 +751,8 @@ def stock_fund_flow_120d(code: str) -> pd.DataFrame:
 # ==================== Layer 5: 新闻层 ====================
 
 def get_stock_news(code: str, days: int = 30) -> list:
-    """获取个股新闻"""
-    url = EASTMONEY_NEWS_URL
+    """获取个股新闻（东方财富）"""
+    url = "https://search-api-web.eastmoney.com/search/jsonp"
     params = {
         "param": json.dumps({
             "uid": "",
@@ -651,22 +763,35 @@ def get_stock_news(code: str, days: int = 30) -> list:
             "time": str(days)
         })
     }
-    headers = {
-        "User-Agent": UA,
-        "Referer": "https://so.eastmoney.com/",
-    }
-    r = requests.get(url, params=params, headers=headers, timeout=15)
-    d = r.json()
-    articles = d.get("result", {}).get("cmsArticles", []) or []
-    return [
-        {
-            "title": a.get("title", ""),
-            "publish_time": a.get("publish_time", ""),
-            "source": a.get("source", ""),
-            "url": a.get("url", ""),
-        }
-        for a in articles
-    ]
+    
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            resp = session.get(url, params=params, timeout=15)
+            d = resp.json()
+            
+            if d and d.get("result"):
+                articles = d["result"].get("cmsArticles", []) or []
+                return [
+                    {
+                        "title": a.get("title", ""),
+                        "publish_time": a.get("publish_time", ""),
+                        "source": a.get("source", ""),
+                        "url": a.get("url", ""),
+                    }
+                    for a in articles
+                ]
+            else:
+                if attempt < max_retries - 1:
+                    time.sleep(0.5)
+                    continue
+                return []
+        except Exception as e:
+            if attempt < max_retries - 1:
+                time.sleep(0.5)
+                continue
+            print(f"[get_stock_news] 获取新闻失败: {e}")
+            return []
 
 def cls_flash_news() -> list:
     """财联社快讯"""

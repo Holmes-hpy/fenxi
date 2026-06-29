@@ -486,6 +486,652 @@
         "support_3": 1324.93
       },
       "timestamp": "2026-06-03T01:38:04.425830"
+    },
+    {
+      "stock_code": "601318",
+      "stock_name": "中国平安",
+      "current_price": 53.63,
+      "analysis_date": "2026-06-05",
+      "prediction": {
+        "score": 80,
+        "direction": "上涨",
+        "confidence": "高",
+        "factors": [
+          "RSI处于健康区间",
+          "KDJ多方信号",
+          "价格处于布林带中部"
+        ],
+        "predicted_change_pct": 6.0
+      },
+      "indicators": {
+        "price": 53.64,
+        "ma5": 53.7,
+        "ma10": 53.623000000000005,
+        "ma20": 54.854499999999994,
+        "ma60": 57.53816666666667,
+        "macd_dif": -1.2113903208501213,
+        "macd_dea": -1.2478587265477017,
+        "macd_histogram": 0.036468405697580364,
+        "rsi": 40.3400309119011,
+        "kdj_k": 33.16208886878547,
+        "kdj_d": 24.224072578478165,
+        "kdj_j": 51.038121449400066,
+        "bb_upper": 59.06049309256879,
+        "bb_middle": 54.854499999999994,
+        "bb_lower": 50.6485069074312,
+        "bb_position": 35.5622682530579,
+        "volume": 583809.0,
+        "vol_ma5": 669069.4,
+        "recent_return": -0.38997214484679826
+      },
+      "key_findings": [
+        "MACD柱状图为正，动能强劲"
+      ],
+      "risk_factors": [],
+      "support_resistance": {
+        "resistance_1": 55.67,
+        "resistance_2": 53.7,
+        "support_1": 53.7,
+        "support_2": 53.62,
+        "support_3": 54.85
+      },
+      "timestamp": "2026-06-05T11:14:33.254859"
+    },
+    {
+      "stock_code": "000001",
+      "stock_name": "平安银行",
+      "current_price": 11.13,
+      "analysis_date": "2026-06-10",
+      "prediction": {
+        "score": 80,
+        "direction": "上涨",
+        "confidence": "高",
+        "factors": [
+          "均线多头排列",
+          "MACD零轴上方金叉",
+          "RSI处于健康区间",
+          "KDJ超买"
+        ],
+        "predicted_change_pct": 6.0
+      },
+      "indicators": {
+        "price": 11.13,
+        "ma5": 11.018,
+        "ma10": 10.974,
+        "ma20": 10.894,
+        "ma60": 11.031166666666667,
+        "macd_dif": 0.00043746209746231557,
+        "macd_dea": -0.03938684624043298,
+        "macd_histogram": 0.0398243083378953,
+        "rsi": 67.20000000000009,
+        "kdj_k": 80.2481428919148,
+        "kdj_d": 68.40968503058224,
+        "kdj_j": 103.92505861457991,
+        "bb_upper": 11.205559743362686,
+        "bb_middle": 10.894,
+        "bb_lower": 10.582440256637314,
+        "bb_position": 87.87395596312223,
+        "volume": 5.877471754111438e-39,
+        "vol_ma5": 822674.2,
+        "recent_return": 2.865064695009247
+      },
+      "key_findings": [
+        "MACD柱状图为正，动能强劲"
+      ],
+      "risk_factors": [],
+      "support_resistance": {
+        "resistance_1": 11.35,
+        "resistance_2": 11.02,
+        "support_1": 11.02,
+        "support_2": 10.97,
+        "support_3": 10.89
+      },
+      "timestamp": "2026-06-10T09:05:39.304408"
+    },
+    {
+      "stock_code": "600036",
+      "stock_name": "招商银行",
+      "current_price": 38.8,
+      "analysis_date": "2026-06-10",
+      "prediction": {
+        "score": 70,
+        "direction": "上涨",
+        "confidence": "高",
+        "factors": [
+          "均线多头排列",
+          "MACD零轴上方金叉",
+          "KDJ超买"
+        ],
+        "predicted_change_pct": 4.0
+      },
+      "indicators": {
+        "price": 38.8,
+        "ma5": 38.494,
+        "ma10": 38.309999999999995,
+        "ma20": 37.784000000000006,
+        "ma60": 38.757666666666665,
+        "macd_dif": 0.057318917022520566,
+        "macd_dea": -0.13924316731265549,
+        "macd_histogram": 0.19656208433517605,
+        "rsi": 72.60273972602747,
+        "kdj_k": 84.64137362559413,
+        "kdj_d": 76.79782867741287,
+        "kdj_j": 100.32846352195665,
+        "bb_upper": 39.12796741815144,
+        "bb_middle": 37.784000000000006,
+        "bb_lower": 36.44003258184857,
+        "bb_position": 87.79853537660351,
+        "volume": 377356.0,
+        "vol_ma5": 665776.4,
+        "recent_return": 1.837270341207338
+      },
+      "key_findings": [
+        "RSI超买，注意回调风险",
+        "MACD柱状图为正，动能强劲"
+      ],
+      "risk_factors": [],
+      "support_resistance": {
+        "resistance_1": 39.67,
+        "resistance_2": 38.49,
+        "support_1": 38.49,
+        "support_2": 38.31,
+        "support_3": 37.78
+      },
+      "timestamp": "2026-06-10T10:35:59.877664"
+    },
+    {
+      "stock_code": "000858",
+      "stock_name": "五 粮 液",
+      "current_price": 79.48,
+      "analysis_date": "2026-06-10",
+      "prediction": {
+        "score": 40,
+        "direction": "震荡偏跌",
+        "confidence": "中",
+        "factors": [
+          "RSI超卖"
+        ],
+        "predicted_change_pct": -2.0
+      },
+      "indicators": {
+        "price": 79.46,
+        "ma5": 80.142,
+        "ma10": 81.556,
+        "ma20": 83.4505,
+        "ma60": 94.8965,
+        "macd_dif": -3.7703823226157027,
+        "macd_dea": -3.872655735717713,
+        "macd_histogram": 0.10227341310201021,
+        "rsi": 29.925017041581455,
+        "kdj_k": 8.22121744412013,
+        "kdj_d": 9.648888259411061,
+        "kdj_j": 5.3658758135382705,
+        "bb_upper": 88.61649193104024,
+        "bb_middle": 83.4505,
+        "bb_lower": 78.28450806895977,
+        "bb_position": 11.377214160722923,
+        "volume": 112515.0,
+        "vol_ma5": 205950.4,
+        "recent_return": -2.0221948212083856
+      },
+      "key_findings": [
+        "RSI超卖，可能存在反弹机会",
+        "MACD柱状图为正，动能强劲"
+      ],
+      "risk_factors": [],
+      "support_resistance": {
+        "resistance_1": 81.34,
+        "resistance_2": 80.14,
+        "support_1": 80.14,
+        "support_2": 81.56,
+        "support_3": 83.45
+      },
+      "timestamp": "2026-06-10T10:36:09.943146"
+    },
+    {
+      "stock_code": "000333",
+      "stock_name": "美的集团",
+      "current_price": 78.85,
+      "analysis_date": "2026-06-16",
+      "prediction": {
+        "score": 60,
+        "direction": "震荡偏涨",
+        "confidence": "中",
+        "factors": [
+          "RSI处于健康区间"
+        ],
+        "predicted_change_pct": 2.0
+      },
+      "indicators": {
+        "price": 78.84,
+        "ma5": 82.45,
+        "ma10": 82.418,
+        "ma20": 81.5475,
+        "ma60": 79.24966666666666,
+        "macd_dif": 0.48742199117268115,
+        "macd_dea": 0.7777677849693447,
+        "macd_histogram": -0.2903457937966636,
+        "rsi": 46.46044021415825,
+        "kdj_k": 42.627648561548384,
+        "kdj_d": 61.208198264408054,
+        "kdj_j": 5.466549155829043,
+        "bb_upper": 84.92202920693003,
+        "bb_middle": 81.5475,
+        "bb_lower": 78.17297079306996,
+        "bb_position": 9.883292839193798,
+        "volume": 361058.0,
+        "vol_ma5": 426348.6,
+        "recent_return": -6.030989272943983
+      },
+      "key_findings": [],
+      "risk_factors": [],
+      "support_resistance": {
+        "resistance_1": 82.61,
+        "resistance_2": 82.45,
+        "support_1": 82.45,
+        "support_2": 82.42,
+        "support_3": 81.55
+      },
+      "timestamp": "2026-06-16T14:19:12.777989"
+    },
+    {
+      "stock_code": "600519",
+      "stock_name": "贵州茅台",
+      "current_price": 1255.67,
+      "analysis_date": "2026-06-16",
+      "prediction": {
+        "score": 50,
+        "direction": "震荡",
+        "confidence": "中",
+        "factors": [],
+        "predicted_change_pct": 0.0
+      },
+      "indicators": {
+        "price": 1255.67,
+        "ma5": 1274.712,
+        "ma10": 1271.5310000000002,
+        "ma20": 1285.6285,
+        "ma60": 1369.2565,
+        "macd_dif": -24.065403364812937,
+        "macd_dea": -26.523415208508656,
+        "macd_histogram": 2.4580118436957186,
+        "rsi": 39.66187584640252,
+        "kdj_k": 24.435983907057828,
+        "kdj_d": 28.8089521835531,
+        "kdj_j": 15.690047354067282,
+        "bb_upper": 1326.4319489125326,
+        "bb_middle": 1285.6285,
+        "bb_lower": 1244.8250510874675,
+        "bb_position": 13.28925519970153,
+        "volume": 34969.0,
+        "vol_ma5": 38328.6,
+        "recent_return": -1.5840047653384357
+      },
+      "key_findings": [
+        "MACD柱状图为正，动能强劲"
+      ],
+      "risk_factors": [],
+      "support_resistance": {
+        "resistance_1": 1293.24,
+        "resistance_2": 1274.71,
+        "support_1": 1274.71,
+        "support_2": 1271.53,
+        "support_3": 1285.63
+      },
+      "timestamp": "2026-06-16T16:02:15.084441"
+    },
+    {
+      "stock_code": "601318",
+      "stock_name": "中国平安",
+      "current_price": 52.76,
+      "analysis_date": "2026-06-17",
+      "prediction": {
+        "score": 60,
+        "direction": "震荡偏涨",
+        "confidence": "中",
+        "factors": [
+          "RSI处于健康区间"
+        ],
+        "predicted_change_pct": 2.0
+      },
+      "indicators": {
+        "price": 52.76,
+        "ma5": 53.326,
+        "ma10": 53.387,
+        "ma20": 53.533500000000004,
+        "ma60": 56.45033333333333,
+        "macd_dif": -0.8397345674430241,
+        "macd_dea": -0.9623299198438198,
+        "macd_histogram": 0.12259535240079567,
+        "rsi": 51.88067444876783,
+        "kdj_k": 31.731432262450234,
+        "kdj_d": 37.1613564448806,
+        "kdj_j": 20.871583897589502,
+        "bb_upper": 54.60885599980433,
+        "bb_middle": 53.533500000000004,
+        "bb_lower": 52.45814400019568,
+        "bb_position": 14.03516602219379,
+        "volume": 653905.0,
+        "vol_ma5": 845516.2,
+        "recent_return": 0.22796352583586138
+      },
+      "key_findings": [
+        "MACD柱状图为正，动能强劲"
+      ],
+      "risk_factors": [],
+      "support_resistance": {
+        "resistance_1": 54.41,
+        "resistance_2": 53.33,
+        "support_1": 53.33,
+        "support_2": 53.39,
+        "support_3": 53.53
+      },
+      "timestamp": "2026-06-17T15:31:14.534470"
+    },
+    {
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "current_price": 48.42,
+      "analysis_date": "2026-06-19",
+      "prediction": {
+        "score": 85,
+        "direction": "上涨",
+        "confidence": "高",
+        "factors": [
+          "RSI处于健康区间",
+          "KDJ多方信号",
+          "价格处于布林带中部",
+          "成交量放大"
+        ],
+        "predicted_change_pct": 7.0
+      },
+      "indicators": {
+        "price": 48.42,
+        "ma5": 47.826,
+        "ma10": 47.252,
+        "ma20": 48.07899999999999,
+        "ma60": 52.68783333333333,
+        "macd_dif": -1.2969155329382502,
+        "macd_dea": -1.5718893710691206,
+        "macd_histogram": 0.2749738381308704,
+        "rsi": 41.72123479887747,
+        "kdj_k": 39.82262400085191,
+        "kdj_d": 33.14573628800265,
+        "kdj_j": 53.17639942655043,
+        "bb_upper": 50.81388881713786,
+        "bb_middle": 48.07899999999999,
+        "bb_lower": 45.34411118286213,
+        "bb_position": 56.234257090510795,
+        "volume": 1185928.0,
+        "vol_ma5": 775899.4,
+        "recent_return": -0.14435966178593582
+      },
+      "key_findings": [
+        "MACD柱状图为正，动能强劲"
+      ],
+      "risk_factors": [],
+      "support_resistance": {
+        "resistance_1": 50.49,
+        "resistance_2": 47.83,
+        "support_1": 47.83,
+        "support_2": 47.25,
+        "support_3": 48.08
+      },
+      "timestamp": "2026-06-19T15:31:25.172659"
+    },
+    {
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "current_price": 408.98,
+      "analysis_date": "2026-06-22",
+      "prediction": {
+        "score": 85,
+        "direction": "上涨",
+        "confidence": "高",
+        "factors": [
+          "RSI处于健康区间",
+          "KDJ多方信号",
+          "价格处于布林带中部",
+          "成交量放大"
+        ],
+        "predicted_change_pct": 7.0
+      },
+      "indicators": {
+        "price": 408.98,
+        "ma5": 400.232,
+        "ma10": 395.923,
+        "ma20": 405.53499999999997,
+        "ma60": 417.139,
+        "macd_dif": -6.153452995370003,
+        "macd_dea": -6.605154010858192,
+        "macd_histogram": 0.4517010154881893,
+        "rsi": 45.69592816225421,
+        "kdj_k": 34.1982557528302,
+        "kdj_d": 28.31322261576372,
+        "kdj_j": 45.968322026963165,
+        "bb_upper": 432.5368225505742,
+        "bb_middle": 405.53499999999997,
+        "bb_lower": 378.53317744942575,
+        "bb_position": 56.37919902174675,
+        "volume": 594648.0,
+        "vol_ma5": 383872.2,
+        "recent_return": 2.732981662898768
+      },
+      "key_findings": [
+        "MACD柱状图为正，动能强劲"
+      ],
+      "risk_factors": [],
+      "support_resistance": {
+        "resistance_1": 421.6,
+        "resistance_2": 400.23,
+        "support_1": 400.23,
+        "support_2": 395.92,
+        "support_3": 405.54
+      },
+      "timestamp": "2026-06-22T16:16:52.103664"
+    },
+    {
+      "stock_code": "600584",
+      "stock_name": "XD长电科",
+      "current_price": 86.09,
+      "analysis_date": "2026-06-23",
+      "prediction": {
+        "score": 95,
+        "direction": "上涨",
+        "confidence": "高",
+        "factors": [
+          "MACD零轴上方金叉",
+          "RSI处于健康区间",
+          "KDJ多方信号",
+          "成交量放大",
+          "适度上涨趋势"
+        ],
+        "predicted_change_pct": 9.0
+      },
+      "indicators": {
+        "price": 86.09,
+        "ma5": 83.828,
+        "ma10": 78.36699999999999,
+        "ma20": 79.0985,
+        "ma60": 58.65316666666667,
+        "macd_dif": 5.641358244493929,
+        "macd_dea": 5.315881778800613,
+        "macd_histogram": 0.325476465693316,
+        "rsi": 60.01491980604253,
+        "kdj_k": 71.87991796144341,
+        "kdj_d": 57.552689501714134,
+        "kdj_j": 100.53437488090195,
+        "bb_upper": 91.5259471697889,
+        "bb_middle": 79.0985,
+        "bb_lower": 66.6710528302111,
+        "bb_position": 78.12926864415213,
+        "volume": 2221174.0,
+        "vol_ma5": 2215861.6,
+        "recent_return": 11.906928376446114
+      },
+      "key_findings": [
+        "MACD柱状图为正，动能强劲"
+      ],
+      "risk_factors": [],
+      "support_resistance": {
+        "resistance_1": 93.8,
+        "resistance_2": 83.83,
+        "support_1": 83.83,
+        "support_2": 78.37,
+        "support_3": 79.1
+      },
+      "timestamp": "2026-06-23T15:31:34.025396"
+    },
+    {
+      "stock_code": "000333",
+      "stock_name": "000333",
+      "current_price": 76.63,
+      "analysis_date": "2026-06-24",
+      "prediction": {
+        "score": 55,
+        "direction": "震荡偏涨",
+        "confidence": "中",
+        "factors": [
+          "成交量放大"
+        ],
+        "predicted_change_pct": 1.0
+      },
+      "indicators": {
+        "price": 76.63,
+        "ma5": 78.03999999999999,
+        "ma10": 80.257,
+        "ma20": 80.9315,
+        "ma60": 79.52966666666666,
+        "macd_dif": -0.6684333185077236,
+        "macd_dea": 0.05112255110983322,
+        "macd_histogram": -0.7195558696175568,
+        "rsi": 30.533854166666657,
+        "kdj_k": 13.850911745497884,
+        "kdj_d": 23.856057155406877,
+        "kdj_j": -6.1593790743201,
+        "bb_upper": 85.56999465145526,
+        "bb_middle": 80.9315,
+        "bb_lower": 76.29300534854474,
+        "bb_position": 3.6325863968553826,
+        "volume": 384877.0,
+        "vol_ma5": 350123.2,
+        "recent_return": -3.2693764200959397
+      },
+      "key_findings": [],
+      "risk_factors": [],
+      "support_resistance": {
+        "resistance_1": 80.27,
+        "resistance_2": 78.04,
+        "support_1": 78.04,
+        "support_2": 80.26,
+        "support_3": 80.93
+      },
+      "timestamp": "2026-06-24T15:33:36.013362"
+    },
+    {
+      "stock_code": "000001",
+      "stock_name": "000001",
+      "current_price": 0,
+      "analysis_date": "2026-06-26",
+      "prediction": {
+        "score": 45,
+        "direction": "震荡",
+        "confidence": "中",
+        "factors": [
+          "RSI超卖",
+          "成交量放大"
+        ],
+        "predicted_change_pct": -1.0
+      },
+      "indicators": {
+        "price": 10.23,
+        "ma5": 10.504000000000001,
+        "ma10": 10.706,
+        "ma20": 10.881499999999999,
+        "ma60": 11.011666666666667,
+        "macd_dif": -0.14988490055050008,
+        "macd_dea": -0.07354278073747257,
+        "macd_histogram": -0.0763421198130275,
+        "rsi": 29.28176795580113,
+        "kdj_k": 11.549651439779812,
+        "kdj_d": 22.736306878093814,
+        "kdj_j": -10.823659436848189,
+        "bb_upper": 11.47855505344325,
+        "bb_middle": 10.881499999999999,
+        "bb_lower": 10.284444946556748,
+        "bb_position": -4.559457812370959,
+        "volume": 1236481.0,
+        "vol_ma5": 1180448.2,
+        "recent_return": -3.9436619718309847
+      },
+      "key_findings": [
+        "RSI超卖，可能存在反弹机会"
+      ],
+      "risk_factors": [],
+      "support_resistance": {
+        "resistance_1": 10.68,
+        "resistance_2": 10.5,
+        "support_1": 10.5,
+        "support_2": 10.71,
+        "support_3": 10.88
+      },
+      "timestamp": "2026-06-26T15:32:46.044225"
+    },
+    {
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "current_price": 52.93,
+      "analysis_date": "2026-06-29",
+      "prediction": {
+        "score": 65,
+        "direction": "上涨",
+        "confidence": "高",
+        "factors": [
+          "均线多头排列",
+          "KDJ多方信号",
+          "价格触及布林带上轨",
+          "成交量放大",
+          "适度上涨趋势"
+        ],
+        "predicted_change_pct": 3.0
+      },
+      "indicators": {
+        "price": 52.93,
+        "ma5": 50.174,
+        "ma10": 49.087,
+        "ma20": 48.207499999999996,
+        "ma60": 52.30683333333333,
+        "macd_dif": -0.13631181208016585,
+        "macd_dea": -0.8259191823962833,
+        "macd_histogram": 0.6896073703161174,
+        "rsi": 75.01789549033643,
+        "kdj_k": 75.9389979244526,
+        "kdj_d": 66.8536809259791,
+        "kdj_j": 94.10963192139957,
+        "bb_upper": 51.5028228417834,
+        "bb_middle": 48.207499999999996,
+        "bb_lower": 44.91217715821659,
+        "bb_position": 121.65458783158594,
+        "volume": 1727561.0,
+        "vol_ma5": 1192640.4,
+        "recent_return": 8.064516129032265
+      },
+      "key_findings": [
+        "RSI超买，注意回调风险",
+        "MACD柱状图为正，动能强劲",
+        "价格接近布林带上轨"
+      ],
+      "risk_factors": [
+        "极度超买，可能面临调整"
+      ],
+      "support_resistance": {
+        "resistance_1": 54.38,
+        "resistance_2": 50.17,
+        "support_1": 50.17,
+        "support_2": 49.09,
+        "support_3": 48.21
+      },
+      "timestamp": "2026-06-29T15:31:42.272535"
     }
   ],
   "success_cases": [
@@ -543,6 +1189,45 @@
         "适度上涨趋势"
       ],
       "timestamp": "2026-06-03T01:38:51.032754"
+    },
+    {
+      "stock_code": "000858",
+      "stock_name": "五 粮 液",
+      "selection_date": "2026-06-10",
+      "prediction": "震荡偏跌",
+      "actual_change_pct": -2.5037745344740925,
+      "strategy": "value",
+      "success_factors": [
+        "RSI超卖"
+      ],
+      "timestamp": "2026-06-17T15:31:49.331974"
+    },
+    {
+      "stock_code": "600276",
+      "stock_name": "恒瑞医药",
+      "selection_date": "2026-06-19",
+      "prediction": "上涨",
+      "actual_change_pct": 1.9413465510119736,
+      "strategy": "technical",
+      "success_factors": [
+        "RSI处于健康区间",
+        "KDJ多方信号",
+        "价格处于布林带中部",
+        "成交量放大"
+      ],
+      "timestamp": "2026-06-22T16:18:01.058115"
+    },
+    {
+      "stock_code": "000858",
+      "stock_name": "五 粮 液",
+      "selection_date": "2026-06-10",
+      "prediction": "震荡偏跌",
+      "actual_change_pct": -5.938600905888272,
+      "strategy": "value",
+      "success_factors": [
+        "RSI超卖"
+      ],
+      "timestamp": "2026-06-23T15:33:36.857949"
     }
   ],
   "failure_cases": [
@@ -574,6 +1259,39 @@
       ],
       "risk_factors": [],
       "timestamp": "2026-06-03T01:38:50.617223"
+    },
+    {
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "selection_date": "2026-06-22",
+      "prediction": "上涨",
+      "actual_change_pct": -4.027091789329558,
+      "strategy": "technical",
+      "prediction_factors": [
+        "RSI处于健康区间",
+        "KDJ多方信号",
+        "价格处于布林带中部",
+        "成交量放大"
+      ],
+      "risk_factors": [],
+      "timestamp": "2026-06-23T15:33:51.896087"
+    },
+    {
+      "stock_code": "600584",
+      "stock_name": "XD长电科",
+      "selection_date": "2026-06-23",
+      "prediction": "上涨",
+      "actual_change_pct": -100.0,
+      "strategy": "momentum",
+      "prediction_factors": [
+        "MACD零轴上方金叉",
+        "RSI处于健康区间",
+        "KDJ多方信号",
+        "成交量放大",
+        "适度上涨趋势"
+      ],
+      "risk_factors": [],
+      "timestamp": "2026-06-24T15:34:01.856181"
     }
   ]
 }
