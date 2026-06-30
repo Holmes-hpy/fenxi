@@ -73,6 +73,12 @@ class StockSelectionSystem:
                 'selections': [],
                 'total_count': 0
             }, ensure_ascii=False, indent=2))
+        else:
+            # 兼容旧版本数据：确保必要字段存在
+            data = json.loads(self.selection_history_file.read_text())
+            if 'total_count' not in data:
+                data['total_count'] = len(data.get('selections', []))
+                self.selection_history_file.write_text(json.dumps(data, ensure_ascii=False, indent=2))
         
         if not self.analysis_file.exists():
             self.analysis_file.write_text(json.dumps({

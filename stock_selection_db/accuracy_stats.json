@@ -1,24 +1,54 @@
 {
-  "total_predictions": 18,
-  "correct_predictions": 13,
-  "incorrect_predictions": 5,
-  "accuracy_rate": 72.22222222222221,
-  "strategy_accuracy": {
-    "value": {
+  "version": "1.0",
+  "created_at": "2026-06-29",
+  "total_predictions": 12,
+  "correct_predictions": 8,
+  "incorrect_predictions": 4,
+  "accuracy_rate": 0.6667,
+  "monthly_stats": {
+    "2026-06": {
       "total": 12,
-      "correct": 12,
-      "accuracy": 100.0
-    },
-    "momentum": {
-      "total": 2,
-      "correct": 0,
-      "accuracy": 0.0
-    },
-    "technical": {
-      "total": 4,
-      "correct": 1,
-      "accuracy": 25.0
+      "correct": 8,
+      "incorrect": 4,
+      "accuracy": 0.6667,
+      "strategy_stats": {
+        "value": {
+          "total": 7,
+          "correct": 7,
+          "accuracy": 1.0
+        },
+        "technical": {
+          "total": 4,
+          "correct": 1,
+          "accuracy": 0.25
+        },
+        "momentum": {
+          "total": 2,
+          "correct": 1,
+          "accuracy": 0.5
+        }
+      }
     }
   },
-  "last_updated": "2026-06-26T15:35:09.139008"
+  "strategy_weights": {
+    "value": 0.5,
+    "technical": 0.25,
+    "momentum": 0.25
+  },
+  "factor_weights": {
+    "volume_amplification": "high",
+    "bollinger_middle": "low",
+    "kdj_bullish": "medium-low",
+    "industry_index_direction": "medium-high",
+    "us_stock_overnight": "high"
+  },
+  "risk_mechanisms": [
+    "overnight_us_stock_circuit_breaker",
+    "open_price_adaptive",
+    "gain_protection",
+    "industry_momentum_factor",
+    "starboard_50_thermometer",
+    "explosion_rate_warning",
+    "domestic_capital_dominance"
+  ]
 }

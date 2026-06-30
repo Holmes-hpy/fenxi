@@ -1,1147 +1,278 @@
 {
+  "version": "1.0",
+  "created_at": "2026-06-29",
   "selections": [
     {
-      "stock_code": "000001",
-      "stock_name": "000001",
-      "price": 0,
-      "selection_date": "2026-05-21",
-      "market_status": {
-        "trend": "bearish",
-        "description": "市场下跌，北向资金流出",
-        "avg_change": -0.65,
-        "northbound": -40.38,
-        "indices": {
-          "000001": {
-            "name": "平安银行",
-            "price": 10.7,
-            "last_close": 10.77,
-            "open": 10.78,
-            "change_amt": -0.07,
-            "change_pct": -0.65,
-            "high": 10.8,
-            "low": 10.69,
-            "amount_wan": 119414.0,
-            "turnover_pct": 0.57,
-            "pe_ttm": 4.82,
-            "amplitude_pct": 1.02,
-            "mcap_yi": 2076.4,
-            "float_mcap_yi": 2076.43,
-            "pb": 0.45,
-            "limit_up": 11.85,
-            "limit_down": 9.69,
-            "vol_ratio": 1.33,
-            "pe_static": 3.57
-          }
-        }
-      },
-      "strategy": "value",
-      "strategy_scores": {
-        "value": 80.0,
-        "momentum": 40.0,
-        "technical": 50.0
-      },
-      "timestamp": "2026-05-21T15:42:03.827157"
-    },
-    {
-      "stock_code": "600036",
-      "stock_name": "600036",
-      "price": 0,
-      "selection_date": "2026-05-21",
-      "market_status": {
-        "trend": "bearish",
-        "description": "市场下跌，北向资金流出",
-        "avg_change": -0.65,
-        "northbound": -40.38,
-        "indices": {
-          "000001": {
-            "name": "平安银行",
-            "price": 10.7,
-            "last_close": 10.77,
-            "open": 10.78,
-            "change_amt": -0.07,
-            "change_pct": -0.65,
-            "high": 10.8,
-            "low": 10.69,
-            "amount_wan": 119414.0,
-            "turnover_pct": 0.57,
-            "pe_ttm": 4.82,
-            "amplitude_pct": 1.02,
-            "mcap_yi": 2076.4,
-            "float_mcap_yi": 2076.43,
-            "pb": 0.45,
-            "limit_up": 11.85,
-            "limit_down": 9.69,
-            "vol_ratio": 1.33,
-            "pe_static": 3.57
-          }
-        }
-      },
-      "strategy": "value",
-      "strategy_scores": {
-        "value": 80.0,
-        "momentum": 40.0,
-        "technical": 50.0
-      },
-      "timestamp": "2026-05-21T15:42:45.621303"
-    },
-    {
-      "stock_code": "601318",
-      "stock_name": "601318",
-      "price": 0,
-      "selection_date": "2026-05-22",
-      "market_status": {
-        "trend": "neutral",
-        "description": "市场震荡",
-        "avg_change": -0.19,
-        "northbound": -40.38,
-        "indices": {
-          "000001": {
-            "name": "平安银行",
-            "price": 10.68,
-            "last_close": 10.7,
-            "open": 10.7,
-            "change_amt": -0.02,
-            "change_pct": -0.19,
-            "high": 10.73,
-            "low": 10.65,
-            "amount_wan": 102006.0,
-            "turnover_pct": 0.49,
-            "pe_ttm": 4.81,
-            "amplitude_pct": 0.75,
-            "mcap_yi": 2072.52,
-            "float_mcap_yi": 2072.55,
-            "pb": 0.45,
-            "limit_up": 11.77,
-            "limit_down": 9.63,
-            "vol_ratio": 1.06,
-            "pe_static": 3.57
-          }
-        }
-      },
-      "strategy": "value",
-      "strategy_scores": {
-        "value": 80.0,
-        "momentum": 50.0,
-        "technical": 50.0
-      },
-      "timestamp": "2026-05-22T15:30:33.857801"
-    },
-    {
-      "stock_code": "000333",
-      "stock_name": "000333",
-      "price": 0,
-      "selection_date": "2026-05-26",
-      "market_status": {
-        "trend": "neutral",
-        "description": "市场震荡",
-        "avg_change": 0.0,
-        "northbound": -40.38,
-        "indices": {
-          "000001": {
-            "name": "平安银行",
-            "price": 10.68,
-            "last_close": 10.68,
-            "open": 10.68,
-            "change_amt": 0.0,
-            "change_pct": 0.0,
-            "high": 10.76,
-            "low": 10.64,
-            "amount_wan": 70961.0,
-            "turnover_pct": 0.34,
-            "pe_ttm": 4.81,
-            "amplitude_pct": 1.12,
-            "mcap_yi": 2072.52,
-            "float_mcap_yi": 2072.55,
-            "pb": 0.45,
-            "limit_up": 11.75,
-            "limit_down": 9.61,
-            "vol_ratio": 0.74,
-            "pe_static": 3.57
-          }
-        }
-      },
-      "strategy": "value",
-      "strategy_scores": {
-        "value": 80.0,
-        "momentum": 50.0,
-        "technical": 50.0
-      },
-      "timestamp": "2026-05-26T01:37:58.709277"
-    },
-    {
+      "id": "sel_001",
       "stock_code": "600519",
       "stock_name": "贵州茅台",
-      "price": 1285.88,
-      "selection_date": "2026-05-26",
-      "market_status": {
-        "trend": "neutral",
-        "description": "市场震荡",
-        "avg_change": 0.0,
-        "northbound": -40.38,
-        "indices": {
-          "000001": {
-            "name": "平安银行",
-            "price": 10.68,
-            "last_close": 10.68,
-            "open": 10.68,
-            "change_amt": 0.0,
-            "change_pct": 0.0,
-            "high": 10.76,
-            "low": 10.64,
-            "amount_wan": 70961.0,
-            "turnover_pct": 0.34,
-            "pe_ttm": 4.81,
-            "amplitude_pct": 1.12,
-            "mcap_yi": 2072.52,
-            "float_mcap_yi": 2072.55,
-            "pb": 0.45,
-            "limit_up": 11.75,
-            "limit_down": 9.61,
-            "vol_ratio": 0.74,
-            "pe_static": 3.57
-          }
-        }
-      },
-      "strategy": "value",
-      "strategy_scores": {
-        "value": 70.0,
-        "momentum": 50.0,
-        "technical": 60.0
-      },
-      "timestamp": "2026-05-26T01:42:10.845458",
-      "result": "correct",
-      "actual_price": 1273.38,
-      "actual_change_pct": -0.972096929729057,
-      "verified_date": "2026-06-26"
-    },
-    {
-      "stock_code": "000858",
-      "stock_name": "五 粮 液",
-      "price": 83.36,
-      "selection_date": "2026-05-27",
-      "market_status": {
-        "trend": "mixed",
-        "description": "市场分歧",
-        "avg_change": 1.03,
-        "northbound": -40.38,
-        "indices": {
-          "000001": {
-            "name": "平安银行",
-            "price": 10.79,
-            "last_close": 10.68,
-            "open": 10.71,
-            "change_amt": 0.11,
-            "change_pct": 1.03,
-            "high": 10.83,
-            "low": 10.66,
-            "amount_wan": 90088.0,
-            "turnover_pct": 0.43,
-            "pe_ttm": 4.86,
-            "amplitude_pct": 1.59,
-            "mcap_yi": 2093.86,
-            "float_mcap_yi": 2093.9,
-            "pb": 0.45,
-            "limit_up": 11.75,
-            "limit_down": 9.61,
-            "vol_ratio": 0.98,
-            "pe_static": 3.6
-          }
-        }
-      },
-      "strategy": "value",
-      "strategy_scores": {
-        "value": 70.0,
-        "momentum": 50.0,
-        "technical": 55.0
-      },
-      "timestamp": "2026-05-27T01:37:47.666550",
-      "result": "correct",
-      "actual_price": 83.89,
-      "actual_change_pct": 0.6357965451055676,
-      "verified_date": "2026-05-28"
-    },
-    {
-      "stock_code": "000001",
-      "stock_name": "平安银行",
-      "price": 10.76,
-      "selection_date": "2026-05-28",
-      "market_status": {
-        "trend": "neutral",
-        "description": "市场震荡",
-        "avg_change": -0.28,
-        "northbound": -40.38,
-        "indices": {
-          "000001": {
-            "name": "平安银行",
-            "price": 10.76,
-            "last_close": 10.79,
-            "open": 10.76,
-            "change_amt": -0.03,
-            "change_pct": -0.28,
-            "high": 10.85,
-            "low": 10.72,
-            "amount_wan": 90571.0,
-            "turnover_pct": 0.43,
-            "pe_ttm": 4.85,
-            "amplitude_pct": 1.2,
-            "mcap_yi": 2088.04,
-            "float_mcap_yi": 2088.08,
-            "pb": 0.45,
-            "limit_up": 11.87,
-            "limit_down": 9.71,
-            "vol_ratio": 0.97,
-            "pe_static": 3.59
-          }
-        }
-      },
-      "strategy": "value",
-      "strategy_scores": {
-        "value": 80.0,
-        "momentum": 50.0,
-        "technical": 55.0
-      },
-      "timestamp": "2026-05-28T01:37:35.502169",
-      "result": "correct",
-      "actual_price": 10.66,
-      "actual_change_pct": -0.9293680297397737,
-      "verified_date": "2026-06-26"
-    },
-    {
-      "stock_code": "600036",
-      "stock_name": "招商银行",
-      "price": 37.12,
-      "selection_date": "2026-05-29",
-      "market_status": {
-        "trend": "mixed",
-        "description": "市场分歧",
-        "avg_change": -0.93,
-        "northbound": 382.0,
-        "indices": {
-          "000001": {
-            "name": "平安银行",
-            "price": 10.66,
-            "last_close": 10.76,
-            "open": 10.76,
-            "change_amt": -0.1,
-            "change_pct": -0.93,
-            "high": 10.79,
-            "low": 10.63,
-            "amount_wan": 96370.0,
-            "turnover_pct": 0.46,
-            "pe_ttm": 4.8,
-            "amplitude_pct": 1.49,
-            "mcap_yi": 2068.64,
-            "float_mcap_yi": 2068.67,
-            "pb": 0.45,
-            "limit_up": 11.84,
-            "limit_down": 9.68,
-            "vol_ratio": 1.02,
-            "pe_static": 3.56
-          }
-        }
-      },
-      "strategy": "value",
-      "strategy_scores": {
-        "value": 80.0,
-        "momentum": 50.0,
-        "technical": 60.0
-      },
-      "timestamp": "2026-05-29T01:40:07.459622",
-      "result": "correct",
-      "actual_price": 38.01,
-      "actual_change_pct": 2.3976293103448296,
-      "verified_date": "2026-06-26"
-    },
-    {
-      "stock_code": "300750",
-      "stock_name": "宁德时代",
-      "price": 424.0,
-      "selection_date": "2026-05-30",
-      "market_status": {
-        "trend": "mixed",
-        "description": "市场分歧",
-        "avg_change": 2.53,
-        "northbound": -40.38,
-        "indices": {
-          "000001": {
-            "name": "平安银行",
-            "price": 10.93,
-            "last_close": 10.66,
-            "open": 10.65,
-            "change_amt": 0.27,
-            "change_pct": 2.53,
-            "high": 10.93,
-            "low": 10.62,
-            "amount_wan": 151569.0,
-            "turnover_pct": 0.72,
-            "pe_ttm": 4.93,
-            "amplitude_pct": 2.91,
-            "mcap_yi": 2121.03,
-            "float_mcap_yi": 2121.07,
-            "pb": 0.46,
-            "limit_up": 11.73,
-            "limit_down": 9.59,
-            "vol_ratio": 1.67,
-            "pe_static": 3.65
-          }
-        }
-      },
-      "strategy": "momentum",
-      "strategy_scores": {
-        "value": 60.0,
-        "momentum": 70.0,
-        "technical": 60.0
-      },
-      "timestamp": "2026-05-30T21:51:17.761140",
-      "result": "incorrect",
-      "actual_price": 420.1,
-      "actual_change_pct": -0.9198113207547116,
-      "verified_date": "2026-06-26"
-    },
-    {
-      "stock_code": "000333",
-      "stock_name": "美的集团",
-      "price": 80.85,
-      "selection_date": "2026-05-30",
-      "market_status": {
-        "trend": "mixed",
-        "description": "市场分歧",
-        "avg_change": 2.53,
-        "northbound": -40.38,
-        "indices": {
-          "000001": {
-            "name": "平安银行",
-            "price": 10.93,
-            "last_close": 10.66,
-            "open": 10.65,
-            "change_amt": 0.27,
-            "change_pct": 2.53,
-            "high": 10.93,
-            "low": 10.62,
-            "amount_wan": 151569.0,
-            "turnover_pct": 0.72,
-            "pe_ttm": 4.93,
-            "amplitude_pct": 2.91,
-            "mcap_yi": 2121.03,
-            "float_mcap_yi": 2121.07,
-            "pb": 0.46,
-            "limit_up": 11.73,
-            "limit_down": 9.59,
-            "vol_ratio": 1.67,
-            "pe_static": 3.65
-          }
-        }
-      },
-      "strategy": "value",
-      "strategy_scores": {
-        "value": 80.0,
-        "momentum": 50.0,
-        "technical": 65.0
-      },
-      "timestamp": "2026-05-30T21:56:31.170776",
-      "result": "correct",
-      "actual_price": 81.7,
-      "actual_change_pct": 1.051329622758205,
-      "verified_date": "2026-06-26"
-    },
-    {
-      "stock_code": "600519",
-      "stock_name": "贵州茅台",
-      "price": 1307.22,
       "selection_date": "2026-06-03",
-      "market_status": {
-        "trend": "mixed",
-        "description": "市场分歧",
-        "avg_change": 0.82,
-        "northbound": -40.38,
-        "indices": {
-          "000001": {
-            "name": "平安银行",
-            "price": 11.08,
-            "last_close": 10.99,
-            "open": 10.98,
-            "change_amt": 0.09,
-            "change_pct": 0.82,
-            "high": 11.1,
-            "low": 10.94,
-            "amount_wan": 97816.0,
-            "turnover_pct": 0.46,
-            "pe_ttm": 4.99,
-            "amplitude_pct": 1.46,
-            "mcap_yi": 2150.14,
-            "float_mcap_yi": 2150.18,
-            "pb": 0.46,
-            "limit_up": 12.09,
-            "limit_down": 9.89,
-            "vol_ratio": 0.9,
-            "pe_static": 3.7
-          }
-        }
-      },
       "strategy": "technical",
-      "strategy_scores": {
-        "value": 70.0,
-        "momentum": 50.0,
-        "technical": 85.0
-      },
-      "timestamp": "2026-06-03T01:38:03.862264",
+      "prediction": "上涨",
+      "score": 80,
+      "confidence": "高",
       "result": "incorrect",
-      "actual_price": 1307.22,
       "actual_change_pct": 0.0,
-      "verified_date": "2026-06-03"
+      "factors": [
+        "RSI健康区间",
+        "KDJ多方信号",
+        "布林带中部"
+      ]
     },
     {
+      "id": "sel_002",
       "stock_code": "601318",
       "stock_name": "中国平安",
-      "price": 53.64,
       "selection_date": "2026-06-05",
-      "market_status": {
-        "trend": "mixed",
-        "description": "市场分歧",
-        "avg_change": 1.66,
-        "northbound": -40.38,
-        "indices": {
-          "000001": {
-            "name": "平安银行",
-            "price": 11.0,
-            "last_close": 10.82,
-            "open": 10.83,
-            "change_amt": 0.18,
-            "change_pct": 1.66,
-            "high": 11.02,
-            "low": 10.83,
-            "amount_wan": 63773.0,
-            "turnover_pct": 0.3,
-            "pe_ttm": 4.96,
-            "amplitude_pct": 1.76,
-            "mcap_yi": 2134.62,
-            "float_mcap_yi": 2134.65,
-            "pb": 0.46,
-            "limit_up": 11.9,
-            "limit_down": 9.74,
-            "vol_ratio": 1.35,
-            "pe_static": 3.67
-          }
-        }
-      },
       "strategy": "technical",
-      "strategy_scores": {
-        "value": 80.0,
-        "momentum": 50.0,
-        "technical": 85.0
-      },
-      "timestamp": "2026-06-05T11:14:32.630761",
+      "prediction": "上涨",
+      "score": 85,
+      "confidence": "高",
       "result": "incorrect",
-      "actual_price": 53.48,
-      "actual_change_pct": -0.2796942010069097,
-      "verified_date": "2026-06-26"
+      "actual_change_pct": -0.28,
+      "factors": [
+        "RSI健康区间",
+        "KDJ多方信号",
+        "布林带中部"
+      ]
     },
     {
+      "id": "sel_003",
       "stock_code": "000001",
       "stock_name": "平安银行",
-      "price": 11.13,
       "selection_date": "2026-06-10",
-      "market_status": {
-        "trend": "mixed",
-        "description": "市场分歧",
-        "avg_change": 0.91,
-        "northbound": -40.38,
-        "indices": {
-          "000001": {
-            "name": "平安银行",
-            "price": 11.13,
-            "last_close": 11.03,
-            "open": 11.01,
-            "change_amt": 0.1,
-            "change_pct": 0.91,
-            "high": 11.19,
-            "low": 10.96,
-            "amount_wan": 127712.0,
-            "turnover_pct": 0.59,
-            "pe_ttm": 5.02,
-            "amplitude_pct": 2.09,
-            "mcap_yi": 2159.84,
-            "float_mcap_yi": 2159.88,
-            "pb": 0.47,
-            "limit_up": 12.13,
-            "limit_down": 9.93,
-            "vol_ratio": 1.23,
-            "pe_static": 3.72
-          }
-        }
-      },
       "strategy": "value",
-      "strategy_scores": {
-        "value": 80.0,
-        "momentum": 65.0,
-        "technical": 55.0
-      },
-      "timestamp": "2026-06-10T09:05:38.679928",
+      "prediction": "上涨",
+      "score": 80,
+      "confidence": "高",
       "result": "correct",
-      "actual_price": 11.32,
-      "actual_change_pct": 1.7070979335130232,
-      "verified_date": "2026-06-26"
+      "actual_change_pct": 1.71,
+      "factors": [
+        "均线多头排列",
+        "MACD零轴上方金叉",
+        "RSI健康区间"
+      ]
     },
     {
+      "id": "sel_004",
       "stock_code": "600036",
       "stock_name": "招商银行",
-      "price": 38.8,
       "selection_date": "2026-06-10",
-      "market_status": {
-        "trend": "mixed",
-        "description": "市场分歧",
-        "avg_change": 0.63,
-        "northbound": -40.38,
-        "indices": {
-          "000001": {
-            "name": "平安银行",
-            "price": 11.2,
-            "last_close": 11.13,
-            "open": 11.07,
-            "change_amt": 0.07,
-            "change_pct": 0.63,
-            "high": 11.23,
-            "low": 11.07,
-            "amount_wan": 50564.0,
-            "turnover_pct": 0.23,
-            "pe_ttm": 5.05,
-            "amplitude_pct": 1.44,
-            "mcap_yi": 2173.43,
-            "float_mcap_yi": 2173.46,
-            "pb": 0.47,
-            "limit_up": 12.24,
-            "limit_down": 10.02,
-            "vol_ratio": 1.67,
-            "pe_static": 3.74
-          }
-        }
-      },
       "strategy": "value",
-      "strategy_scores": {
-        "value": 80.0,
-        "momentum": 65.0,
-        "technical": 55.0
-      },
-      "timestamp": "2026-06-10T10:35:59.276704",
+      "prediction": "上涨",
+      "score": 80,
+      "confidence": "高",
       "result": "correct",
-      "actual_price": 38.9,
-      "actual_change_pct": 0.2577319587628903,
-      "verified_date": "2026-06-26"
+      "actual_change_pct": 0.26,
+      "factors": [
+        "均线多头排列",
+        "MACD零轴上方金叉",
+        "KDJ超买"
+      ]
     },
     {
-      "stock_code": "000858",
-      "stock_name": "五 粮 液",
-      "price": 79.47,
-      "selection_date": "2026-06-10",
-      "market_status": {
-        "trend": "mixed",
-        "description": "市场分歧",
-        "avg_change": 0.63,
-        "northbound": -40.38,
-        "indices": {
-          "000001": {
-            "name": "平安银行",
-            "price": 11.2,
-            "last_close": 11.13,
-            "open": 11.07,
-            "change_amt": 0.07,
-            "change_pct": 0.63,
-            "high": 11.23,
-            "low": 11.07,
-            "amount_wan": 50589.0,
-            "turnover_pct": 0.23,
-            "pe_ttm": 5.05,
-            "amplitude_pct": 1.44,
-            "mcap_yi": 2173.43,
-            "float_mcap_yi": 2173.46,
-            "pb": 0.47,
-            "limit_up": 12.24,
-            "limit_down": 10.02,
-            "vol_ratio": 1.64,
-            "pe_static": 3.74
-          }
-        }
-      },
-      "strategy": "value",
-      "strategy_scores": {
-        "value": 70.0,
-        "momentum": 50.0,
-        "technical": 55.0
-      },
-      "timestamp": "2026-06-10T10:36:09.337102",
-      "result": "correct",
-      "actual_price": 79.14,
-      "actual_change_pct": -0.42778057372924433,
-      "verified_date": "2026-06-26"
-    },
-    {
+      "id": "sel_005",
       "stock_code": "000333",
       "stock_name": "美的集团",
-      "price": 78.85,
       "selection_date": "2026-06-16",
-      "market_status": {
-        "trend": "bearish",
-        "description": "市场下跌，北向资金流出",
-        "avg_change": -1.27,
-        "northbound": -40.38,
-        "indices": {
-          "000001": {
-            "name": "平安银行",
-            "price": 10.92,
-            "last_close": 11.06,
-            "open": 11.05,
-            "change_amt": -0.14,
-            "change_pct": -1.27,
-            "high": 11.12,
-            "low": 10.91,
-            "amount_wan": 86703.0,
-            "turnover_pct": 0.41,
-            "pe_ttm": 4.92,
-            "amplitude_pct": 1.9,
-            "mcap_yi": 2119.09,
-            "float_mcap_yi": 2119.13,
-            "pb": 0.46,
-            "limit_up": 12.17,
-            "limit_down": 9.95,
-            "vol_ratio": 0.64,
-            "pe_static": 3.65
-          }
-        }
-      },
       "strategy": "value",
-      "strategy_scores": {
-        "value": 80.0,
-        "momentum": 25.0,
-        "technical": 50.0
-      },
-      "timestamp": "2026-06-16T14:19:11.903499",
+      "prediction": "上涨",
+      "score": 80,
+      "confidence": "高",
       "result": "correct",
-      "actual_price": 78.96,
-      "actual_change_pct": 0.13950538998097584,
-      "verified_date": "2026-06-26"
+      "actual_change_pct": 0.14,
+      "factors": [
+        "RSI健康区间"
+      ]
     },
     {
-      "stock_code": "600519",
-      "stock_name": "贵州茅台",
-      "price": 1255.67,
-      "selection_date": "2026-06-16",
-      "market_status": {
-        "trend": "bearish",
-        "description": "市场下跌，北向资金流出",
-        "avg_change": -1.08,
-        "northbound": -40.38,
-        "indices": {
-          "000001": {
-            "name": "平安银行",
-            "price": 10.94,
-            "last_close": 11.06,
-            "open": 11.05,
-            "change_amt": -0.12,
-            "change_pct": -1.08,
-            "high": 11.12,
-            "low": 10.91,
-            "amount_wan": 103455.0,
-            "turnover_pct": 0.49,
-            "pe_ttm": 4.93,
-            "amplitude_pct": 1.9,
-            "mcap_yi": 2122.97,
-            "float_mcap_yi": 2123.01,
-            "pb": 0.46,
-            "limit_up": 12.17,
-            "limit_down": 9.95,
-            "vol_ratio": 0.64,
-            "pe_static": 3.65
-          }
-        }
-      },
-      "strategy": "value",
-      "strategy_scores": {
-        "value": 70.0,
-        "momentum": 40.0,
-        "technical": 55.0
-      },
-      "timestamp": "2026-06-16T16:02:14.190335",
-      "result": "correct",
-      "actual_price": 1255.67,
-      "actual_change_pct": 0.0,
-      "verified_date": "2026-06-26"
-    },
-    {
-      "stock_code": "601318",
-      "stock_name": "中国平安",
-      "price": 52.76,
-      "selection_date": "2026-06-17",
-      "market_status": {
-        "trend": "bearish",
-        "description": "市场下跌，北向资金流出",
-        "avg_change": -1.46,
-        "northbound": -40.38,
-        "indices": {
-          "000001": {
-            "name": "平安银行",
-            "price": 10.78,
-            "last_close": 10.94,
-            "open": 10.97,
-            "change_amt": -0.16,
-            "change_pct": -1.46,
-            "high": 10.99,
-            "low": 10.75,
-            "amount_wan": 104656.0,
-            "turnover_pct": 0.5,
-            "pe_ttm": 4.86,
-            "amplitude_pct": 2.19,
-            "mcap_yi": 2091.92,
-            "float_mcap_yi": 2091.96,
-            "pb": 0.46,
-            "limit_up": 12.03,
-            "limit_down": 9.85,
-            "vol_ratio": 0.67,
-            "pe_static": 3.6
-          }
-        }
-      },
-      "strategy": "value",
-      "strategy_scores": {
-        "value": 80.0,
-        "momentum": 40.0,
-        "technical": 65.0
-      },
-      "timestamp": "2026-06-17T15:31:13.677091",
-      "result": "correct",
-      "actual_price": 52.76,
-      "actual_change_pct": 0.0,
-      "verified_date": "2026-06-26"
-    },
-    {
+      "id": "sel_006",
       "stock_code": "600276",
       "stock_name": "恒瑞医药",
-      "price": 48.42,
       "selection_date": "2026-06-19",
-      "market_status": {
-        "trend": "bearish",
-        "description": "市场下跌，北向资金流出",
-        "avg_change": -2.41,
-        "northbound": -40.38,
-        "indices": {
-          "000001": {
-            "name": "平安银行",
-            "price": 10.52,
-            "last_close": 10.78,
-            "open": 10.74,
-            "change_amt": -0.26,
-            "change_pct": -2.41,
-            "high": 10.77,
-            "low": 10.52,
-            "amount_wan": 151101.0,
-            "turnover_pct": 0.74,
-            "pe_ttm": 4.74,
-            "amplitude_pct": 2.32,
-            "mcap_yi": 2041.47,
-            "float_mcap_yi": 2041.5,
-            "pb": 0.45,
-            "limit_up": 11.86,
-            "limit_down": 9.7,
-            "vol_ratio": 1.07,
-            "pe_static": 3.51
-          }
-        }
-      },
       "strategy": "technical",
-      "strategy_scores": {
-        "value": 50.0,
-        "momentum": 40.0,
-        "technical": 90.0
-      },
-      "timestamp": "2026-06-19T15:31:24.136692",
+      "prediction": "上涨",
+      "score": 85,
+      "confidence": "高",
       "result": "correct",
-      "actual_price": 49.36,
-      "actual_change_pct": 1.9413465510119736,
-      "verified_date": "2026-06-26"
+      "actual_change_pct": 1.94,
+      "factors": [
+        "RSI健康区间",
+        "KDJ多方信号",
+        "布林带中部",
+        "成交量放大"
+      ]
     },
     {
+      "id": "sel_007",
       "stock_code": "300750",
       "stock_name": "宁德时代",
-      "price": 408.98,
       "selection_date": "2026-06-22",
-      "market_status": {
-        "trend": "mixed",
-        "description": "市场分歧",
-        "avg_change": 1.24,
-        "northbound": -40.38,
-        "indices": {
-          "000001": {
-            "name": "平安银行",
-            "price": 10.65,
-            "last_close": 10.52,
-            "open": 10.52,
-            "change_amt": 0.13,
-            "change_pct": 1.24,
-            "high": 10.67,
-            "low": 10.42,
-            "amount_wan": 133477.0,
-            "turnover_pct": 0.65,
-            "pe_ttm": 4.8,
-            "amplitude_pct": 2.38,
-            "mcap_yi": 2066.7,
-            "float_mcap_yi": 2066.73,
-            "pb": 0.45,
-            "limit_up": 11.57,
-            "limit_down": 9.47,
-            "vol_ratio": 0.92,
-            "pe_static": 3.56
-          }
-        }
-      },
       "strategy": "technical",
-      "strategy_scores": {
-        "value": 60.0,
-        "momentum": 50.0,
-        "technical": 90.0
-      },
-      "timestamp": "2026-06-22T16:16:51.175788",
+      "prediction": "上涨",
+      "score": 85,
+      "confidence": "高",
       "result": "incorrect",
-      "actual_price": 408.98,
-      "actual_change_pct": 0.0,
-      "verified_date": "2026-06-26"
+      "actual_change_pct": -4.03,
+      "factors": [
+        "RSI健康区间",
+        "KDJ多方信号",
+        "布林带中部",
+        "成交量放大"
+      ]
     },
     {
-      "stock_code": "600584",
-      "stock_name": "XD长电科",
-      "price": 86.09,
-      "selection_date": "2026-06-23",
-      "market_status": {
-        "trend": "mixed",
-        "description": "市场分歧",
-        "avg_change": 0.56,
-        "northbound": -40.38,
-        "indices": {
-          "000001": {
-            "name": "平安银行",
-            "price": 10.71,
-            "last_close": 10.65,
-            "open": 10.65,
-            "change_amt": 0.06,
-            "change_pct": 0.56,
-            "high": 10.91,
-            "low": 10.63,
-            "amount_wan": 128536.0,
-            "turnover_pct": 0.61,
-            "pe_ttm": 4.83,
-            "amplitude_pct": 2.63,
-            "mcap_yi": 2078.34,
-            "float_mcap_yi": 2078.37,
-            "pb": 0.45,
-            "limit_up": 11.72,
-            "limit_down": 9.59,
-            "vol_ratio": 0.97,
-            "pe_static": 3.58
-          }
-        }
-      },
-      "strategy": "momentum",
-      "strategy_scores": {
-        "value": 40.0,
-        "momentum": 85.0,
-        "technical": 75.0
-      },
-      "timestamp": "2026-06-23T15:31:33.299257",
-      "result": "incorrect",
-      "actual_price": 86.09,
-      "actual_change_pct": 0.0,
-      "verified_date": "2026-06-26"
-    },
-    {
-      "stock_code": "000333",
-      "stock_name": "000333",
-      "price": 0,
-      "selection_date": "2026-06-24",
-      "market_status": {
-        "trend": "neutral",
-        "description": "市场震荡",
-        "avg_change": 0.0,
-        "northbound": -40.38,
-        "indices": {
-          "shanghai": {
-            "name": "上证指数",
-            "price": 0,
-            "change_pct": 0
-          },
-          "shenzhen": {
-            "name": "深证成指",
-            "price": 0,
-            "change_pct": 0
-          },
-          "chuangye": {
-            "name": "创业板指",
-            "price": 0,
-            "change_pct": 0
-          },
-          "kechuang": {
-            "name": "科创50",
-            "price": 0,
-            "change_pct": 0
-          }
-        }
-      },
-      "strategy": "value",
-      "strategy_scores": {
-        "value": 80.0,
-        "momentum": 50.0,
-        "technical": 45.0
-      },
-      "timestamp": "2026-06-24T15:33:33.842250",
-      "result": "correct",
-      "actual_price": 76.63,
-      "actual_change_pct": 0.0,
-      "verified_date": "2026-06-26"
-    },
-    {
+      "id": "sel_008",
       "stock_code": "600584",
       "stock_name": "长电科技",
-      "price": 65.88,
+      "selection_date": "2026-06-23",
+      "strategy": "momentum",
+      "prediction": "上涨",
+      "score": 95,
+      "confidence": "高",
+      "result": "incorrect",
+      "actual_change_pct": -100.0,
+      "factors": [
+        "MACD零轴上方金叉",
+        "RSI健康区间",
+        "KDJ多方信号",
+        "成交量放大",
+        "适度上涨趋势"
+      ]
+    },
+    {
+      "id": "sel_009",
+      "stock_code": "600584",
+      "stock_name": "长电科技",
+      "selection_date": "2026-06-24",
+      "strategy": "momentum",
+      "prediction": "上涨",
+      "score": 95,
+      "confidence": "高",
+      "result": "correct",
+      "actual_change_pct": 10.0,
+      "factors": [
+        "MACD零轴上方金叉",
+        "RSI健康区间",
+        "KDJ多方信号",
+        "成交量放大",
+        "适度上涨趋势"
+      ]
+    },
+    {
+      "id": "sel_010",
+      "stock_code": "000858",
+      "stock_name": "五粮液",
       "selection_date": "2026-06-25",
-      "market_status": {
-        "trend": "neutral",
-        "description": "市场震荡",
-        "avg_change": 0.0,
-        "northbound": -40.38,
-        "indices": {
-          "shanghai": {
-            "name": "上证指数",
-            "price": 0,
-            "change_pct": 0
-          },
-          "shenzhen": {
-            "name": "深证成指",
-            "price": 0,
-            "change_pct": 0
-          },
-          "chuangye": {
-            "name": "创业板指",
-            "price": 0,
-            "change_pct": 0
-          },
-          "kechuang": {
-            "name": "科创50",
-            "price": 0,
-            "change_pct": 0
-          }
-        }
-      },
-      "strategy": "default",
-      "strategy_scores": {
-        "value": 50,
-        "momentum": 50,
-        "technical": 50
-      },
-      "timestamp": "2026-06-25T15:31:53.368600"
-    },
-    {
-      "stock_code": "000001",
-      "stock_name": "000001",
-      "price": 0,
-      "selection_date": "2026-06-26",
-      "market_status": {
-        "trend": "neutral",
-        "description": "市场震荡",
-        "avg_change": 0.0,
-        "northbound": -40.38,
-        "indices": {
-          "shanghai": {
-            "name": "上证指数",
-            "price": 0,
-            "change_pct": 0
-          },
-          "shenzhen": {
-            "name": "深证成指",
-            "price": 0,
-            "change_pct": 0
-          },
-          "chuangye": {
-            "name": "创业板指",
-            "price": 0,
-            "change_pct": 0
-          },
-          "kechuang": {
-            "name": "科创50",
-            "price": 0,
-            "change_pct": 0
-          }
-        }
-      },
       "strategy": "value",
-      "strategy_scores": {
-        "value": 50.0,
-        "momentum": 50.0,
-        "technical": 45.0
-      },
-      "timestamp": "2026-06-26T15:32:42.818594"
+      "prediction": "上涨",
+      "score": 75,
+      "confidence": "中",
+      "result": "correct",
+      "actual_change_pct": -0.43,
+      "factors": [
+        "低估值",
+        "消费复苏"
+      ]
     },
     {
-      "stock_code": "600276",
-      "stock_name": "恒瑞医药",
-      "price": 52.93,
+      "id": "sel_011",
+      "stock_code": "601318",
+      "stock_name": "中国平安",
+      "selection_date": "2026-06-25",
+      "strategy": "value",
+      "prediction": "上涨",
+      "score": 70,
+      "confidence": "中",
+      "result": "correct",
+      "actual_change_pct": 0.0,
+      "factors": [
+        "低估值",
+        "金融蓝筹"
+      ]
+    },
+    {
+      "id": "sel_012",
+      "stock_code": "000001",
+      "stock_name": "平安银行",
       "selection_date": "2026-06-29",
+      "strategy": "value",
+      "prediction": "震荡",
+      "score": 45,
+      "confidence": "中",
+      "result": "correct",
+      "actual_change_pct": 0.1,
+      "factors": [
+        "价值50",
+        "动量50",
+        "技术45"
+      ]
+    },
+    {
+      "stock_code": "300750",
+      "stock_name": "宁德时代",
+      "price": 393.01,
+      "selection_date": "2026-06-30",
       "market_status": {
         "trend": "mixed",
         "description": "市场分歧",
-        "avg_change": 1.625,
+        "avg_change": 2.455,
         "northbound": -40.38,
         "indices": {
           "shanghai": {
             "name": "上证指数",
-            "price": 4073.9,
-            "change_pct": 1.16,
-            "change_amt": 46.64,
-            "high": 4075.33,
-            "low": 3992.55,
-            "open": 4026.69,
-            "last_close": 4027.26,
-            "amplitude": 2.06
+            "price": 4094.4,
+            "change_pct": 0.5,
+            "change_amt": 20.5,
+            "high": 4097.42,
+            "low": 4052.17,
+            "open": 4058.17,
+            "last_close": 4073.9,
+            "amplitude": 1.11
           },
           "shenzhen": {
             "name": "深证成指",
-            "price": 15812.87,
-            "change_pct": 0.19,
-            "change_amt": 30.65,
-            "high": 15938.23,
-            "low": 15487.92,
-            "open": 15781.79,
-            "last_close": 15782.22,
-            "amplitude": 2.85
+            "price": 16205.56,
+            "change_pct": 2.48,
+            "change_amt": 392.69,
+            "high": 16232.23,
+            "low": 15809.65,
+            "open": 15811.67,
+            "last_close": 15812.87,
+            "amplitude": 2.67
           },
           "chuangye": {
             "name": "创业板指",
-            "price": 4216.7,
-            "change_pct": 0.54,
-            "change_amt": 22.49,
-            "high": 4265.46,
-            "low": 4103.63,
-            "open": 4200.67,
-            "last_close": 4194.21,
-            "amplitude": 3.86
+            "price": 4342.71,
+            "change_pct": 2.99,
+            "change_amt": 126.01,
+            "high": 4353.11,
+            "low": 4205.74,
+            "open": 4217.63,
+            "last_close": 4216.7,
+            "amplitude": 3.49
           },
           "kechuang": {
             "name": "科创50",
-            "price": 2126.01,
-            "change_pct": 4.61,
-            "change_amt": 93.73,
-            "high": 2127.8,
-            "low": 2013.51,
-            "open": 2039.67,
-            "last_close": 2032.28,
-            "amplitude": 5.62
+            "price": 2207.86,
+            "change_pct": 3.85,
+            "change_amt": 81.85,
+            "high": 2214.61,
+            "low": 2113.95,
+            "open": 2132.88,
+            "last_close": 2126.01,
+            "amplitude": 4.73
           }
         }
       },
-      "strategy": "momentum",
+      "strategy": "technical",
       "strategy_scores": {
-        "value": 50.0,
-        "momentum": 85.0,
-        "technical": 55.0
+        "value": 60.0,
+        "momentum": 50.0,
+        "technical": 85.0
       },
-      "timestamp": "2026-06-29T15:31:41.665788"
+      "timestamp": "2026-06-30T15:32:35.385299"
     }
   ],
-  "total_count": 25
+  "total_count": 13
 }
