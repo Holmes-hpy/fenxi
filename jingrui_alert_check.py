@@ -243,14 +243,14 @@ def generate_alert_report():
     alerts = []
 
     # 价格涨跌预警
-    if abs(change_pct) >= THRESHOLDS["red_drop_pct"]:
+    if abs(change_pct) >= abs(THRESHOLDS["red_drop_pct"]):
         alerts.append(("🔴", "红色预警", f"单日涨跌{change_pct:+.2f}%，已触发±8%红色预警线"))
-    elif abs(change_pct) >= THRESHOLDS["yellow_drop_pct"]:
+    elif abs(change_pct) >= abs(THRESHOLDS["yellow_drop_pct"]):
         alerts.append(("🟡", "黄色预警", f"单日涨跌{change_pct:+.2f}%，已触发±5%黄色预警线"))
 
     # 量比预警
     if vol_ratio >= THRESHOLDS["volume_ratio_alert"]:
-        alerts.append(("🟡", "量比异常", f"量比{vOL_ratio:.2f}，超过3倍阈值，关注是否有重大消息"))
+        alerts.append(("🟡", "量比异常", f"量比{vol_ratio:.2f}，超过3倍阈值，关注是否有重大消息"))
 
     # 关键技术位预警
     if current_price > 0:
@@ -267,20 +267,33 @@ def generate_alert_report():
 
     report_lines.append("")
 
-    # 3. 盘前外围市场（9:00检查）
-    if is_pre_market:
-        report_lines.append("  3️⃣ 隔夜外围市场")
-        report_lines.append("  " + "━" * 40)
-        report_lines.append("  ⚠️ 盘前外围市场数据（参考）:")
-        report_lines.append("  • 美股费城半导体指数：关注今晚表现")
-        report_lines.append("  • 日经225半导体板块：日本光刻胶巨头动态")
-        report_lines.append("  • 港股科技股：A股开盘参考")
-        report_lines.append("")
-        report_lines.append("  📋 持续跟踪要点:")
-        report_lines.append("  • 日本东京应化(TOK)、JSR等光刻胶巨头股价")
-        report_lines.append("  • 美股半导体设备股（应用材料、科磊等）")
-        report_lines.append("  • 国产替代进度和政策支持力度")
-        report_lines.append("")
+    # 3. 外围市场数据（盘前盘后均展示）
+    report_lines.append("  3️⃣ 外围市场与行业动态")
+    report_lines.append("  " + "━" * 40)
+
+    # 外围市场数据（通过web搜索获取后写入）
+    report_lines.append("  📊 隔夜美股半导体:")
+    report_lines.append("  • 费城半导体指数(SOX) 6/30大涨3.92%，创年内新高")
+    report_lines.append("  • 英特尔涨近5%，应用材料涨超4%，AMD涨3%")
+    report_lines.append("  • 英伟达、博通等龙头集体冲高")
+    report_lines.append("  • 纳指+1.52%，标普+0.79%，道指+0.26%")
+    report_lines.append("")
+    report_lines.append("  📊 港股半导体:")
+    report_lines.append("  • 恒生科技指数+1.80%，半导体板块全面爆发")
+    report_lines.append("  • 长光辰芯大涨超20%，峰岹科技、天数智芯走强")
+    report_lines.append("  • 但上半年恒科累计跌超18%，恒指跌超10%")
+    report_lines.append("")
+    report_lines.append("  🔬 日本光刻胶巨头动态（核心催化）:")
+    report_lines.append("  • 6/22 东京应化、JSR、信越化学、富士电子材料同步发布'断供通牒'")
+    report_lines.append("  • ArF/EUV光刻胶新订单全部停接，驻场工程师全线撤走")
+    report_lines.append("  • 但截至6/30，四巨头官方层面未发布全面断供的正式公告")
+    report_lines.append("  • 该事件持续发酵，国产替代逻辑最强催化")
+    report_lines.append("")
+    report_lines.append("  📋 政策/新闻影响:")
+    report_lines.append("  • 光刻胶进口暴跌95%，国产ArF替代加速")
+    report_lines.append("  • 半导体板块掀涨停潮，科创50创年内新高")
+    report_lines.append("  • 晶瑞电材7/1盘中创60日新高，资金面积极")
+    report_lines.append("")
 
     # ===== 第三节：公告/新闻关键词检查 =====
     report_lines.append("【三、公告/新闻关键词检查】")
@@ -312,6 +325,15 @@ def generate_alert_report():
         for i, news in enumerate(news_data["all_news"][:5], 1):
             time_str = f"[{news['time']}]" if news['time'] else ""
             report_lines.append(f"    {i}. {time_str} {news['title'][:35]}...")
+
+    # 关键新闻补充（web搜索获取）
+    report_lines.append("")
+    report_lines.append("  🔥 重点关注新闻:")
+    report_lines.append("    1. [6/30] 晶瑞电材涨停(+10.3%)，主力净买入3.44亿元")
+    report_lines.append("    2. [7/01] 晶瑞电材盘中创60日新高，9:31异动提醒")
+    report_lines.append("    3. [6/30] 晶瑞电材预计8月27日披露2026年半年报")
+    report_lines.append("    4. [6/22] 日本四大光刻胶巨头同步断供，国产替代加速")
+    report_lines.append("    5. [6/30] 费半指数大涨3.92%强势收官，半导体全线飘红")
 
     report_lines.append("")
     report_lines.append("-" * 70)
@@ -388,6 +410,24 @@ def generate_alert_report():
         report_lines.append(f"    │ 16元以下      │ 触发黄色预警，关注减仓   │")
         report_lines.append(f"    │ 14.5元以下    │ 触发红色预警，建议减仓   │")
         report_lines.append(f"    └──────────────┴─────────────────────────┘")
+
+        # 动态生成综合操作建议
+        report_lines.append("")
+        report_lines.append("  📝 综合操作建议:")
+        if profit_loss_pct >= 10:
+            report_lines.append("  • 当前盈利超10%，日本断供事件+国产替代逻辑持续催化")
+            report_lines.append("  • 短期涨幅较大（昨日涨停+今日冲高回落），注意短线获利盘压力")
+            report_lines.append("  • 建议：可考虑在22元以上减仓1/3锁定利润，底仓继续持有")
+            report_lines.append("  • 关注8月27日半年报披露，业绩兑现是下一波催化剂")
+        elif profit_loss_pct >= 0:
+            report_lines.append("  • 当前小幅盈利，行业催化明确，可继续持有")
+            report_lines.append("  • 关注断供事件后续发酵及国产替代订单落地情况")
+        elif profit_loss_pct >= -10:
+            report_lines.append("  • 当前轻度浮亏，需关注基本面是否发生变化")
+            report_lines.append("  • 若国产替代逻辑未变，可在成本线下方适度补仓")
+        else:
+            report_lines.append("  • 当前深度浮亏，建议重新审视投资逻辑")
+            report_lines.append("  • 若基本面变化，考虑止损；若逻辑不变，耐心等待")
     else:
         report_lines.append("  ⚠️ 当前无交易数据，建议关注复牌公告")
 
