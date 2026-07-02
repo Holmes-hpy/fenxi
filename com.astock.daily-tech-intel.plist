@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.astock.daily-tech-intel</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/python3</string>
+        <string>/Users/houpengyuan/Documents/trae_projects/a-stock-data/daily_tech_intel_crawler.py</string>
+    </array>
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>9</integer>
+        <key>Minute</key>
+        <integer>30</integer>
+    </dict>
+    <key>StandardOutPath</key>
+    <string>/Users/houpengyuan/Documents/trae_projects/a-stock-data/daily_tech_intel/crawler_stdout.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/houpengyuan/Documents/trae_projects/a-stock-data/daily_tech_intel/crawler_stderr.log</string>
+    <key>WorkingDirectory</key>
+    <string>/Users/houpengyuan/Documents/trae_projects/a-stock-data</string>
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/opt/homebrew/bin</string>
+    </dict>
+</dict>
+</plist>
