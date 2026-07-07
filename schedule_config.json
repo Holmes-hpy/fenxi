@@ -8,29 +8,36 @@
       "enabled": true
     },
     {
+      "name": "科技资讯爬取-下午-v8多源融合",
+      "description": "每日下午14:30爬取科技前沿资讯，v8.0多源融合增强版（百度新闻+搜狗新闻+财经网站+RSS），结合缠论进行知识沉淀，识别反向信号（自媒体标题党、资本雇佣枪手发文），含背驰检测和多级别联立分析",
+      "cron": "30 14 * * 1-5",
+      "function": "daily_tech_intel_system_v8.DailyTechIntelSystemV8.run",
+      "enabled": true
+    },
+    {
       "name": "科技资讯爬取-上午-WebSearch",
-      "description": "每日上午9:30爬取科技前沿资讯，使用WebSearch增强版搜索十五五规划相关产业（人工智能、半导体、新能源、数字经济等），结合缠论进行知识沉淀，识别反向信号",
+      "description": "每日上午9:30爬取科技前沿资讯，使用WebSearch增强版搜索十五五规划相关产业",
       "cron": "30 9 * * 1-5",
       "function": "daily_tech_intel_webssearch.DailyTechIntelWebSearchSystem.run",
       "enabled": true
     },
     {
       "name": "科技资讯爬取-下午-WebSearch",
-      "description": "每日下午14:30爬取科技前沿资讯，分析资讯并提取知识，使用WebSearch增强版进行搜索，结合缠论进行知识沉淀，识别反向信号（自媒体标题党、资本雇佣枪手发文）",
+      "description": "每日下午14:30爬取科技前沿资讯，使用WebSearch增强版（已被v8多源融合版替代）",
       "cron": "30 14 * * 1-5",
       "function": "daily_tech_intel_webssearch.DailyTechIntelWebSearchSystem.run",
-      "enabled": true
+      "enabled": false
     },
     {
-      "name": "科技资讯爬取-上午",
-      "description": "每日上午9:30爬取科技前沿资讯，关注十五五规划相关产业（人工智能、半导体、新能源、数字经济等）",
+      "name": "科技资讯爬取-上午-v7",
+      "description": "每日上午9:30爬取科技前沿资讯（v7旧版，已禁用）",
       "cron": "30 9 * * 1-5",
       "function": "daily_tech_intel_system_v7.DailyTechIntelSystemV7.run",
       "enabled": false
     },
     {
-      "name": "科技资讯爬取-下午",
-      "description": "每日下午14:30爬取科技前沿资讯，分析资讯并提取知识，结合缠论进行知识沉淀，识别反向信号（自媒体标题党、资本雇佣枪手发文）",
+      "name": "科技资讯爬取-下午-v7",
+      "description": "每日下午14:30爬取科技前沿资讯（v7旧版，已被v8替代）",
       "cron": "30 14 * * 1-5",
       "function": "daily_tech_intel_system_v7.DailyTechIntelSystemV7.run",
       "enabled": false
@@ -65,5 +72,5 @@
     }
   ],
   "created_at": "2026-06-19T14:30:00.000000",
-  "version": "1.4"
+  "version": "1.5"
 }
