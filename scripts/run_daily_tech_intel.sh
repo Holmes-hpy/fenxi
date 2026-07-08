@@ -43,9 +43,9 @@ echo "========================================" >> "$LOG_FILE"
 # 切换到项目目录
 cd "$PROJECT_DIR"
 
-# 执行Python分析脚本（v7.0版本）
-echo "📡 执行资讯分析（v7.0）..." >> "$LOG_FILE"
-python3 daily_tech_intel_system_v7.py "$SESSION" >> "$LOG_FILE" 2>&1
+# 执行Python分析脚本（RSS独立爬虫版）
+echo "📡 执行资讯分析（RSS Crawler v4.0）..." >> "$LOG_FILE"
+python3 daily_tech_intel_rss_crawler.py >> "$LOG_FILE" 2>&1
 
 # 检查执行结果
 if [ $? -eq 0 ]; then
