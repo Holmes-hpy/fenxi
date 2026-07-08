@@ -8,11 +8,18 @@
       "enabled": true
     },
     {
+      "name": "科技资讯爬取-下午-v9-WebSearch增强版",
+      "description": "每日下午14:30爬取科技前沿资讯，v9.0 WebSearch增强版（双重搜索策略：requests爬虫+WebSearch API降级），结合缠论进行知识沉淀（走势类型+操作级别），识别反向信号（11维检测），含历史趋势对比、产业链关联分析",
+      "cron": "30 14 * * 1-5",
+      "function": "daily_tech_intel_system_v9.DailyTechIntelSystemV9.run",
+      "enabled": true
+    },
+    {
       "name": "科技资讯爬取-下午-v8多源融合",
-      "description": "每日下午14:30爬取科技前沿资讯，v8.0多源融合增强版（百度新闻+搜狗新闻+财经网站+RSS），结合缠论进行知识沉淀，识别反向信号（自媒体标题党、资本雇佣枪手发文），含背驰检测和多级别联立分析",
+      "description": "每日下午14:30爬取科技前沿资讯，v8.0多源融合增强版（已被v9.0替代，保留降级）",
       "cron": "30 14 * * 1-5",
       "function": "daily_tech_intel_system_v8.DailyTechIntelSystemV8.run",
-      "enabled": true
+      "enabled": false
     },
     {
       "name": "科技资讯爬取-上午-WebSearch",
@@ -72,5 +79,5 @@
     }
   ],
   "created_at": "2026-06-19T14:30:00.000000",
-  "version": "1.5"
+  "version": "2.0"
 }
