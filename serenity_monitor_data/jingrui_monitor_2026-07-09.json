@@ -1,0 +1,146 @@
+{
+  "report_type": "晶瑞电材(300655)每日持仓监控",
+  "report_date": "2026-07-09",
+  "generated_time": "2026-07-09 18:05:00",
+  "track_name": "光刻胶产业链",
+  "engine": "serenity_monitor_engine",
+  "position": {
+    "code": "300655",
+    "name": "晶瑞电材",
+    "cost_price": 18.07,
+    "shares": 1000,
+    "current_price": 18.97,
+    "last_close": 17.65,
+    "open": 18.01,
+    "high": 19.05,
+    "low": 17.77,
+    "change_amt": 1.32,
+    "change_pct_today": 7.48,
+    "amplitude_pct": 7.25,
+    "volume_ratio": 0.72,
+    "turnover_pct": 7.83,
+    "amount_yi": 16.09,
+    "limit_up": 21.18,
+    "limit_down": 14.12,
+    "pe_ttm": 189.89,
+    "mcap_yi": 212.75,
+    "float_mcap_yi": 213.73
+  },
+  "profit_loss": {
+    "market_value": 18970.0,
+    "profit_loss_amt": 900.0,
+    "profit_loss_pct": 4.98,
+    "vs_cost_10pct_line": "安全(16.26元)",
+    "vs_cost_20pct_line": "安全(14.46元)",
+    "distance_to_yellow_line_pct": 15.66,
+    "distance_to_red_line_pct": 23.56
+  },
+  "alerts": {
+    "red_alerts": [],
+    "yellow_alerts": [
+      {
+        "level": "黄色预警",
+        "type": "振幅异常",
+        "title": "单日振幅7.25%，超7%警戒线",
+        "description": "今日振幅7.25%(低17.77→高19.05)，虽方向为反弹，但振幅仍超7%警戒线；盘中14:11涨幅达7.48%触发临时停牌，反映多空博弈剧烈。",
+        "severity_score": 62,
+        "suggestion": "反弹中的高振幅需关注持续性；若后续交易日缩量企稳则风险可控，若继续大幅波动则需警惕。"
+      },
+      {
+        "level": "黄色预警",
+        "type": "涨幅异常+临时停牌",
+        "title": "单日涨+7.48%触发盘中临时停牌",
+        "description": "今日+7.48%为7/3大跌(-12.59%)以来的最强反弹；14:11触发盘中临时停牌，此前连续5日下跌(7/2→7/8)累计跌幅-19.55%。反弹力度强劲但需确认是否为有效反转。",
+        "severity_score": 60,
+        "suggestion": "关注明日开盘是否延续涨势；若高开高走则反转确认，若冲高回落则可能为技术性反抽。"
+      },
+      {
+        "level": "黄色预警",
+        "type": "换手异常",
+        "title": "换手率7.83%，连续多日高位换手",
+        "description": "今日换手率7.83%，成交16.09亿元，连续多日(7/6: 10.54%, 7/7: 7.27%, 7/8: 7.89%, 7/9: 7.83%)维持7%以上换手，反映多空分歧仍然剧烈。",
+        "severity_score": 55,
+        "suggestion": "反弹日的高换手可能意味着底部承接有力；建议结合资金流向判断主力意图。"
+      }
+    ],
+    "blue_alerts": [
+      {
+        "level": "蓝色提示",
+        "type": "盘中临时停牌",
+        "title": "14:11涨幅达7.48%触发盘中临时停牌",
+        "description": "创业板盘中临时停牌机制触发，股票于14:11临时停牌。这是7/3以来首次触发该机制，反映买盘力量强劲。",
+        "severity_score": 30,
+        "suggestion": "盘中停牌为创业板正常交易机制，关注复牌后走势及次日开盘情况。"
+      }
+    ]
+  },
+  "news_announcement_check": {
+    "negative_keywords_found": [],
+    "positive_keywords_found": [
+      {
+        "keyword": "ArF光刻胶已向多家客户批量供应",
+        "source": "公司公告/互动平台",
+        "date": "2026-06-27",
+        "impact": "正面催化 - 国产替代逻辑持续验证"
+      },
+      {
+        "keyword": "KrF光刻胶已量产出货",
+        "source": "央视财经报道",
+        "date": "2026-06-15",
+        "impact": "正面催化 - KrF已实现量产"
+      }
+    ],
+    "key_news_timeline": [
+      {"date": "2026-07-09", "title": "晶瑞电材+7.48%报18.97元，14:11触发盘中临时停牌", "type": "强势反弹"},
+      {"date": "2026-07-08", "title": "晶瑞电材：氢氟酸销量及收入占比较小", "type": "公司澄清"},
+      {"date": "2026-07-07", "title": "晶瑞电材7/7主力资金净买入3360.71万元", "type": "资金面"},
+      {"date": "2026-07-06", "title": "晶瑞电材-4.69%报18.27元，董秘回复投资者关切", "type": "公司互动"},
+      {"date": "2026-07-03", "title": "晶瑞电材大跌-12.59%，主力净卖出3.70亿元", "type": "异常波动"},
+      {"date": "2026-07-02", "title": "晶瑞电材+5.89%报21.93元，盘中创60日新高23.22元", "type": "突破"},
+      {"date": "2026-06-30", "title": "晶瑞电材涨停+10.3%，主力净买入3.44亿元", "type": "涨停"},
+      {"date": "2026-06-27", "title": "公司拟发行股份购买晶瑞湖北76.0951%股权", "type": "并购重组"},
+      {"date": "2026-06-22", "title": "日本四大光刻胶巨头同步断供，国产替代加速", "type": "行业催化"}
+    ]
+  },
+  "japan_blockade_risk_check": {
+    "japan_export_control_status": "持续发酵中",
+    "photoresist_import_drop_q1_2026": "-95%",
+    "domestic_replacement_logic": "持续有效",
+    "company_position": [
+      "ArF光刻胶：已向多家客户批量供应，2026年继续加快客户验证",
+      "KrF光刻胶：多款已量产出货",
+      "光刻机：5台光刻机覆盖紫外宽谱/g线/i线/KrF/ArF全谱系",
+      "在研：ArF高端光刻胶研发工作有序开展中"
+    ],
+    "risks": [
+      "公司明确ArF销量及收入占比较小，业绩兑现节奏需观察",
+      "高端ArF/EUV光刻胶国产化率仍低，技术差距客观存在",
+      "重组并购晶瑞湖北事项进展待跟踪"
+    ]
+  },
+  "daily_price_history": [
+    {"date": "2026-06-24", "close": 18.08, "change_pct": null, "cum_return_pct": 0.06, "note": "选股日"},
+    {"date": "2026-06-25", "close": 17.77, "change_pct": -1.71, "cum_return_pct": -1.66, "note": ""},
+    {"date": "2026-06-26", "close": 17.77, "change_pct": 0.00, "cum_return_pct": -1.66, "note": ""},
+    {"date": "2026-06-29", "close": 19.42, "change_pct": 9.29, "cum_return_pct": 7.47, "note": ""},
+    {"date": "2026-06-30", "close": 21.42, "change_pct": 10.30, "cum_return_pct": 18.54, "note": "涨停"},
+    {"date": "2026-07-01", "close": 20.71, "change_pct": -3.32, "cum_return_pct": 14.61, "note": "估算"},
+    {"date": "2026-07-02", "close": 21.93, "change_pct": 5.89, "cum_return_pct": 21.36, "note": "盘中最高23.22"},
+    {"date": "2026-07-03", "close": 19.17, "change_pct": -12.59, "cum_return_pct": 6.09, "note": "大跌"},
+    {"date": "2026-07-06", "close": 18.27, "change_pct": -4.69, "cum_return_pct": 1.11, "note": ""},
+    {"date": "2026-07-07", "close": 18.36, "change_pct": 0.49, "cum_return_pct": 1.60, "note": ""},
+    {"date": "2026-07-08", "close": 17.65, "change_pct": -3.87, "cum_return_pct": -2.32, "note": ""},
+    {"date": "2026-07-09", "close": 18.97, "change_pct": 7.48, "cum_return_pct": 4.98, "note": "今日，盘中停牌"}
+  ],
+  "summary": {
+    "total_positions": 1,
+    "total_market_value": 18970.0,
+    "total_profit_loss": 900.0,
+    "total_profit_loss_pct": 4.98,
+    "red_alerts_count": 0,
+    "yellow_alerts_count": 3,
+    "blue_alerts_count": 1,
+    "risk_level": "中低风险",
+    "key_takeaway": "今日+7.48%强势反弹，触发盘中临时停牌，昨日2条红色预警(累计跌幅/高位巨震)降级解除。当前收益+4.98%回到成本线上方，距止盈线+25%(22.59元)仍需+19.08%涨幅。基本面国产替代逻辑未变(ArF批量供应/KrF量产)，短期关注反弹持续性。建议：持有观察，若连续2日站上19元可确认反转；止损线维持16.26元(-10%)。"
+  }
+}

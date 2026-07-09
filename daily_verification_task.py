@@ -95,7 +95,7 @@ def get_today_prices(picker: DailyStockPicker) -> dict:
     
     # 备选价格数据源（从监控报告中读取）
     backup_prices = {
-        "300655": 17.77,  # 晶瑞电材 2026-06-25 收盘价
+        "300655": 18.97,  # 晶瑞电材 2026-07-09 收盘价
     }
     
     for sel in active:

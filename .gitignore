@@ -39,3 +39,6 @@ test.txt
 !requirements.txt
 !mcp_config.json
 !schedule_config.json
+!serenity_monitor_data/*.json
+!data/stock/daily_reviews/*.json
+!data/monitor/*.json
