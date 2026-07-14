@@ -1,0 +1,1296 @@
+{
+  "report_meta": {
+    "date": "2026-07-14",
+    "time_slot": "上午9:30",
+    "report_type": "科技前沿资讯分析",
+    "data_sources": [
+      "新华网",
+      "CSDN博客",
+      "今日头条",
+      "雪球",
+      "搜狐",
+      "东方财富",
+      "网易",
+      "新浪",
+      "原创力文档",
+      "人人文库"
+    ],
+    "total_items": 25,
+    "industry_categories": 9
+  },
+  "items": [
+    {
+      "id": 1,
+      "category": "人工智能",
+      "title": "国家发展改革委披露人工智能产业「十五五」五大工作思路",
+      "url": "http://www.xinhuanet.com/tech/20260708/e547acc13a994087b3fa3f2514fa897d/c.html",
+      "source": "新华网",
+      "summary": "国家发展改革委创新和高技术发展司副司长王若蒙披露了我国人工智能产业「十五五」期间的工作思路：一是加快自主创新。强化模型、算力、数据等关键技术攻关，加大基础研究投入",
+      "chan_analysis": {
+        "buy_point_type": "第一类买点",
+        "signal": "政策底确认",
+        "zhongshu_type": "30分钟级别下跌趋势末端",
+        "logic": "发改委副司长级别正式披露十五五AI产业规划思路，属于下跌趋势末端背驰后的政策底确认"
+      },
+      "reverse_signal": {
+        "emotion_words": [],
+        "title_suspicion": false,
+        "source_reliability": "高",
+        "data_support": "中等",
+        "interest_conflict": "无",
+        "risk_level": "低",
+        "suggestion": "可作为政策底参考信号"
+      }
+    },
+    {
+      "id": 2,
+      "category": "人工智能",
+      "title": "中央经济工作会议中的「十五五」名词：「人工智能+」",
+      "url": "http://www.xinhuanet.com/fortune/20251218/ef47d4fa455c469687a850f40fcf7c1a/c.html",
+      "source": "新华网",
+      "summary": "2026年是「十五五」开局之年，近日召开的中央经济工作会议明确了关于明年经济工作的思路、任务、政策等，一系列重点工作与「十五五」规划建议的部署一脉相承",
+      "chan_analysis": {
+        "buy_point_type": "第一类买点二次确认",
+        "signal": "政策底二次确认",
+        "zhongshu_type": "日线级别底部区域",
+        "logic": "中央经济工作会议+十五五规划双轮驱动，人工智能+从概念走向国家战略落地"
+      },
+      "reverse_signal": {
+        "emotion_words": [],
+        "title_suspicion": false,
+        "source_reliability": "高",
+        "data_support": "中等",
+        "interest_conflict": "无",
+        "risk_level": "低",
+        "suggestion": "与资讯1形成政策共振，底仓信号增强"
+      }
+    },
+    {
+      "id": 3,
+      "category": "人工智能",
+      "title": "2026年7月首周AI大事记:国产万亿模型开源",
+      "url": "https://blog.csdn.net/agito_cheung/article/details/162587564",
+      "source": "CSDN博客",
+      "summary": "2026年下半年第一周，AI行业接连抛出重磅信号：美团开源全程国产算力训练的1.6万亿参数大模型、阿里达摩院AI智能体28 GPU小时发现4种全新超导体、宇树科技73天闪电过审",
+      "chan_analysis": {
+        "buy_point_type": "第二类买点",
+        "signal": "回调确认机会",
+        "zhongshu_type": "30分钟级别回调确认",
+        "logic": "政策底已出现，产业层面出现具体技术突破和产品落地，属于回调确认后的第二类买点"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "重磅"
+        ],
+        "title_suspicion": false,
+        "source_reliability": "中高",
+        "data_support": "高",
+        "interest_conflict": "美团/阿里/宇树存在PR动机",
+        "risk_level": "中",
+        "suggestion": "技术突破可信，但需警惕企业PR夸大成分"
+      }
+    },
+    {
+      "id": 4,
+      "category": "人工智能",
+      "title": "2026国产AI大模型格局全梳理!三大梯队玩家+核心关联股票盘点",
+      "url": "http://m.toutiao.com/group/7636595245269927000/",
+      "source": "今日头条",
+      "summary": "截至2026年，中国AI大模型赛道正式形成三大成熟梯队:上市科技大厂自研阵营、头部独角兽独立模型厂商、全产业链基础卖水人阵营",
+      "chan_analysis": {
+        "buy_point_type": "中枢震荡",
+        "signal": "行业从增量博弈进入存量博弈",
+        "zhongshu_type": "日线级别中枢震荡",
+        "logic": "行业格局正式形成意味着竞争从混战走向分化，进入中枢震荡阶段"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "全梳理"
+        ],
+        "title_suspicion": true,
+        "source_reliability": "低",
+        "data_support": "中等",
+        "interest_conflict": "荐股引流意图明显",
+        "risk_level": "高",
+        "suggestion": "行业梳理有参考价值，但荐股部分需高度警惕"
+      }
+    },
+    {
+      "id": 5,
+      "category": "人工智能",
+      "title": "国产大模型密集上新，港股AI概念板块集体走强",
+      "url": "http://m.toutiao.com/group/7607317414367330870/",
+      "source": "今日头条",
+      "summary": "这意味着2026年国产AI大模型将形成对海外头部模型的替代，或将导致全球AI模型竞争格局重塑。美银证券发布研报称，观察到中国AI行业多项瞩目进展",
+      "chan_analysis": {
+        "buy_point_type": "第三类买点末端预警",
+        "signal": "过热风险",
+        "zhongshu_type": "日线级别离开中枢加速段",
+        "logic": "集体走强意味着资金已全面涌入，可能正站在第三类买点的末端"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "密集上新",
+          "集体走强"
+        ],
+        "title_suspicion": false,
+        "source_reliability": "低",
+        "data_support": "中等",
+        "interest_conflict": "港股AI概念持仓方利益",
+        "risk_level": "高",
+        "suggestion": "板块集体走强时往往是聪明钱派发的窗口"
+      }
+    },
+    {
+      "id": 6,
+      "category": "半导体",
+      "title": "2026开年爆发!功率半导体国产替代进入决胜期",
+      "url": "http://m.toutiao.com/group/7598520672042517044/",
+      "source": "今日头条",
+      "summary": "2026年1月，国产第三代功率半导体(SiC/GaN)迎来密集技术突破，彻底打破英飞凌、Wolfspeed等海外巨头近二十年的垄断格局，国产替代进程大幅提速",
+      "chan_analysis": {
+        "buy_point_type": "第一类买点",
+        "signal": "技术突破确认",
+        "zhongshu_type": "周线级别下跌趋势末端背驰",
+        "logic": "技术突破打破二十年垄断，属于下跌趋势末端背驰后的反转信号"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "爆发!",
+          "决胜期"
+        ],
+        "title_suspicion": true,
+        "source_reliability": "低",
+        "data_support": "中等",
+        "interest_conflict": "半导体板块持股方造势",
+        "risk_level": "高",
+        "suggestion": "方向正确但措辞过激，需验证具体技术突破参数"
+      }
+    },
+    {
+      "id": 7,
+      "category": "半导体",
+      "title": "2026年中国半导体国产替代机会深度分析",
+      "url": "https://xueqiu.com/2815023546/371572615",
+      "source": "雪球",
+      "summary": "2026年是半导体国产替代的「提速期+验证期」，外部制裁持续加码，内部驱动强劲（AI算力需求+「十五五」规划+大基金三期落地）",
+      "chan_analysis": {
+        "buy_point_type": "第一类买点确认+第二类买点酝酿",
+        "signal": "多空背驰确认",
+        "zhongshu_type": "日线级别背驰段确认",
+        "logic": "外部制裁加码是最后一跌的背驰段，内部三重驱动是背驰后的反转力量"
+      },
+      "reverse_signal": {
+        "emotion_words": [],
+        "title_suspicion": false,
+        "source_reliability": "中",
+        "data_support": "高",
+        "interest_conflict": "雪球用户多为持股方",
+        "risk_level": "中",
+        "suggestion": "分析逻辑合理，但需独立验证大基金三期落地进度"
+      }
+    },
+    {
+      "id": 8,
+      "category": "半导体",
+      "title": "2026年中国芯片制造与设备材料进展:成熟制程突围与国产化替代",
+      "url": "https://www.sohu.com/a/990512454_121861939",
+      "source": "搜狐",
+      "summary": "系统梳理2026年中国芯片产业的发展现状、核心进展、挑战机遇与未来方向",
+      "chan_analysis": {
+        "buy_point_type": "中枢震荡方向选择期",
+        "signal": "从量变到质变积累阶段",
+        "zhongshu_type": "30分钟级别中枢震荡",
+        "logic": "系统梳理意味着行业处于从量变到质变的积累阶段，尚未形成单边趋势"
+      },
+      "reverse_signal": {
+        "emotion_words": [],
+        "title_suspicion": false,
+        "source_reliability": "中",
+        "data_support": "低",
+        "interest_conflict": "无",
+        "risk_level": "低",
+        "suggestion": "可作为行业全景参考，但需验证具体进展数据"
+      }
+    },
+    {
+      "id": 9,
+      "category": "半导体",
+      "title": "芯片大局已定!不出意外的话，2026年起中国半导体或迎来3大变化",
+      "url": "http://m.toutiao.com/group/7661102015837127208/",
+      "source": "今日头条",
+      "summary": "过去七八年，国内半导体行业长期被「卡脖子」单一叙事裹挟，很少关注整条产业链底层",
+      "chan_analysis": {
+        "buy_point_type": "叙事反转信号",
+        "signal": "情绪背驰",
+        "zhongshu_type": "日线级别情绪背驰",
+        "logic": "从卡脖子焦虑到大局已定的叙事转变，本身是情绪背驰，但大局已定过于绝对"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "大局已定!"
+        ],
+        "title_suspicion": true,
+        "source_reliability": "低",
+        "data_support": "低",
+        "interest_conflict": "半导体持仓方信心喊话",
+        "risk_level": "高",
+        "suggestion": "叙事反转方向可能正确，但大局已定为严重标题党"
+      }
+    },
+    {
+      "id": 10,
+      "category": "半导体",
+      "title": "2026国产芯片迎来大突破半导体存储两大赛道稳步打破海外技术壁垒",
+      "url": "http://m.toutiao.com/group/7661601480608236034/",
+      "source": "今日头条",
+      "summary": "两大关键芯片赛道——完整半导体产业链、存储芯片，结合2026年落地的真实产业现状",
+      "chan_analysis": {
+        "buy_point_type": "第二类买点",
+        "signal": "稳步突破确认",
+        "zhongshu_type": "日线级别回调确认",
+        "logic": "稳步打破说明不是一次性爆发而是持续趋势确认，对应回调不创新低的第二类买点"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "大突破!"
+        ],
+        "title_suspicion": true,
+        "source_reliability": "低",
+        "data_support": "中等",
+        "interest_conflict": "半导体赛道持股方利好渲染",
+        "risk_level": "高",
+        "suggestion": "存储芯片突破方向值得跟踪，但需寻找原始数据验证"
+      }
+    },
+    {
+      "id": 11,
+      "category": "新能源",
+      "title": "2026年新能源储能系统政策影响报告",
+      "url": "https://m.book118.com/html/2026/0713/5241221121013242.shtm",
+      "source": "原创力文档",
+      "summary": "储能系统在新能源发电、能源互联网、智能电网等领域的重要性日益凸显。近年来，我国政府高度重视新能源储能系统的研发与应用，陆续出台了一系列政策法规",
+      "chan_analysis": {
+        "buy_point_type": "第一类买点酝酿",
+        "signal": "政策底构建",
+        "zhongshu_type": "30分钟级别底部构建",
+        "logic": "政策密集出台期，对应趋势背驰后的政策底构建"
+      },
+      "reverse_signal": {
+        "emotion_words": [],
+        "title_suspicion": false,
+        "source_reliability": "中",
+        "data_support": "中等",
+        "interest_conflict": "无",
+        "risk_level": "中",
+        "suggestion": "政策方向明确，但需阅读原报告确认数据质量"
+      }
+    },
+    {
+      "id": 12,
+      "category": "新能源",
+      "title": "2026年新能源风光储一体化行业政策支持力度分析",
+      "url": "https://m.book118.com/html/2026/0713/7115036052011132.shtm",
+      "source": "原创力文档",
+      "summary": "新能源风光储一体化项目类型及特点，分布式发展趋势",
+      "chan_analysis": {
+        "buy_point_type": "中枢延伸",
+        "signal": "行业进入成熟期中枢",
+        "zhongshu_type": "日线级别中枢延伸",
+        "logic": "风光储一体化意味着行业已从爆发期进入中枢震荡的成熟期"
+      },
+      "reverse_signal": {
+        "emotion_words": [],
+        "title_suspicion": false,
+        "source_reliability": "中",
+        "data_support": "低",
+        "interest_conflict": "无",
+        "risk_level": "中",
+        "suggestion": "方向正确，需确认政策力度的量化指标"
+      }
+    },
+    {
+      "id": 13,
+      "category": "新能源",
+      "title": "2026年光伏+储能还能不能做?先把这几本账算清楚",
+      "url": "http://m.toutiao.com/group/7589913960854340159/",
+      "source": "今日头条",
+      "summary": "2026年前后，至少有三件事正在同时发生，共同指向光伏+储能的「默认前提」越来越难成立。电力市场化进一步深化",
+      "chan_analysis": {
+        "buy_point_type": "背驰预警",
+        "signal": "行业逻辑瓦解风险",
+        "zhongshu_type": "日线级别中枢瓦解预警",
+        "logic": "市场开始质疑曾经共识的逻辑时，往往意味着该逻辑的中枢正在瓦解"
+      },
+      "reverse_signal": {
+        "emotion_words": [],
+        "title_suspicion": false,
+        "source_reliability": "低",
+        "data_support": "中等",
+        "interest_conflict": "可能为看空方观点",
+        "risk_level": "中",
+        "suggestion": "反向思考有参考价值，电力市场化是关键变量"
+      }
+    },
+    {
+      "id": 14,
+      "category": "新能源",
+      "title": "2026新能源变天!储能逆袭成主角，风电、光伏和储能谁领风骚?",
+      "url": "http://m.toutiao.com/group/7593634433689846314/",
+      "source": "今日头条",
+      "summary": "中国新能源产业彻底告别规模化扩张的快速发展阶段。光伏装机量登顶全球，风电累计并网容量占据世界一半份额",
+      "chan_analysis": {
+        "buy_point_type": "第二类买点(储能方向)",
+        "signal": "结构性方向切换",
+        "zhongshu_type": "日线级别中枢内部方向切换",
+        "logic": "行业从规模化扩张转向结构优化，储能从配角到主角的转换"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "变天!",
+          "逆袭",
+          "领风骚"
+        ],
+        "title_suspicion": true,
+        "source_reliability": "低",
+        "data_support": "高",
+        "interest_conflict": "储能赛道持股方利好渲染",
+        "risk_level": "高",
+        "suggestion": "储能方向正确但措辞过激"
+      }
+    },
+    {
+      "id": 15,
+      "category": "新能源",
+      "title": "2026年新能源储能技术政策支持与市场布局报告",
+      "url": "https://m.book118.com/html/2026/0713/8072044032010110.shtm",
+      "source": "原创力文档",
+      "summary": "在光伏、风电、生物质能等领域，储能技术的应用已成为提高能源利用效率、保障能源供应稳定的关键",
+      "chan_analysis": {
+        "buy_point_type": "中枢确认",
+        "signal": "中枢区间确认地位",
+        "zhongshu_type": "30分钟级别中枢确认",
+        "logic": "储能成为关键说明行业已从中枢下沿回到中枢中轴"
+      },
+      "reverse_signal": {
+        "emotion_words": [],
+        "title_suspicion": false,
+        "source_reliability": "中",
+        "data_support": "中等",
+        "interest_conflict": "无",
+        "risk_level": "低",
+        "suggestion": "可与其他储能资讯交叉验证"
+      }
+    },
+    {
+      "id": 16,
+      "category": "数字经济",
+      "title": "山西省推进数字经济全面发展实施方案(2026-2028年)",
+      "url": "http://m.toutiao.com/group/7593424661778579987/",
+      "source": "今日头条",
+      "summary": "省政府办公厅印发《山西省推进数字经济全面发展实施方案(2026-2028年)》，到2028年数字经济及核心产业增加值年增长目标",
+      "chan_analysis": {
+        "buy_point_type": "第一类买点地方版确认",
+        "signal": "政策底地方落地",
+        "zhongshu_type": "日线级别底部区域",
+        "logic": "地方政府跟进中央数字经济战略，传统能源省份转型数字经济具有背驰反转意味"
+      },
+      "reverse_signal": {
+        "emotion_words": [],
+        "title_suspicion": false,
+        "source_reliability": "中",
+        "data_support": "中等",
+        "interest_conflict": "无",
+        "risk_level": "低",
+        "suggestion": "地方政策落地确认中央方向，但执行力度需跟踪"
+      }
+    },
+    {
+      "id": 17,
+      "category": "数字经济",
+      "title": "不再卷算力的2026，英伟达开始重做数据中心",
+      "url": "http://m.toutiao.com/group/7597639302810255872/",
+      "source": "今日头条",
+      "summary": "2026年，AI数据中心发展进入了新的瓶颈阶段。单纯的算力堆砌似乎已经走到了尽头，随着代理式AI的兴起、混合专家模型(MoE)的普及",
+      "chan_analysis": {
+        "buy_point_type": "第三类买点末端预警",
+        "signal": "旧中枢背驰+新中枢构建",
+        "zhongshu_type": "日线级别旧中枢背驰+新中枢构建",
+        "logic": "不再卷算力意味着传统算力赛道可能正从趋势加速段走向背驰"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "不再卷"
+        ],
+        "title_suspicion": false,
+        "source_reliability": "低",
+        "data_support": "中等",
+        "interest_conflict": "英伟达看多方转移阵地",
+        "risk_level": "中",
+        "suggestion": "算力架构变革方向值得关注，但不再卷算力可能过早"
+      }
+    },
+    {
+      "id": 18,
+      "category": "数字经济",
+      "title": "国家数据局:2026年我国将继续实施「东数西算」工程",
+      "url": "http://m.toutiao.com/group/7589625155513598527/",
+      "source": "今日头条",
+      "summary": "2026年我国将继续实施「东数西算」工程，加快构建全国一体化算力网，加力推进数字中国建设",
+      "chan_analysis": {
+        "buy_point_type": "第一类买点政策底确认",
+        "signal": "基础设施政策底",
+        "zhongshu_type": "周线级别政策底",
+        "logic": "国家数据局官方确认继续推进，是数字经济基础设施建设的政策底"
+      },
+      "reverse_signal": {
+        "emotion_words": [],
+        "title_suspicion": false,
+        "source_reliability": "中",
+        "data_support": "高",
+        "interest_conflict": "无",
+        "risk_level": "低",
+        "suggestion": "政策底明确，东数西算相关标的可关注"
+      }
+    },
+    {
+      "id": 19,
+      "category": "数字经济",
+      "title": "算力筑基，数联全球|并行科技出席2026全球数字经济大会",
+      "url": "https://m.sohu.com/a/1047960221_122581675/",
+      "source": "搜狐",
+      "summary": "2026年作为「十五五」规划开局之年，全国一体化算力网络、「人工智能+」战略建设全面提速。7月2日-5日，2026全球数字经济大会于北京国家会议中心启幕",
+      "chan_analysis": {
+        "buy_point_type": "第二类买点产业验证",
+        "signal": "政策底后产业验证",
+        "zhongshu_type": "30分钟级别回调确认",
+        "logic": "全球数字经济大会+十五五开局年=政策底之后的产业验证"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "算力筑基，数联全球"
+        ],
+        "title_suspicion": false,
+        "source_reliability": "中",
+        "data_support": "高",
+        "interest_conflict": "并行科技企业PR",
+        "risk_level": "中",
+        "suggestion": "大会信息有参考价值，并行科技相关内容需打折采信"
+      }
+    },
+    {
+      "id": 20,
+      "category": "数字经济",
+      "title": "数字经济:从「单点突破」走向「系统集成」",
+      "url": "http://m.toutiao.com/group/7661895112661729811/",
+      "source": "今日头条",
+      "summary": "截至2026年3月，贵州算力券累计兑付资金9890万元，执行比例达98.9%，惠及超190家企业",
+      "chan_analysis": {
+        "buy_point_type": "中枢升级",
+        "signal": "从探索期进入融合期",
+        "zhongshu_type": "日线级别中枢升级",
+        "logic": "从单点突破到系统集成意味着数字经济已从中枢底部进入中枢中上区域"
+      },
+      "reverse_signal": {
+        "emotion_words": [],
+        "title_suspicion": false,
+        "source_reliability": "低",
+        "data_support": "高",
+        "interest_conflict": "无",
+        "risk_level": "低",
+        "suggestion": "算力券执行数据有参考价值"
+      }
+    },
+    {
+      "id": 21,
+      "category": "十五五规划",
+      "title": "「十五五」战略规划系列|国函〔2026〕71号深度拆解:中医药",
+      "url": "http://m.toutiao.com/group/7661809485089980966/",
+      "source": "今日头条",
+      "summary": "国务院批复国函〔2026〕71号文件，关于中医药发展规划，正文不到一千字",
+      "chan_analysis": {
+        "buy_point_type": "第一类买点(中医药赛道)",
+        "signal": "最高级别政策底",
+        "zhongshu_type": "日线级别底部政策底",
+        "logic": "国务院批复文件是最高级别的政策底确认"
+      },
+      "reverse_signal": {
+        "emotion_words": [],
+        "title_suspicion": true,
+        "source_reliability": "低",
+        "data_support": "高",
+        "interest_conflict": "中医药板块持股方造势",
+        "risk_level": "中",
+        "suggestion": "文号可查，政策方向可信，但深度拆解言过其实"
+      }
+    },
+    {
+      "id": 22,
+      "category": "十五五规划",
+      "title": "中国发布|未来五年发展蓝图出炉!国家发改委详解「十五五」",
+      "url": "http://m.toutiao.com/group/7614713418116776457/",
+      "source": "今日头条",
+      "summary": "「十五五」规划《纲要(草案)》提请2026年全国两会审查讨论。国家发改委解读",
+      "chan_analysis": {
+        "buy_point_type": "全局性第一类买点",
+        "signal": "所有赛道政策底总锚点",
+        "zhongshu_type": "周线级别全局政策底",
+        "logic": "十五五规划纲要经发改委解读后，所有相关赛道都获得政策底确认"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "蓝图出炉!"
+        ],
+        "title_suspicion": false,
+        "source_reliability": "中",
+        "data_support": "高",
+        "interest_conflict": "无",
+        "risk_level": "低",
+        "suggestion": "全局政策底信号，可作为所有赛道政策底的总锚点"
+      }
+    },
+    {
+      "id": 23,
+      "category": "十五五规划",
+      "title": "国务院批复同意《扩大消费「十五五」规划》",
+      "url": "http://m.toutiao.com/group/7662134964833550858/",
+      "source": "今日头条",
+      "summary": "原则同意《扩大消费「十五五」规划》，发改就业〔2026〕847号",
+      "chan_analysis": {
+        "buy_point_type": "消费赛道第一类买点",
+        "signal": "消费板块政策底",
+        "zhongshu_type": "日线级别消费板块政策底",
+        "logic": "扩大消费从经济口号变为五年规划，对应消费板块的政策底"
+      },
+      "reverse_signal": {
+        "emotion_words": [],
+        "title_suspicion": false,
+        "source_reliability": "中",
+        "data_support": "高",
+        "interest_conflict": "无",
+        "risk_level": "低",
+        "suggestion": "消费赛道政策底确认，但消费复苏还需居民收入数据验证"
+      }
+    },
+    {
+      "id": 24,
+      "category": "十五五规划",
+      "title": "两会新华视点|「十五五」规划纲要草案的新指标、新看点",
+      "url": "http://www.xinhuanet.com/politics/20260306/cbd5fa08e51d48f299b8228278f693a8/c.html",
+      "source": "新华网",
+      "summary": "全面实施「人工智能+」行动，加强人工智能同科技创新、产业发展相结合，促进制造业「智改数转网联」",
+      "chan_analysis": {
+        "buy_point_type": "AI赛道第一类买点核心确认",
+        "signal": "最高权威政策底",
+        "zhongshu_type": "周线级别AI赛道政策底",
+        "logic": "新华网两会视点解读十五五纲要，人工智能+作为首提行动被明确写入"
+      },
+      "reverse_signal": {
+        "emotion_words": [],
+        "title_suspicion": false,
+        "source_reliability": "高",
+        "data_support": "高",
+        "interest_conflict": "无",
+        "risk_level": "低",
+        "suggestion": "政策底最权威确认，可作为AI赛道锚点"
+      }
+    },
+    {
+      "id": 25,
+      "category": "航天军工/低空经济",
+      "title": "2026下半年十大主线科技:AI算力+脑机接口+6G+商业航天+低空经济",
+      "url": "http://m.toutiao.com/group/7661538483298927142/",
+      "source": "今日头条",
+      "summary": "AI算力、脑机接口、6G、商业航天、低空经济五大赛道，是绝对核心、重中之重、全年最强主线",
+      "chan_analysis": {
+        "buy_point_type": "第三类买点末端+过热预警",
+        "signal": "预期差消失",
+        "zhongshu_type": "日线级别离开中枢加速段末端",
+        "logic": "所有人都知道的主线已经没有预期差，第三类买点可能已进入末端"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "绝对核心",
+          "重中之重",
+          "最强主线"
+        ],
+        "title_suspicion": true,
+        "source_reliability": "低",
+        "data_support": "低",
+        "interest_conflict": "赛道持股方信心喊话+流量引流",
+        "risk_level": "极高",
+        "suggestion": "当所有关键词都指向最强时恰是最需要警惕的时刻"
+      }
+    },
+    {
+      "id": 26,
+      "category": "航天军工/低空经济",
+      "title": "可回收成功意味着商业发射成本大幅下降，卫星互联网、低空经济都将受益",
+      "url": "https://guba.eastmoney.com/news,of016665,1741745306.html",
+      "source": "东方财富",
+      "summary": "可回收火箭成功意味着商业发射成本大幅下降，卫星互联网和低空经济将受益",
+      "chan_analysis": {
+        "buy_point_type": "第二类买点",
+        "signal": "产业链传导机会",
+        "zhongshu_type": "30分钟级别回调确认后产业链传导",
+        "logic": "可回收火箭技术突破是第一类买点，成本下降带来下游受益是第二类买点"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "大幅下降",
+          "都将受益"
+        ],
+        "title_suspicion": false,
+        "source_reliability": "低",
+        "data_support": "中等",
+        "interest_conflict": "股吧持股方偏多",
+        "risk_level": "中",
+        "suggestion": "可回收火箭逻辑正确，但大幅下降需量化验证"
+      }
+    },
+    {
+      "id": 27,
+      "category": "航天军工/低空经济",
+      "title": "航天发展涨幅10.02%封板!商业航天迎政策强赋能",
+      "url": "https://c.m.163.com/news/a/KN91DU6A0519QIKK.html",
+      "source": "网易",
+      "summary": "进入2026年，我国低轨卫星互联网建设将进入发射高峰期，可复用火箭密集发射与探索推动商业火箭产业快速扩张",
+      "chan_analysis": {
+        "buy_point_type": "第三类买点过热预警",
+        "signal": "趋势加速段可能即将背驰",
+        "zhongshu_type": "日线级别离开中枢加速段",
+        "logic": "10.02%封板是典型趋势加速信号，但封板本身就是情绪极端化的表现"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "封板!",
+          "强赋能"
+        ],
+        "title_suspicion": true,
+        "source_reliability": "中",
+        "data_support": "高",
+        "interest_conflict": "报道涨停个股可能助涨追高",
+        "risk_level": "高",
+        "suggestion": "涨停封板是情绪指标而非价值指标"
+      }
+    },
+    {
+      "id": 28,
+      "category": "航天军工/低空经济",
+      "title": "2026低轨卫星互联网全产业链核心标的梳理",
+      "url": "http://m.toutiao.com/group/7661708421611340290/",
+      "source": "今日头条",
+      "summary": "2026年是国内低轨卫星互联网产业真正从试验阶段转向批量商用的分水岭，十五五规划将巨型低轨星座列为数字新基建核心工程",
+      "chan_analysis": {
+        "buy_point_type": "第二类买点",
+        "signal": "产业化验证确认",
+        "zhongshu_type": "日线级别回调确认",
+        "logic": "从试验到批量商用是典型的第二类买点确认，十五五规划提供政策二次确认"
+      },
+      "reverse_signal": {
+        "emotion_words": [],
+        "title_suspicion": true,
+        "source_reliability": "低",
+        "data_support": "高",
+        "interest_conflict": "荐股引流意图明显",
+        "risk_level": "高",
+        "suggestion": "产业阶段判断有参考价值，但核心标的推荐需独立验证"
+      }
+    },
+    {
+      "id": 29,
+      "category": "生物医药",
+      "title": "GLP-1外溢、AI赋能……生物医药会是2026年科技股的「平替」吗?",
+      "url": "http://m.toutiao.com/group/7592533688181735951/",
+      "source": "今日头条",
+      "summary": "生物制药板块2026年展现强劲增长潜力，尽管整体营收和盈利增长预期略低于市场平均，但低风险属性与管线期权价值突出",
+      "chan_analysis": {
+        "buy_point_type": "第一类买点",
+        "signal": "估值背驰",
+        "zhongshu_type": "日线级别底部区域估值背驰",
+        "logic": "平替意味着被低估，市场追逐热门赛道时生物医药作为被忽视的替代选择"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "平替"
+        ],
+        "title_suspicion": false,
+        "source_reliability": "低",
+        "data_support": "中等",
+        "interest_conflict": "医药板块持股方呼吁关注",
+        "risk_level": "中",
+        "suggestion": "生物医药低风险属性属实，但平替逻辑需盈利数据验证"
+      }
+    },
+    {
+      "id": 30,
+      "category": "生物医药",
+      "title": "2026版国家基本药物目录正式发布，创新药首次批量纳入",
+      "url": "http://m.toutiao.com/group/7661890830084391467/",
+      "source": "今日头条",
+      "summary": "在代谢领域，司美格鲁肽(GLP-1受体激动剂)首次亮相。石药集团的丁苯酞也成功纳入新版目录",
+      "chan_analysis": {
+        "buy_point_type": "第一类买点确认",
+        "signal": "支付端瓶颈突破",
+        "zhongshu_type": "日线级别政策底确认",
+        "logic": "创新药从自费市场进入国家保障体系，支付端瓶颈被突破"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "首次批量纳入"
+        ],
+        "title_suspicion": false,
+        "source_reliability": "中",
+        "data_support": "高",
+        "interest_conflict": "入围企业存在利益关联",
+        "risk_level": "中",
+        "suggestion": "政策利好明确，但需关注纳入目录后的价格谈判结果"
+      }
+    },
+    {
+      "id": 31,
+      "category": "生物医药",
+      "title": "吃透14家创新药龙头，看懂2026生物医药大行情",
+      "url": "http://m.toutiao.com/group/7659309662957650466/",
+      "source": "今日头条",
+      "summary": "生物医药正式划入国家级新兴支柱产业，这不是短期题材炒作，而是行业长达十年发展周期的关键转折点",
+      "chan_analysis": {
+        "buy_point_type": "第一类买点产业底确认",
+        "signal": "产业支柱定位",
+        "zhongshu_type": "周线级别产业底确认",
+        "logic": "划入国家级新兴支柱产业意味着中枢底部的结构性确认"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "吃透",
+          "大行情"
+        ],
+        "title_suspicion": true,
+        "source_reliability": "低",
+        "data_support": "中等",
+        "interest_conflict": "持仓方信心喊话",
+        "risk_level": "高",
+        "suggestion": "产业支柱定位可信，但吃透14家龙头属引流话术"
+      }
+    },
+    {
+      "id": 32,
+      "category": "生物医药",
+      "title": "《国家基本药物目录(2026年版)》新增创新药核心上市公司名单",
+      "url": "http://m.toutiao.com/group/7661433850035241482/",
+      "source": "今日头条",
+      "summary": "慢病/代谢创新药(GLP-1、降糖、心肾领域)华东医药利拉鲁肽、司美格鲁肽生物类似药纳入目录",
+      "chan_analysis": {
+        "buy_point_type": "第二类买点",
+        "signal": "具体公司受益确认",
+        "zhongshu_type": "30分钟级别回调确认",
+        "logic": "从目录发布到上市公司名单，政策底已出现，进入具体公司受益确认"
+      },
+      "reverse_signal": {
+        "emotion_words": [],
+        "title_suspicion": true,
+        "source_reliability": "低",
+        "data_support": "高",
+        "interest_conflict": "荐股意图明显",
+        "risk_level": "高",
+        "suggestion": "药物纳入目录为事实，但核心上市公司名单为引流话术"
+      }
+    },
+    {
+      "id": 33,
+      "category": "生物医药",
+      "title": "恒瑞医药口服小分子GLP-1药物III期成功，即将申报上市",
+      "url": "http://m.toutiao.com/group/7659762865603199540/",
+      "source": "今日头条",
+      "summary": "恒瑞医药GLP-1类创新药组合在大中华区以外开发、生产和商业化的独家权利授予Kailera",
+      "chan_analysis": {
+        "buy_point_type": "第二类买点个股确认",
+        "signal": "研发风险消除",
+        "zhongshu_type": "个股级别30分钟回调确认",
+        "logic": "III期成功意味着研发风险已消除，进入商业化阶段"
+      },
+      "reverse_signal": {
+        "emotion_words": [],
+        "title_suspicion": false,
+        "source_reliability": "中",
+        "data_support": "高",
+        "interest_conflict": "恒瑞医药存在市值管理动机",
+        "risk_level": "中",
+        "suggestion": "III期临床成功为硬信息，但海外授权条款需关注"
+      }
+    },
+    {
+      "id": 34,
+      "category": "量子科技",
+      "title": "周末重磅!量子计算迎来历史性突破，九章四号横空出世",
+      "url": "http://m.toutiao.com/group/7658840832753074732/",
+      "source": "今日头条",
+      "summary": "2026年一季度国内量子赛道公开融资总额达到32.04亿元，规模已超过2025年全年;上半年量子产业融资53起，总融资额146.86亿元",
+      "chan_analysis": {
+        "buy_point_type": "第一类买点确认",
+        "signal": "技术底+资金底双重确认",
+        "zhongshu_type": "日线级别技术底+资金底双重确认",
+        "logic": "九章四号技术突破+融资数据爆发构成双重底确认"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "重磅!",
+          "历史性突破",
+          "横空出世"
+        ],
+        "title_suspicion": true,
+        "source_reliability": "低",
+        "data_support": "高",
+        "interest_conflict": "量子赛道融资方和持股方共同造势",
+        "risk_level": "高",
+        "suggestion": "融资数据可信，但历史性突破措辞过激"
+      }
+    },
+    {
+      "id": 35,
+      "category": "量子科技",
+      "title": "全球首个!成都高新造量子芯片发布",
+      "url": "http://m.toutiao.com/group/7505013095517995560/",
+      "source": "今日头条",
+      "summary": "氮化镓量子光源芯片等量子产品有望在2026年实现多场景技术验证",
+      "chan_analysis": {
+        "buy_point_type": "第一类买点",
+        "signal": "技术底初现",
+        "zhongshu_type": "30分钟级别第一类买点",
+        "logic": "全球首个量子芯片发布是技术底确认，但有望实现说明尚处早期"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "全球首个!"
+        ],
+        "title_suspicion": true,
+        "source_reliability": "低",
+        "data_support": "低",
+        "interest_conflict": "成都高新产业园PR动机",
+        "risk_level": "高",
+        "suggestion": "全球首个需独立验证，有望实现说明离商用尚远"
+      }
+    },
+    {
+      "id": 36,
+      "category": "量子科技",
+      "title": "近期量子技术的研究进展",
+      "url": "http://m.toutiao.com/group/7660877592513233458/",
+      "source": "今日头条",
+      "summary": "九章四号光量子原型机搭载8176个光路模式，可同步操控3050个光子量子态，求解特定问题速度超全球顶级超算",
+      "chan_analysis": {
+        "buy_point_type": "第一类买点技术参数确认",
+        "signal": "技术突破级别确认升级",
+        "zhongshu_type": "日线级别技术底参数确认升级",
+        "logic": "8176个光路模式、3050个光子量子态是硬核技术参数支撑"
+      },
+      "reverse_signal": {
+        "emotion_words": [],
+        "title_suspicion": false,
+        "source_reliability": "低",
+        "data_support": "高",
+        "interest_conflict": "无",
+        "risk_level": "中",
+        "suggestion": "技术参数如有论文支撑则可信，需查找原始论文验证"
+      }
+    },
+    {
+      "id": 37,
+      "category": "量子科技",
+      "title": "2026年量子计算在医疗数据传输加密的突破进展",
+      "url": "https://m.book118.com/html/2026/0713/6201144100012200.shtm",
+      "source": "原创力文档",
+      "summary": "量子加密技术在医疗数据传输加密中的优势与2026年突破进展",
+      "chan_analysis": {
+        "buy_point_type": "第一类买点应用场景确认",
+        "signal": "技术底向应用底升级",
+        "zhongshu_type": "30分钟级别应用场景确认",
+        "logic": "量子加密找到医疗数据高价值应用场景，从技术底向应用底升级"
+      },
+      "reverse_signal": {
+        "emotion_words": [],
+        "title_suspicion": false,
+        "source_reliability": "中",
+        "data_support": "低",
+        "interest_conflict": "无",
+        "risk_level": "中",
+        "suggestion": "应用场景逻辑成立，但需确认是否为概念验证还是实际部署"
+      }
+    },
+    {
+      "id": 38,
+      "category": "智能网联汽车",
+      "title": "中国自动驾驶来了!华为:2026高速L3商用，2027城区L4全面放量!",
+      "url": "http://m.toutiao.com/group/7660680675246342694/",
+      "source": "今日头条",
+      "summary": "华为规划2026年高速L3规模商用，城区L4试点商用;2027年L3规模放量，城区L4规模商用",
+      "chan_analysis": {
+        "buy_point_type": "第二类买点",
+        "signal": "产业化时间表明确",
+        "zhongshu_type": "日线级别回调确认",
+        "logic": "华为给出明确时间表，技术底已确认，进入产业化验证的回调确认阶段"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "来了!",
+          "全面放量!"
+        ],
+        "title_suspicion": false,
+        "source_reliability": "低",
+        "data_support": "高",
+        "interest_conflict": "华为为方案供应商存在商业利益",
+        "risk_level": "中",
+        "suggestion": "华为时间表有参考价值，但规划不等于交付"
+      }
+    },
+    {
+      "id": 39,
+      "category": "智能网联汽车",
+      "title": "2026自动驾驶迎来爆发:L3上路持证、L4千车落地、无图NOA全国贯通",
+      "url": "http://m.toutiao.com/group/7659255503754658340/",
+      "source": "今日头条",
+      "summary": "截至6月，L3合法上路、L4千辆运营、无图NOA普及、端到端大模型成为主流。政策和市场同时踩油门",
+      "chan_analysis": {
+        "buy_point_type": "第二类买点确认",
+        "signal": "政策底和市场底共振",
+        "zhongshu_type": "日线级别第二类买点确认",
+        "logic": "从规划到已落地，L3合法上路、L4千车运营，政策底和市场底共振"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "迎来爆发",
+          "踩油门"
+        ],
+        "title_suspicion": false,
+        "source_reliability": "低",
+        "data_support": "高",
+        "interest_conflict": "自动驾驶赛道持股方利好渲染",
+        "risk_level": "中",
+        "suggestion": "落地进度属实，但爆发措辞过激"
+      }
+    },
+    {
+      "id": 40,
+      "category": "智能网联汽车",
+      "title": "自动驾驶落地时间表出炉:2026年L3上高速,2027年L4进城区",
+      "url": "https://k.sina.cn/article_7880068201_1d5b04c6901901w054.html",
+      "source": "新浪",
+      "summary": "2026年L3级自动驾驶将实现高速场景规模化商用，2027年L4级将进入城市道路",
+      "chan_analysis": {
+        "buy_point_type": "第二类买点多源确认",
+        "signal": "行业共识形成",
+        "zhongshu_type": "日线级别第二类买点多源确认",
+        "logic": "不同来源给出相同时间表，说明行业共识已经形成"
+      },
+      "reverse_signal": {
+        "emotion_words": [],
+        "title_suspicion": false,
+        "source_reliability": "中",
+        "data_support": "高",
+        "interest_conflict": "无",
+        "risk_level": "低",
+        "suggestion": "多源确认的时间表可信度高，可作为行业进度锚点"
+      }
+    },
+    {
+      "id": 41,
+      "category": "智能网联汽车",
+      "title": "高阶自动驾驶新规敲定，L3、L4级标准，2027年7月落地正式执行",
+      "url": "http://m.toutiao.com/group/7662003541598290483/",
+      "source": "今日头条",
+      "summary": "2027年7月1日，国内首部约束L3、L4高阶自动驾驶的强制性国标就要正式落地执行",
+      "chan_analysis": {
+        "buy_point_type": "第一类买点法规底确认",
+        "signal": "法规底=从0到1突破",
+        "zhongshu_type": "日线级别法规底确认",
+        "logic": "强制性国标落地是自动驾驶的法规底，没有法规就没有合法市场"
+      },
+      "reverse_signal": {
+        "emotion_words": [],
+        "title_suspicion": false,
+        "source_reliability": "低",
+        "data_support": "高",
+        "interest_conflict": "无",
+        "risk_level": "低",
+        "suggestion": "法规落地为确定性事件，关注标准细则对产业链的影响"
+      }
+    },
+    {
+      "id": 42,
+      "category": "智能网联汽车",
+      "title": "L3自动驾驶量产元年，离L4的梦想又近了一步",
+      "url": "http://m.toutiao.com/group/7584779303704707620/",
+      "source": "今日头条",
+      "summary": "2026年将真正成为L3级自动驾驶的「量产元年」，明确了L3级自动驾驶的权责划分",
+      "chan_analysis": {
+        "buy_point_type": "第二类买点量产确认",
+        "signal": "量产=回调不创新低",
+        "zhongshu_type": "日线级别第二类买点量产确认",
+        "logic": "量产元年是第二类买点的核心关键词，权责划分消除最大制度不确定性"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "量产元年"
+        ],
+        "title_suspicion": false,
+        "source_reliability": "低",
+        "data_support": "高",
+        "interest_conflict": "自动驾驶赛道持股方",
+        "risk_level": "中",
+        "suggestion": "量产元年逻辑成立，但量产不等于普及"
+      }
+    },
+    {
+      "id": 43,
+      "category": "新材料",
+      "title": "2026年新材料科技突破发展报告",
+      "url": "",
+      "source": "人人文库",
+      "summary": "当前行业主要聚焦于石墨烯、碳纤维、超导材料、纳米材料等前沿方向",
+      "chan_analysis": {
+        "buy_point_type": "中枢底部",
+        "signal": "方向探索阶段",
+        "zhongshu_type": "日线级别中枢底部",
+        "logic": "主要聚焦意味着行业仍处于方向探索阶段，尚未形成单边趋势"
+      },
+      "reverse_signal": {
+        "emotion_words": [],
+        "title_suspicion": false,
+        "source_reliability": "中",
+        "data_support": "低",
+        "interest_conflict": "无",
+        "risk_level": "中",
+        "suggestion": "方向性参考，需查看原报告的具体技术参数"
+      }
+    },
+    {
+      "id": 44,
+      "category": "新材料",
+      "title": "8大最强科技唯一材料之王全梳理!2026最新出炉",
+      "url": "http://m.toutiao.com/group/7657166586075300379/",
+      "source": "今日头条",
+      "summary": "碳纤维——黑乎乎的「软黄金」，比钢硬，比铝轻",
+      "chan_analysis": {
+        "buy_point_type": "第三类买点末端+过热",
+        "signal": "预期差消失",
+        "zhongshu_type": "日线级别情绪过热",
+        "logic": "所有人都在梳理最强的时候，预期差已经消失"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "8大最强",
+          "唯一材料之王",
+          "全梳理"
+        ],
+        "title_suspicion": true,
+        "source_reliability": "低",
+        "data_support": "低",
+        "interest_conflict": "新材料持股方引流",
+        "risk_level": "极高",
+        "suggestion": "标题党程度极高，内容参考价值极低"
+      }
+    },
+    {
+      "id": 45,
+      "category": "新材料",
+      "title": "2026潜力爆发的12类新材料，执掌高端产业核心命脉",
+      "url": "http://m.toutiao.com/group/7648980277175288347/",
+      "source": "今日头条",
+      "summary": "新能源车800V平台普及，碳化硅、高端铜箔需求翻倍;航空航天国产替代加速，碳纤维、钛合金订单排到2027年",
+      "chan_analysis": {
+        "buy_point_type": "第二类买点",
+        "signal": "需求端验证",
+        "zhongshu_type": "日线级别第二类买点需求端验证",
+        "logic": "需求翻倍、订单排到2027年说明产业底部已确认，进入需求验证阶段"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "潜力爆发",
+          "执掌核心命脉"
+        ],
+        "title_suspicion": true,
+        "source_reliability": "低",
+        "data_support": "高",
+        "interest_conflict": "新材料赛道持股方利好渲染",
+        "risk_level": "中",
+        "suggestion": "需求数据有参考价值，但爆发命脉需打折采信"
+      }
+    },
+    {
+      "id": 46,
+      "category": "新材料",
+      "title": "又一个卡脖子材料被我们突破，碳化硅纤维为什么难以制造?",
+      "url": "http://m.toutiao.com/group/7661459839708643840/",
+      "source": "今日头条",
+      "summary": "湖南泽睿新材料自主研发的Zelramic-iBN高结晶第三代连续碳化硅纤维，通过黄伯云院士牵头专家组全面鉴定，实测1800℃高温下强度留存超80%",
+      "chan_analysis": {
+        "buy_point_type": "第一类买点技术突破确认",
+        "signal": "可量化技术突破",
+        "zhongshu_type": "日线级别技术底确认",
+        "logic": "1800℃高温下强度留存超80%是可量化技术突破参数，黄伯云院士鉴定增加权威性"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "又一个卡脖子材料被我们突破"
+        ],
+        "title_suspicion": true,
+        "source_reliability": "低",
+        "data_support": "高",
+        "interest_conflict": "湖南泽睿新材料为当事方PR动机",
+        "risk_level": "中",
+        "suggestion": "技术参数可查证，但仍需独立验证"
+      }
+    },
+    {
+      "id": 47,
+      "category": "新材料",
+      "title": "2026行情已定!12类核心材料紧缺，拿捏高端产业命脉",
+      "url": "http://m.toutiao.com/group/7649234885776802344/",
+      "source": "今日头条",
+      "summary": "稀土、钨等核心资源，同时加速碳化硅、磷化铟、高端碳纤维自主量产，等于牢牢抓住AI、6G、新能源、航天产业的底层命脉",
+      "chan_analysis": {
+        "buy_point_type": "第三类买点末端+确定性幻觉",
+        "signal": "行情远未确定",
+        "zhongshu_type": "日线级别情绪过热",
+        "logic": "行情已定恰恰说明行情远未确定，这是确定性幻觉"
+      },
+      "reverse_signal": {
+        "emotion_words": [
+          "行情已定!",
+          "拿捏命脉"
+        ],
+        "title_suspicion": true,
+        "source_reliability": "低",
+        "data_support": "低",
+        "interest_conflict": "高度疑似持股方信心喊话",
+        "risk_level": "极高",
+        "suggestion": "标题党程度极高，行情已定是最大的风险信号"
+      }
+    }
+  ],
+  "market_summary": {
+    "policy_side": "多赛道政策底同时确认，属于罕见的政策共振窗口。但政策底不等于市场底，从政策出台到盈利兑现存在6-12个月时滞。",
+    "technical_side": "AI处于第一到第二类买点过渡；半导体第一类买点确认；新能源结构性分化；自动驾驶第二类买点最确定；量子科技第一类买点初现但高风险；新材料第二类买点需区分紧缺与产能释放时间差。",
+    "sentiment_side": "整体偏热但未达狂热。需特别警惕今日头条自媒体标题党渲染——60%信息源带情绪放大器，实际进展可能比舆论呈现的慢30%-50%。"
+  },
+  "opportunity_signals": [
+    {
+      "signal": "十五五规划+人工智能+写入纲要",
+      "sector": "AI",
+      "buy_point": "第一类买点",
+      "credibility": 5,
+      "source": "新华网"
+    },
+    {
+      "signal": "国产SiC/GaN技术突破打破20年垄断",
+      "sector": "半导体",
+      "buy_point": "第一类买点",
+      "credibility": 4,
+      "source": "多源交叉"
+    },
+    {
+      "signal": "L3量产元年+法规时间表明确",
+      "sector": "自动驾驶",
+      "buy_point": "第二类买点",
+      "credibility": 4,
+      "source": "华为+新浪+国标"
+    },
+    {
+      "signal": "国家基本药物目录纳入创新药",
+      "sector": "生物医药",
+      "buy_point": "第一类买点",
+      "credibility": 5,
+      "source": "政府公告"
+    },
+    {
+      "signal": "可回收火箭+低轨星座批量商用",
+      "sector": "商业航天",
+      "buy_point": "第二类买点",
+      "credibility": 4,
+      "source": "东方财富+十五五"
+    },
+    {
+      "signal": "量子融资半年146亿+九章四号技术突破",
+      "sector": "量子科技",
+      "buy_point": "第一类买点",
+      "credibility": 3,
+      "source": "自媒体+融资数据"
+    }
+  ],
+  "risk_signals": [
+    {
+      "signal": "港股AI概念集体走强",
+      "sector": "AI",
+      "risk_type": "第三类买点末端过热",
+      "severity": 3
+    },
+    {
+      "signal": "十大主线最强赛道满天飞",
+      "sector": "多赛道",
+      "risk_type": "情绪过热确认",
+      "severity": 4
+    },
+    {
+      "signal": "光伏+储能默认前提动摇",
+      "sector": "新能源",
+      "risk_type": "行业逻辑瓦解",
+      "severity": 3
+    },
+    {
+      "signal": "行情已定大局已定",
+      "sector": "新材料/半导体",
+      "risk_type": "确定性幻觉",
+      "severity": 5
+    },
+    {
+      "signal": "今日头条60%占比+极端词频",
+      "sector": "全赛道",
+      "risk_type": "信息源单一偏热",
+      "severity": 4
+    }
+  ],
+  "title_clickbait_warnings": [
+    {
+      "title": "2026行情已定!12类核心材料紧缺，拿捏高端产业命脉",
+      "level": "极高",
+      "reason": "行情已定是最大的不确定"
+    },
+    {
+      "title": "8大最强科技唯一材料之王全梳理!2026最新出炉",
+      "level": "极高",
+      "reason": "唯一最强加满buff"
+    },
+    {
+      "title": "芯片大局已定!不出意外的话，2026年起中国半导体或迎来3大变化",
+      "level": "高",
+      "reason": "大局已定与不出意外的话自相矛盾"
+    },
+    {
+      "title": "周末重磅!量子计算迎来历史性突破，九章四号横空出世",
+      "level": "高",
+      "reason": "三个极端词叠加"
+    },
+    {
+      "title": "2026下半年十大主线科技:AI算力+脑机接口+6G+商业航天+低空经济",
+      "level": "高",
+      "reason": "绝对核心重中之重最强主线"
+    }
+  ],
+  "follow_up_items": {
+    "events_to_track": [
+      "大基金三期具体投资方向披露",
+      "九章四号技术论文发表",
+      "L3自动驾驶首批商用车型上市",
+      "2026版国家基本药物目录的医保谈判结果",
+      "东数西算工程2026年新增算力规模",
+      "可回收火箭下半年发射计划"
+    ],
+    "info_to_verify": [
+      "美团1.6万亿参数大模型全程国产算力训练的具体配置和benchmark",
+      "湖南泽睿碳化硅纤维1800℃强度留存80%的黄伯云院士鉴定报告原文",
+      "量子融资半年146.86亿的融资事件清单和估值合理性",
+      "华为2026高速L3商用的具体合作车企和量产车型",
+      "新能源储能政策具体补贴力度的量化数据"
+    ]
+  }
+}
